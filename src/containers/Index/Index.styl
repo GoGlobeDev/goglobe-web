@@ -1,0 +1,421 @@
+@import '../../theme/variables.styl'
+
+.container
+    padding: 0
+
+.header-nav
+    border: none
+    margin-bottom: 0
+    box-shadow: 0px 3px 7px 0 rgba($dark, .3)
+    .navbar-header
+        .logo1, .logo3
+            float: left
+    .navbar-collapse
+        padding: 0
+        .navbar-nav
+            margin: 0
+    .nav>li>a
+        padding: 10px 15px
+        
+
+            
+.top-area
+    img
+        width: 100%
+    .events
+        background-color: $orange
+        color: $light
+        text-align: center
+        font-weight: bold
+        .right-btn
+            width: 147px
+            height: 40px
+            border: 2px solid $light
+            border-radius: 20px
+            text-align: center
+            line-height: 35px
+            margin-left: auto
+            margin-right: auto
+
+.intro
+    .fun-left
+        text-transform: uppercase
+        padding-top: 50px
+        .top-line
+            height: 6px
+            width: 95%
+            background-image: linear-gradient(to left, #f1911c, #eac72a)
+            margin-bottom: 20px
+        .left-text
+            color: $orange
+        &:second-child
+            margin-top: 15px
+    .fun-right
+        line-height: 1.8
+        padding-bottom: 20px
+        color: rgba($fontc, .8)
+
+.files
+    background-color: rgba($orange, .1)
+    .col-xs-6
+        min-width: 257px
+    .files-left, .files-right
+        text-align: center
+        padding: 50px 0
+        width: 257px
+        margin: 0 auto
+        .names
+            height: 42px
+            border-radius: 4px
+            line-height: 40px
+            margin-top: 10px
+        .available
+            margin-top: 35px
+        .language
+            margin-top: 15px
+            span
+                color: $orange
+                cursor: pointer
+    .files-left
+        .names
+            background-color: $light
+            color: $orange
+    .files-right
+        .names
+            background-color: $orange
+            color: $light
+            
+.team
+    border-top: $border
+    .persons
+        margin-top: 30px
+    .person-intro
+        border-bottom: $border
+        padding-top: 20px
+        padding-bottom: 20px
+        img
+            float: left
+        .person-right
+            margin-left: 180px
+            h4
+                font-weight: bold
+            p
+                margin: 15px 0
+                line-height: 23px
+                color: rgba($fontc, .6)
+            li
+                margin-right: 20px
+.team.advisors
+    .persons>.person-intro
+        height: initial
+        padding-top: 30px
+        padding-bottom: 30px
+.contact
+    background-image: url('../../img/grid.png')
+    background-size: auto 100%
+    .contact-icons
+        width: 258px
+        li
+            margin-right: 65px
+            float: left
+            &:last-child
+                margin-right: 0
+    .up-to-top
+        margin: 0 auto
+        width: 70px
+        height: 70px
+        border-radius: 50%
+        background-color: $light
+        box-shadow: 2px 3px 20px 0 rgba(68,68,68,0.2)
+        cursor: pointer
+        text-align: center
+        line-height: 62px
+        img
+            width: 50px
+
+.footer
+    background-color: $dark
+    color: rgba($light, .3)
+    padding-top: 20px
+    padding-bottom: 20px
+    h4
+        color: rgba($light, .9)
+    .footer-left
+        text-align: center
+    .footer-mid
+        h4+p
+            margin-top: 30px
+        p+p
+            margin-bottom: 30px
+    .footer-right
+        li
+            margin-right: 30px
+            float: left
+        .e-mail, .splitter, .contact-icons, .join-us
+            margin-top: 30px
+        .splitter
+            width: 90%
+            height: 1px
+            background-color: rgba($light, .3)
+
+@media (max-width: 440px)
+    .header-nav
+        padding: 0 20px
+        .navbar-brand
+            padding-top: 0
+        .logo1
+            width: 40px
+            margin-top: 13px
+        .logo3
+            display: none
+        .navbar-toggle
+            margin: 15px
+    .top-area
+        margin-top: 64px
+    .events
+        .event1
+            padding-top: 10px
+            font-size: 20px
+        .event2
+            font-size: 20px
+            padding-top: 10px
+        .event3
+            .right-btn
+                margin-top: 10px
+                margin-bottom: 10px
+    .intro
+        .left-text
+            font-size: 30px
+        .fun-right
+            padding-top: 20px            
+    .contact
+        padding-bottom: 20px
+        .contact-icons
+            margin: 20px auto
+    .team
+        .person-intro
+            img
+                width: 80px
+            .person-right
+                margin-left: 100px
+@media (min-width: 440px)
+    .header-nav
+        padding: 0 20px
+        .navbar-brand
+            padding-top: 0
+        .logo1
+            width: 40px
+            margin-top: 13px
+        .logo3
+            display: block
+        .navbar-toggle
+            margin: 15px
+    .top-area
+        margin-top: 64px
+    .events
+        .event1
+            padding-top: 10px
+            font-size: 20px
+        .event2
+            font-size: 20px
+            padding-top: 10px
+        .event3
+            .right-btn
+                margin-top: 10px
+                margin-bottom: 10px
+    .intro
+        .left-text
+            font-size: 30px
+        .fun-right
+            padding-top: 20px
+    .contact
+        padding-bottom: 20px
+        .contact-icons
+            margin: 20px auto
+    .team
+        .person-intro
+            img
+                width: 100px
+            .person-right
+                margin-left: 130px
+@media (min-width: 768px)
+    .header-nav
+        .navbar-header
+            height: 60px
+            margin-right: 69px
+    .top-area
+        margin-top: 100px
+    .events
+        .event1
+            font-size: 25px
+            padding-top: 25px
+        .event2
+            font-size: 30px
+            padding-top: 20px
+        .event3
+            .right-btn
+                margin-top: 30px
+                margin-bottom: 30px
+    .intro
+        .left-text
+            font-size: 40px
+    .team
+        .person-intro
+            padding-left: 0
+            padding-right: 0
+            float: left
+            .person-right
+                margin-left: 120px
+            &:first-child, &:nth-child(2)
+            //     height: 375px
+            // &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8)
+                height: 465px
+            &:nth-child(5), &:nth-child(6)
+                height: 375px
+            &:nth-child(2n)
+                padding-left: 50px
+    .team.advisors
+        .persons>.person-intro
+            &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4)
+                height: 190px
+            &:nth-child(5), &:nth-child(6)
+                height: 260px
+    .contact
+        padding-bottom: 30px
+        .contact-icons
+            margin: 40px auto
+@media (min-width: 992px)
+    .header-nav
+        .logo1
+            width: initial
+        .logo3
+            display: none
+        .navbar-collapse
+            .navbar-nav
+                float: right
+                margin: 25px
+    .top-area
+        margin-top: 90px
+    .events
+        .event1
+            font-size: 35px
+            padding-top: 25px
+        .event2
+            font-size: 40px
+            padding-top: 20px
+        .event3
+            .right-btn
+                margin-top: 30px
+                margin-bottom: 30px
+    .intro
+        .left-text
+            font-size: 50px
+        .fun-right
+            padding-top: 40px
+            padding-bottom: 40px
+            font-size: 18px
+    .team
+        .person-intro
+            &:first-child, &:nth-child(2)
+                height: 285px
+            &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8)
+                height: 330px
+            &:nth-child(5), &:nth-child(6)
+                height: 260px
+    .team.advisors
+        .persons>.person-intro
+            &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4)
+                height: 165px
+            &:nth-child(5), &:nth-child(6)
+                height: 225px
+    .contact
+        padding-bottom: 40px
+        .contact-icons
+            margin: 60px auto
+@media (min-width: 1200px)
+    .header-nav
+        .logo3
+            display: block
+            margin-top: 13px
+    .navbar-nav
+        margin-top: 26px
+    .events
+        .event1
+            font-size: 45px
+            padding-top: 35px
+        .event2
+            font-size: 50px
+            padding-top: 30px
+        .event3
+            .right-btn
+                margin-top: 45px
+                margin-bottom: 45px
+    .intro
+        .left-text
+            font-size: 60px
+        .fun-right
+            font-size: 20px
+    .team
+        .person-intro
+            padding-left: 0
+            padding-right: 0
+            width: 535px
+            float: left
+            img
+                width:150px
+            .person-right
+                margin-left: 180px
+            &:first-child, &:nth-child(2), &:nth-child(5), &:nth-child(6)
+            //     height: 310px
+            // &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8)
+                height: 320px
+            &:nth-child(2n)
+                margin-left: 100px
+    .team.advisors
+        .persons>.person-intro
+            height: 215px !important
+    .contact
+        padding-bottom: 50px
+        .contact-icons
+            margin: 80px auto
+
+.features, .intro, .contact
+    background-color: $light
+
+.partners, .investors
+    border-bottom: $border
+    background-color: $light
+    li
+        margin-top: 35px
+        text-align: center
+        &:last-child
+            margin-bottom: 35px
+        img
+            max-width: 100%
+    .col-lg-4, .col-md-6, .col-sm-6, .col-xs-12
+        padding: 0
+        
+.title
+    padding-top: 40px
+    text-align: center
+    font-size: 40px
+    letter-spacing: 8px
+    color: $orange
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+

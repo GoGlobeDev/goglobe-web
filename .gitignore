@@ -7,3 +7,5 @@ webpack-assets.json
 webpack-stats.json
 npm-debug.log
 *.swp
+package-lock.json
+static/index0.html

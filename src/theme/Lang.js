@@ -77,18 +77,18 @@ export const PERSONS = [
         title: 'CMO',
         intro: 'Master in strategic management from Oxford Brooks University. He has solid theoretical and operational experience in corporate strategy and financial investment as a venture capitalist. He also has deep understanding in big data and blockchain, and is one of the earliest investors in the blockchain sector with several successful projects such as Deepbrain chain, Quantum, Selfsell.'
     },
-    {
-        pic: require('img/p6.png'),
-        name: 'Angda Li',
-        title: 'CSO',
-        intro: 'An open collaboration evangelist. Graduated from Tsinghua University, UCAS and Hejun Business School. He started his career at Accenture. He is now the CEO of Data.Me/Factube.com and the president of Singularity Philanthropy Center(NGO).'
-    },
-    {
-        pic: require('img/p8.png'),
-        name: 'Pengcheng Song',
-        title: 'Chief Scientist',
-        intro: 'Currently working as co-founder and CTO of Data.Me Technology, he has years of experience in database design and development. He holds B.S. and M.S. from Tsinghua University and Ph.D. from New York University.'
-    },
+    // {
+    //     pic: require('img/p6.png'),
+    //     name: 'Angda Li',
+    //     title: 'CSO',
+    //     intro: 'An open collaboration evangelist. Graduated from Tsinghua University, UCAS and Hejun Business School. He started his career at Accenture. He is now the CEO of Data.Me/Factube.com and the president of Singularity Philanthropy Center(NGO).'
+    // },
+    // {
+    //     pic: require('img/p8.png'),
+    //     name: 'Pengcheng Song',
+    //     title: 'Chief Scientist',
+    //     intro: 'Currently working as co-founder and CTO of Data.Me Technology, he has years of experience in database design and development. He holds B.S. and M.S. from Tsinghua University and Ph.D. from New York University.'
+    // },
     {
         pic: require('img/p7.png'),
         name: 'Nick Yu',

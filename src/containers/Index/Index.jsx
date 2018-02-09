@@ -22,7 +22,7 @@ export default class Index extends Component {
     }
     render() {
         return (
-            <div className="height container">
+            <div className="">
                 <Helmet title="GO GLOBE CHAIN"/>
                 <Navbar collapseOnSelect fixedTop className="header-nav">
                     <Navbar.Header>
@@ -41,8 +41,8 @@ export default class Index extends Component {
                     </Navbar.Collapse>
                 </Navbar>
                 <a name="event"></a><div className="top-area"><a name="home"></a>
-                    <img src={require('img/banner.jpg')}/>
-                    {/* <div className="events clearfix">
+                    {/* <img src={require('img/banner.jpg')}/>
+                    <div className="events clearfix">
                         <div className="event1 col-xs-12 col-sm-12 col-md-3">
                             EVENT</div>
                         <div className="event2 col-xs-12 col-sm-12 col-md-6">
@@ -51,7 +51,7 @@ export default class Index extends Component {
                             <div className="right-btn">Learn More&nbsp; ></div></div>
                     </div>*/}
                 </div>
-                <a name="about"></a><div className="intro clearfix">
+                <a name="about"></a><div className="intro clearfix"><div className="container">
                     <div className="col-md-5 fun-left">
                         <div className="top-line" />
                         <div className="left-text">redefine</div>
@@ -62,8 +62,8 @@ export default class Index extends Component {
                     <div className="col-md-7 fun-right">
                         Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping.  Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly. Furthermore, Go Globe is powered by leading edge AI search engine where rich content is organized and intelligent indexed in distributed fashion.  The image repository can be further enhanced by Go Globe’s Augmented Reality Panoramic(ARP) technology in the future so visitors can take virtual tours.  Finally, Go Globe blockchain offers rapid settlement of value, eliminating charge-back and credit risk from traditional credit network.
                     </div>
-                </div>
-                <a name="files"></a><div className="files clearfix">
+                </div></div>
+                <a name="files"></a><div className="files clearfix"><div className="container">
                     <div className="col-sm-6 col-md-3 col-md-offset-2">
                         <div className="files-left">
                             <img src={require('img/document1.png')}/>
@@ -84,7 +84,7 @@ export default class Index extends Component {
                             <span>日本语</span></div>
                         </div>
                     </div>
-                </div>
+                </div></div>
                 {/* <a name="features"></a><div className="features">
                     <div className="title">FEATURES</div>
                 </div>*/}
@@ -98,7 +98,7 @@ export default class Index extends Component {
                         })}
                     </ul>
                 </div> */}
-                <a name="team"></a><div className="team clearfix">
+                <a name="team"></a><div className="team clearfix"><div className="container">
                     <div className="title">TEAM</div>
                     <div className="persons clearfix">
                         {PERSONS.map((item, idx)=>{
@@ -116,8 +116,8 @@ export default class Index extends Component {
                             return (<li><img key={index} src={item.pic}/></li>);
                         })}
                     </ul>*/}
-                </div>
-                <a name="team"></a><div className="team advisors clearfix">
+                </div></div>
+                <a name="team"></a><div className="team advisors clearfix"><div className="container">
                     <div className="title">ADVISORS</div>
                     <div className="persons clearfix">
                         {ADVISORS.map((item, idx)=>{
@@ -135,8 +135,8 @@ export default class Index extends Component {
                             return (<li><img key={index} src={item.pic}/></li>);
                         })}
                     </ul>*/}
-                </div>
-                <a name="partners"></a><div className="partners">
+                </div></div>
+                <a name="partners"></a><div className="partners"><div className="container">
                     <div className="title">PARTNERS</div>
                     <ul className="brand-list clearfix">
                         {PARTNERS.map((item, index)=>{
@@ -144,8 +144,8 @@ export default class Index extends Component {
                                 <img src={item.pic}/></li>);
                         })}
                     </ul>
-                </div>
-                <a name="partners"></a><div className="investors">
+                </div></div>
+                <a name="partners"></a><div className="investors"><div className="container">
                     <div className="title">INVESTORS</div>
                     <ul className="brand-list clearfix">
                         {INVESTORS.map((item, index)=>{
@@ -153,8 +153,8 @@ export default class Index extends Component {
                                 <img src={item.pic}/></li>);
                         })}
                     </ul>
-                </div>
-                <a name="contact"></a><div className="contact">
+                </div></div>
+                <a name="contact"></a><div className="contact"><div className="container">
                     <div className="title">CONTACT US</div>
                     <ul className="contact-icons clearfix">
                         {CONTACT_ICONS_GRAY.map((item, index)=>{
@@ -163,8 +163,9 @@ export default class Index extends Component {
                     </ul>
                     <a href="#home"><div className="up-to-top">
                         <img src={require('img/arrow.png')}/>
-                </div></a></div>
-                <div className="footer clearfix">
+                    </div></a>
+                </div></div>
+                <div className="footer clearfix"><div className="container">
                     <div className="col-sm-2 footer-left">
                         <img src={require('img/logo2.png')} />
                     </div>
@@ -184,7 +185,7 @@ export default class Index extends Component {
                             })}
                         </ul>
                     </div>
-                </div>
+                </div></div>
             </div>
         );
     }

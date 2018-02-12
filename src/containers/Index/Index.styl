@@ -7,26 +7,33 @@
     border: none
     margin-bottom: 0
     box-shadow: 0px 3px 7px 0 rgba($dark, .3)
+    background-color: rgba(#f8f8f8, 0.5)
     .navbar-header
-        .logo1, .logo3
+        margin-top: 5px
+        height: 50px
+        .navbar-brand
+            padding: 5px 15px
+        .logo1
+            width: 40px
             float: left
+        .logo3
+            float: left
+            width: 175px
     .navbar-collapse
         padding: 0
         .navbar-nav
-            margin: 0
+            float: right
+            margin: 10px
     .nav>li>a
-        padding: 10px 15px
-        
-
+        padding: 10px 15px               
             
 .top-area
-    // img
-    //     width: 100%
     height: 33vh
-    background-image: url('../../img/banner.jpg')
-    background-repeat: no-repeat
+    background: url('../../img/banner.jpg') no-repeat
     background-size: cover
-    background-position: center center
+    background-attachment: fixed
+    background-position: center bottom
+    margin-top: 60px
     .events
         background-color: $orange
         color: $light
@@ -43,23 +50,82 @@
             margin-right: auto
 
 .intro
+    background-image: linear-gradient(to right, #f1911c, #eac72a)
+    // background-size: cover
+    // background-attachment: fixed
+    // background-position: center bottom
     .fun-left
         text-transform: uppercase
-        padding-top: 50px
+        padding-top: 45px
         .top-line
             height: 6px
             width: 95%
-            background-image: linear-gradient(to left, #f1911c, #eac72a)
+            background-color: $light
             margin-bottom: 20px
         .left-text
-            color: $orange
+            color: $light
         &:second-child
             margin-top: 15px
     .fun-right
         line-height: 1.8
         padding-bottom: 20px
-        color: rgba($fontc, .8)
-
+        color: $light
+.inno
+    padding: 40px
+    background-color: $light
+    .container
+        .header
+            margin-bottom: 90px
+            text-align: center
+            .title
+                color: #222222
+                font-size: 40px
+                margin-bottom: 40px
+                font-weight: 300
+                letter-spacing: normal
+            .article
+                color: #222222
+                font-size: 20px
+                line-height: 1.5
+                .article-intro
+                    font-weight: bold
+        .reason
+            .reason-item
+                position: relative
+                margin-bottom: 55px
+                .item-pic
+                    width: 140px
+                    height: 140px
+                    background-color: $light
+                    border-radius: 50%
+                    padding: 10px
+                    margin: 0 auto
+                    img
+                        max-width: 100%
+                .item-txt
+                    color: #222222
+                    position: absolute
+                    top: -30%
+                    .txt-title
+                        margin-bottom: 25px
+                        font-size: 26px
+                        color: $orange
+                        .color-3
+                            color: #222222
+                    .txt-intro
+                        line-height: 1.4
+                        font-size: 16px
+                        font-style: italic
+            .reason-item:nth-child(2n + 1)
+                .item-txt
+                     right: 0
+                     left: 50%
+                     margin-left: 200px
+            .reason-item:nth-child(2n + 2)
+                .item-txt
+                     left: 0
+                     right: 50%
+                     margin-right: 200px            
 .files
     background-color: rgba($orange, .1)
     .col-xs-6
@@ -110,6 +176,11 @@
                 color: rgba($fontc, .6)
             li
                 margin-right: 20px
+.team-img
+    background: url('../../img/team.jpg') no-repeat
+    background-size: cover
+    background-attachment: fixed
+    background-position: center bottom
 .team.advisors
     .persons>.person-intro
         height: initial
@@ -166,17 +237,12 @@
 @media (max-width: 440px)
     .header-nav
         padding: 0 20px
-        .navbar-brand
-            padding-top: 0
-        .logo1
-            width: 40px
-            margin-top: 13px
         .logo3
             display: none
         .navbar-toggle
-            margin: 15px
-    .top-area
-        margin-top: 64px
+            margin: 10px
+    // .top-area
+    //     margin-top: 64px
     .events
         .event1
             padding-top: 10px
@@ -206,17 +272,10 @@
 @media (min-width: 440px)
     .header-nav
         padding: 0 20px
-        .navbar-brand
-            padding-top: 0
-        .logo1
-            width: 40px
-            margin-top: 13px
-        .logo3
-            display: block
         .navbar-toggle
-            margin: 15px
-    .top-area
-        margin-top: 64px
+            margin: 10px
+    // .top-area
+    //     margin-top: 64px
     .events
         .event1
             padding-top: 10px
@@ -244,12 +303,16 @@
             .person-right
                 margin-left: 130px
 @media (min-width: 768px)
-    .header-nav
-        .navbar-header
-            height: 60px
-            margin-right: 69px
     .top-area
-        margin-top: 100px
+         height: 70vh
+    .header-nav .navbar-collapse
+        padding: 0
+        .navbar-nav
+            float: right
+            margin: 10px -15px
+    .header-nav
+        .navbar-toggle
+            margin: 10px
     .events
         .event1
             font-size: 25px
@@ -290,18 +353,8 @@
         .contact-icons
             margin: 40px auto
 @media (min-width: 992px)
-    .header-nav
-        .logo1
-            width: initial
-        .logo3
-            display: none
-        .navbar-collapse
-            .navbar-nav
-                float: right
-                margin: 25px
     .top-area
-        margin-top: 90px
-        height: 40vh
+        height: 70vh
     .events
         .event1
             font-size: 35px
@@ -315,7 +368,7 @@
                 margin-bottom: 30px
     .intro
         .left-text
-            font-size: 50px
+            font-size: 45px
         .fun-right
             padding-top: 40px
             padding-bottom: 40px
@@ -340,11 +393,7 @@
             margin: 60px auto
 @media (min-width: 1200px)
     .top-area
-        height: 50vh
-    .header-nav
-        .logo3
-            display: block
-            margin-top: 13px
+        height: 70vh
     .navbar-nav
         margin-top: 26px
     .events
@@ -360,7 +409,7 @@
                 margin-bottom: 45px
     .intro
         .left-text
-            font-size: 60px
+            font-size: 50px
         .fun-right
             font-size: 20px
     .team
@@ -394,13 +443,16 @@
     border-bottom: $border
     background-color: $light
     li
-        margin-top: 35px
+        height: 125px
+        margin-top: 30px
         text-align: center
         &:last-child
             margin-bottom: 35px
         img
-            width: 100%
-    .col-lg-4, .col-md-6, .col-sm-6, .col-xs-12
+            max-width: 180px
+        .investor-intro
+            color: rgba(38,42,46,0.6) 
+    .col-lg-2, .col-md-3, .col-sm-4, .col-xs-6, .col-xs-12
         padding: 0
         
 .title

@@ -73,6 +73,17 @@ export default class Index extends Component {
                             <div className="event3 col-xs-12 col-sm-12 col-md-3">
                                 <div className="right-btn">Learn More&nbsp; ></div></div>
                         </div>*/}
+                        <div className="tips">
+                            <h3>GO GLOBE</h3>
+                            <div className="tip-btn">
+                                <div className="left">WATCH VIDEO</div>
+                                <div className="right" onClick={() => this.toAnchor('#contact', 6)}>CONTACT US</div>
+                            </div>
+                            <div>
+                                <span>LEARN MORE</span>
+                                <div className="more">...</div>
+                            </div>
+                        </div>
                     </div>
                     <a name="about"></a><div className="intro clearfix"><div className="container">
                         <div className="col-md-5 fun-left">
@@ -245,9 +256,9 @@ export default class Index extends Component {
                                 return (<li key={index}><img src={item.pic}/></li>);
                             })}
                         </ul>
-                        <a href="#home"><div className="up-to-top">
+                        <div className="up-to-top" onClick={() => this.toAnchor('#home', 1)}>
                             <img src={require('img/arrow.png')}/>
-                        </div></a>
+                        </div>
                     </div></div>
                     <div className="footer clearfix"><div className="container">
                         <div className="col-sm-2 footer-left">

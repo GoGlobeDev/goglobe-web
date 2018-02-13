@@ -1,5 +1,9 @@
 @import '../../theme/variables.styl'
 
+.left
+    float: left
+.right
+    float: right    
 .container
     padding: 0
 
@@ -28,12 +32,12 @@
         padding: 10px 15px               
             
 .top-area
-    height: 33vh
+    height: 100vh
     background: url('../../img/banner.jpg') no-repeat
     background-size: cover
     background-attachment: fixed
     background-position: center bottom
-    margin-top: 60px
+    position: relative
     .events
         background-color: $orange
         color: $light
@@ -48,6 +52,36 @@
             line-height: 35px
             margin-left: auto
             margin-right: auto
+    .tips
+        width: 230px
+        position: absolute
+        bottom: 30px
+        left: 50%
+        margin-left: -115px
+        font-size: 12px
+        color: $light
+        text-align: center
+        .tip-btn
+            margin-bottom: 10px
+            overflow: hidden
+            div
+                border: 2px solid $light
+                width: 105px
+                height: 40px
+                line-height: 40px
+                border-radius: 20px 20px 20px 0
+                text-align: center
+                &:hover
+                    cursor: pointer    
+        h3
+            font-weight: bold
+            font-size: 43px
+        .more
+            writing-mode: tb-rl
+            position: absolute
+            bottom: -18px
+            left: 108px
+            font-size: 20px
 
 .intro
     background-image: linear-gradient(to right, #f1911c, #eac72a)
@@ -183,7 +217,21 @@
         line-height: 62px
         img
             width: 50px
-
+.partners, .investors
+    border-bottom: $border
+    background-color: $light
+    li
+        height: 125px
+        margin-top: 30px
+        text-align: center
+        &:last-child
+            margin-bottom: 35px
+        img
+            max-width: 180px
+        .investor-intro
+            color: rgba(38,42,46,0.6) 
+    .col-lg-2, .col-md-3, .col-sm-4, .col-xs-6, .col-xs-12
+        padding: 0
 .footer
     background-color: $dark
     color: rgba($light, .3)
@@ -216,8 +264,6 @@
             display: none
         .navbar-toggle
             margin: 10px
-    // .top-area
-    //     margin-top: 64px
     .events
         .event1
             padding-top: 10px
@@ -244,13 +290,15 @@
                 width: 80px
             .person-right
                 margin-left: 100px
+    .partners, .investors
+        li
+            img
+                max-width: 140px     
 @media (min-width: 440px)
     .header-nav
         padding: 0 20px
         .navbar-toggle
             margin: 10px
-    // .top-area
-    //     margin-top: 64px
     .events
         .event1
             padding-top: 10px
@@ -278,8 +326,8 @@
             .person-right
                 margin-left: 130px
 @media (min-width: 768px)
-    .top-area
-         height: 70vh
+    // .top-area
+    //      height: 70vh
     .header-nav .navbar-collapse
         padding: 0
         .navbar-nav
@@ -328,8 +376,8 @@
         .contact-icons
             margin: 40px auto
 @media (min-width: 992px)
-    .top-area
-        height: 70vh
+    // .top-area
+    //     height: 100vh
     .events
         .event1
             font-size: 35px
@@ -366,9 +414,9 @@
         padding-bottom: 40px
         .contact-icons
             margin: 60px auto
-@media (min-width: 1200px)
-    .top-area
-        height: 70vh
+@media (min-width: 1300px)
+    // .top-area
+    //     height: 100vh
     .navbar-nav
         margin-top: 26px
     .events
@@ -438,22 +486,6 @@
 
 .features, .intro, .contact
     background-color: $light
-
-.partners, .investors
-    border-bottom: $border
-    background-color: $light
-    li
-        height: 125px
-        margin-top: 30px
-        text-align: center
-        &:last-child
-            margin-bottom: 35px
-        img
-            max-width: 180px
-        .investor-intro
-            color: rgba(38,42,46,0.6) 
-    .col-lg-2, .col-md-3, .col-sm-4, .col-xs-6, .col-xs-12
-        padding: 0
         
 .title
     padding-top: 40px
@@ -464,7 +496,7 @@
     
 
 // 
-@media (min-width: 1200px)
+@media (min-width: 1300px)
     .container
         width: 1280px
 

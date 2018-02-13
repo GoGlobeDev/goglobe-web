@@ -121,7 +121,7 @@ export const ADVISORS = [
     {
         pic: require('img/p5.png'),
         name: 'Felix Hu',
-        intro: 'Master in strategic management from Oxford Brooks University. He has solid theoretical and operational experience in corporate strategy and financial investment as a venture capitalist. He also has deep understanding in big data and blockchain, and is one of the earliest investors in the blockchain sector with several successful projects such as Deepbrain chain, Quantum, Selfsell.'
+        intro: 'Master in strategic management from Oxford Brooks University. He is one of the earliest investors in the blockchain sector with several successful projects such as Deepbrain chain, Quantum, Selfsell.'
     },
     {
         pic: require('img/a4.png'),

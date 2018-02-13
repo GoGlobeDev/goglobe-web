@@ -4,9 +4,11 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 
 import { PERSONS, INVESTORS, CONTACT_ICONS_GRAY, CONTACT_ICONS_WHITE, NAV_BAR,
-ADVISORS, PARTNERS } from 'theme/Lang';
+ADVISORS, PARTNERS, INNO } from 'theme/Lang';
 import './Index.styl';
 
 export default class Index extends Component {
@@ -76,7 +78,7 @@ export default class Index extends Component {
                         <div className="tips">
                             <h3>GO GLOBE</h3>
                             <div className="tip-btn">
-                                <div className="left">WATCH VIDEO</div>
+                                <div className="left" onClick={() => this.toAnchor('#about', 2)}>WATCH VIDEO</div>
                                 <div className="right" onClick={() => this.toAnchor('#contact', 6)}>CONTACT US</div>
                             </div>
                             <div>
@@ -94,65 +96,63 @@ export default class Index extends Component {
                             <div className="left-text">landscape</div>
                         </div>
                         <div className="col-md-7 fun-right">
-                            Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping.  Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly. Furthermore, Go Globe is powered by leading edge AI search engine where rich content is organized and intelligent indexed in distributed fashion. Finally, Go Globe blockchain offers rapid settlement of value, eliminating charge-back and credit risk from traditional credit network.
+                            <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" autoPlay />
                         </div>
                     </div></div>
+                    <section className="what-globe">
+                        <div className="wrapper clearfix">
+                            <div className="title">What Is GoGlobe?</div>
+                            <div className="container clearfix">
+                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="item-pic"><img src={require('img/globe-1.png')} /></div>
+                                    <div className="item-txt">
+                                        A decentralized and <span>open-source</span> travel <span>cryptocurrency</span>
+                                    </div>
+                                </div>
+                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="item-pic"><img src={require('img/globe-2.png')} /></div>
+                                    <div className="item-txt">
+                                        Trading and Booking travel products <span>easily</span>
+                                    </div>
+                                </div>
+                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="item-pic"><img src={require('img/globe-3.png')} /></div>
+                                    <div className="item-txt">
+                                        Cross-border <span>highly secure</span> travel property investing
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="ft">
+                                <article className="article">
+                                    <p className="a-intro">Go Globe features a Double-Helix Blockchain which performs value <br />transfer and record keeping.
+                                    </p>
+                                    <p>Go Globe provides decentralized and atomic <br />listing mechanism to empower owners, control pricing and access directly. <br />
+                                    </p>
+                                </article>
+                                <div className="video-btn" onClick={() => this.toAnchor('#about', 2)}>watch video</div>
+                            </div>
+                        </div>
+                        <div className="phone-img"><img src={require('img/phone.png')} /></div>
+                    </section>
                     <section className="inno">
                         <div className="inno-container clearfix">
                             <div className="title">FEATURES</div>
                             <p>&nbsp;</p>
                             <div className="reason">
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-1.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">Double <span className="color-3">Helix Blockchain </span></h3>
-                                        <p className="txt-intro">Industry's first Double-Helix ledgers where one chain is optimized for fast settlement and the other is designed with multi-attribute content in mind for superior experience.</p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-2.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">Brand <span className="color-3">Token</span></h3>
-                                        <p className="txt-intro">Ability to issue one's unique branded token, function like points and distribute these branded tokens to targeted customers, to facilitate the growth of business.</p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-3.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">Smart <span className="color-3">Contract Engine</span></h3>
-                                        <p className="txt-intro">Through the use of Smart Contract, multiparty operations can gain trust; and automation delivers efficiency and reduces dependency on manual labor. </p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-4.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">My <span className="color-3">Property</span></h3>
-                                        <p className="txt-intro">Each user will be able to participate in global travel industry projects, and every business owner and entrepreneur would have access to a global pool of resources without intermediaries required. </p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-5.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">My <span className="color-3">Inventory</span></h3>
-                                        <p className="txt-intro">Ownership of data by users, coupled with mechanisms to manage owned data, is the beginning of reversing this business model. </p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-6.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">Social</h3>
-                                        <p className="txt-intro">With applications available on the Go Globe Chain Platform, travelers can show & tell, in real time, photographs and sound bites during the trip.</p>
-                                    </div>
-                                </div>
-                                <div className="reason-item clearfix">
-                                    <div className="item-pic"><img src={require('img/icon-7.png')} /></div>
-                                    <div className="item-txt">
-                                        <h3 className="txt-title">Cross-border <span className="color-3">Investment</span></h3>
-                                        <p className="txt-intro">Reliable, legal and private ownership of travel assets anywhere in the world, for all users of the Go Globe Chain Platform.</p>
-                                    </div>
-                                </div>
+                                { INNO.map((item, index) => {
+                                    return (
+                                        <div className="reason-item clearfix" key={index}>
+                                            <div className="item-pic"><img src={item.pic} /></div>
+                                            <div className="item-txt">
+                                                <h3 className="txt-title">{item.name} <span className="color-3">{item.subName}</span></h3>
+                                                <p className="txt-intro">{item.intro}</p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
+                        {/* <div className="phone-img"></div> */}
                     </section>
                     <a name="files"></a><div className="files clearfix"><div className="container">
                         <div className="col-sm-6 col-md-3 col-md-offset-2">

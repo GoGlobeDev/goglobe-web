@@ -140,3 +140,47 @@ export const ADVISORS = [
         intro: 'Founder of DeepBrain Chain'
     }
 ];
+export const INNO = [
+    {
+        pic: require('img/icon-1.png'),
+        name: 'Double',
+        subName: 'Helix Blockchain',
+        intro: "Industry's first Double-Helix ledgers where one chain is optimized for fast settlement and the other is designed with multi-attribute content in mind for superior experience."
+    },
+    {
+        pic: require('img/icon-2.png'),
+        name: 'Brand',
+        subName: 'Token',
+        intro: "Ability to issue one's unique branded token, function like points and distribute these branded tokens to targeted customers, to facilitate the growth of business."
+    },
+    {
+        pic: require('img/icon-3.png'),
+        name: 'Smart',
+        subName: 'Contract Engine',
+        intro: 'Through the use of Smart Contract, multiparty operations can gain trust; and automation delivers efficiency and reduces dependency on manual labor.'
+    },
+    {
+        pic: require('img/icon-4.png'),
+        name: 'My',
+        subName: 'Property',
+        intro: 'Each user will be able to participate in global travel industry projects, and every business owner and entrepreneur would have access to a global pool of resources without intermediaries required.'
+    },
+    {
+        pic: require('img/icon-5.png'),
+        name: 'My',
+        subName: 'Inventory',
+        intro: 'Ownership of data by users, coupled with mechanisms to manage owned data, is the beginning of reversing this business model.'
+    },
+    {
+        pic: require('img/icon-6.png'),
+        name: 'Social',
+        subName: '',
+        intro: 'With applications available on the Go Globe Chain Platform, travelers can show & tell, in real time, photographs and sound bites during the trip.'
+    },
+    {
+        pic: require('img/icon-7.png'),
+        name: 'Cross-border',
+        subName: 'Investment',
+        intro: 'Reliable, legal and private ownership of travel assets anywhere in the world, for all users of the Go Globe Chain Platform.'
+    }
+];

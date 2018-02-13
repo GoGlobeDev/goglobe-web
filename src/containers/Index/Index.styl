@@ -69,7 +69,7 @@
                 width: 105px
                 height: 40px
                 line-height: 40px
-                border-radius: 20px 20px 20px 0
+                border-radius: 20px
                 text-align: center
                 &:hover
                     cursor: pointer    
@@ -104,14 +104,93 @@
         line-height: 1.8
         padding-bottom: 20px
         color: $light
+        .video-react
+            width: 100%
+            .video-react-big-play-button
+                top: 50%
+                left: 50%
+                margin-top: -22px
+                margin-left: -45px
+.what-globe
+    background: url('../../img/feature.jpg') no-repeat
+    background-size: cover
+    background-attachment: fixed
+    background-position: center bottom
+    .wrapper
+        .title
+            margin-bottom: 40px
+            letter-spacing: normal
+    .container
+        margin-bottom: 50px
+        .ptl1-item
+            position: relative
+            margin-bottom: 20px
+            .item-pic
+                width: 70px
+                height: 70px
+                border-radius: 50%
+                position: relative
+                transition: transform 0.3s ease-in
+                &:before
+                    content: ''
+                    border-radius: 50%
+                    position: absolute
+                    top: 6px
+                    right: 6px
+                    bottom: 6px
+                    left: 6px
+                    box-shadow: 0 0 50px rgba(86,66,142,.14)
+                &:hover
+                    transition: transform 0.3s ease-out
+                    transform: scale(1.2, 1.2)
+                img
+                    max-width: 100%
+            .item-txt
+                position: absolute
+                top: 50%
+                left: 100px
+                right: 15px
+                transform: translate(0,-50%)
+                font-size: 16px
+                color: #666
+                >span
+                    font-weight: bold
+    .ft
+        text-align: center
+        .article
+            color: #666666
+            font-size: 18px
+            margin-bottom: 100px
+            .a-intro
+                font-weight: bold
+                margin-bottom: 25px
+        .video-btn
+            width: 230px
+            height: 50px
+            line-height: 50px
+            border: 2px solid #ccc
+            border-radius: 20px
+            text-align: center
+            margin-bottom: 50px
+            display: inline-block
+            color: #666666
+            font-weight: bold
+    .phone-img
+        width: 100%
+        background-size: contain
+        img
+            max-width: 100%
 .inno
     padding: 40px
     background-color: $light
+    position: relative
+    // padding-bottom: 700px
     .inno-container
         .reason
             .reason-item
                 position: relative
                 margin-bottom: 55px
+                text-align: center
                 .item-pic
                     width: 80px
                     height: 80px
@@ -124,7 +203,6 @@
                         max-width: 100%
                 .item-txt
                     color: #222222
-                    text-align: center
                     .txt-title
                         margin-bottom: 25px
                         font-size: 26px
@@ -134,7 +212,7 @@
                     .txt-intro
                         line-height: 1.4
                         font-size: 16px
-                        font-style: italic          
+                        font-style: italic                  
 .files
     background-color: rgba($orange, .1)
     .col-xs-6
@@ -359,8 +437,10 @@
                 margin-left: 120px
             &:first-child, &:nth-child(2)
             //     height: 375px
-            // &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8)
+            // &:nth-child(7), &:nth-child(8)
                 height: 465px
+            &:nth-child(3), &:nth-child(4)
+                height: 422px
             &:nth-child(5), &:nth-child(6)
                 height: 375px
             &:nth-child(2n)
@@ -375,6 +455,15 @@
         padding-bottom: 30px
         .contact-icons
             margin: 40px auto
+    .what-globe
+        .container
+            margin-bottom: 200px
+            .ptl1-item
+                .item-pic
+                    width: 96px
+                    height: 96px
+                .item-txt
+                    left: 190px     
 @media (min-width: 992px)
     // .top-area
     //     height: 100vh
@@ -393,9 +482,12 @@
         .left-text
             font-size: 45px
         .fun-right
-            padding-top: 40px
-            padding-bottom: 40px
+            padding-top: 45px
+            padding-bottom: 35px
             font-size: 18px
+            .video-react
+                width: 90%
+                margin: 0 auto
     .team
         .person-intro
             &:first-child, &:nth-child(2)
@@ -414,6 +506,15 @@
         padding-bottom: 40px
         .contact-icons
             margin: 60px auto
+    .what-globe
+        .container
+            .ptl1-item
+                .item-pic
+                    width: 116px
+                    height: 116px
+                .item-txt
+                    left: 160px
+                    font-size: 20px
 @media (min-width: 1300px)
     // .top-area
     //     height: 100vh
@@ -458,21 +559,24 @@
         padding-bottom: 50px
         .contact-icons
             margin: 80px auto
-    .inno .inno-container .reason .reason-item
-        .item-pic
-            width: 140px
-            height: 140px
-            background-color: $light
-            border-radius: 50%
-            padding: 10px
-            margin: 0 auto
-            box-shadow: 0 0 60px rgba(86,66,142,.14)
-            img
-                max-width: 100%
-        .item-txt
-            color: #222222
-            position: absolute
-            top: -30%
+    .inno
+        .inno-container .reason
+            .reason-item
+                text-align: left
+                .item-pic
+                    width: 140px
+                    height: 140px
+                    background-color: $light
+                    border-radius: 50%
+                    padding: 10px
+                    margin: 0 auto
+                    box-shadow: 0 0 60px rgba(86,66,142,.14)
+                    img
+                        max-width: 100%
+                .item-txt
+                    color: #222222
+                    position: absolute
+                    top: -15%
     .reason-item:nth-child(2n + 1)
         .item-txt
             right: 0
@@ -482,8 +586,16 @@
         .item-txt
             left: 0
             right: 50%
-            margin-right: 200px        
-
+            margin-right: 200px
+    .what-globe
+        .container
+            .ptl1-item
+                .item-pic
+                    width: 136px
+                    height: 136px
+                .item-txt
+                    left: 180px
+                    font-size: 22px         
 .features, .intro, .contact
     background-color: $light
         

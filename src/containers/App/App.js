@@ -5,15 +5,15 @@ import Helmet from 'react-helmet';
 
 import config from '../../config';
 import './App.styl';
-import 'react-select/dist/react-select.css';
+// import 'react-select/dist/react-select.css';
 // import { REG_ID } from '../../theme/Lang';
 // import cookie from 'react-cookie';
 // 全局只引用一个HTML5Backend
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+// import { DragDropContext } from 'react-dnd';
+// import HTML5Backend from 'react-dnd-html5-backend';
 
 /* eslint new-cap: [2, {capIsNewExceptions: ["DragDropContext"]}] */
-@DragDropContext(HTML5Backend)
+// @DragDropContext(HTML5Backend)
 export default class App extends Component {
 
     static propTypes = {

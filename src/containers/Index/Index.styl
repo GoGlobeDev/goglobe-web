@@ -73,29 +73,14 @@
 .inno
     padding: 40px
     background-color: $light
-    .container
-        .header
-            margin-bottom: 90px
-            text-align: center
-            .title
-                color: #222222
-                font-size: 40px
-                margin-bottom: 40px
-                font-weight: 300
-                letter-spacing: normal
-            .article
-                color: #222222
-                font-size: 20px
-                line-height: 1.5
-                .article-intro
-                    font-weight: bold
+    .inno-container
         .reason
             .reason-item
                 position: relative
                 margin-bottom: 55px
                 .item-pic
-                    width: 140px
-                    height: 140px
+                    width: 80px
+                    height: 80px
                     background-color: $light
                     border-radius: 50%
                     padding: 10px
@@ -105,8 +90,7 @@
                         max-width: 100%
                 .item-txt
                     color: #222222
-                    position: absolute
-                    top: -30%
+                    text-align: center
                     .txt-title
                         margin-bottom: 25px
                         font-size: 26px
@@ -116,17 +100,7 @@
                     .txt-intro
                         line-height: 1.4
                         font-size: 16px
-                        font-style: italic
-            .reason-item:nth-child(2n + 1)
-                .item-txt
-                     right: 0
-                     left: 50%
-                     margin-left: 200px
-            .reason-item:nth-child(2n + 2)
-                .item-txt
-                     left: 0
-                     right: 50%
-                     margin-right: 200px            
+                        font-style: italic          
 .files
     background-color: rgba($orange, .1)
     .col-xs-6
@@ -436,6 +410,31 @@
         padding-bottom: 50px
         .contact-icons
             margin: 80px auto
+    .inno .inno-container .reason .reason-item
+        .item-pic
+            width: 140px
+            height: 140px
+            background-color: $light
+            border-radius: 50%
+            padding: 10px
+            margin: 0 auto
+            box-shadow: 0 0 60px rgba(86,66,142,.14)
+            img
+                max-width: 100%
+        .item-txt
+            color: #222222
+            position: absolute
+            top: -30%
+    .reason-item:nth-child(2n + 1)
+        .item-txt
+            right: 0
+            left: 50%
+            margin-left: 200px
+    .reason-item:nth-child(2n + 2)
+        .item-txt
+            left: 0
+            right: 50%
+            margin-right: 200px        
 
 .features, .intro, .contact
     background-color: $light

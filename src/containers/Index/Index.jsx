@@ -87,7 +87,7 @@ export default class Index extends Component {
                         </div>
                     </div></div>
                     <section className="inno">
-                        <div className="container clearfix">
+                        <div className="inno-container clearfix">
                             <div className="title">FEATURES</div>
                             <p>&nbsp;</p>
                             <div className="reason">

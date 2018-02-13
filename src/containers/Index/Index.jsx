@@ -96,7 +96,7 @@ export default class Index extends Component {
                             <div className="left-text">landscape</div>
                         </div>
                         <div className="col-md-7 fun-right">
-                            <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" autoPlay />
+                            <Player src="http://www.goglobechain.io/res/goglobe.mp4" />
                         </div>
                     </div></div>
                     <section className="what-globe">

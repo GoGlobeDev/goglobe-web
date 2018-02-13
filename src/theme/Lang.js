@@ -89,12 +89,6 @@ export const PERSONS = [
         intro: 'An open collaboration evangelist. Graduated from Tsinghua University, UCAS and Hejun Business School. He started his career at Accenture. He is now the CEO of Data.Me/Factube.com and the president of Singularity Philanthropy Center(NGO).'
     },
     {
-        pic: require('img/p5.png'),
-        name: 'Felix HU',
-        title: 'CMO',
-        intro: 'Master in strategic management from Oxford Brooks University. He has solid theoretical and operational experience in corporate strategy and financial investment as a venture capitalist. He also has deep understanding in big data and blockchain, and is one of the earliest investors in the blockchain sector with several successful projects such as Deepbrain chain, Quantum, Selfsell.'
-    },
-    {
         pic: require('img/p8.png'),
         name: 'Peter SONG',
         title: 'Chief Scientist',
@@ -123,6 +117,11 @@ export const ADVISORS = [
         pic: require('img/a6.png'),
         name: 'Bella Ling',
         intro: 'Ex-Director of Airbnb, in Public Relations of Asia Pacific region '
+    },
+    {
+        pic: require('img/p5.png'),
+        name: 'Felix Hu',
+        intro: 'Master in strategic management from Oxford Brooks University. He has solid theoretical and operational experience in corporate strategy and financial investment as a venture capitalist. He also has deep understanding in big data and blockchain, and is one of the earliest investors in the blockchain sector with several successful projects such as Deepbrain chain, Quantum, Selfsell.'
     },
     {
         pic: require('img/a4.png'),

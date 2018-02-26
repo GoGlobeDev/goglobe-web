@@ -341,7 +341,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a1.png'),
+            pic: require('img/a2.png'),
             name: {
                 zh: '',
                 en: 'Wakamiya Kiyoshi',
@@ -354,7 +354,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a1.png'),
+            pic: require('img/a3.png'),
             name: {
                 zh: '',
                 en: 'Yue Yuan',
@@ -367,7 +367,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a2.png'),
+            pic: require('img/a4.png'),
             name: {
                 zh: '杨海俊',
                 en: 'Haijun Yang',
@@ -393,7 +393,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a3.png'),
+            pic: require('img/a6.png'),
             name: {
                 zh: '何勇',
                 en: 'Yong He',
@@ -406,7 +406,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a3.png'),
+            pic: require('img/a7.png'),
             name: {
                 zh: '',
                 en: 'Yuan LI',
@@ -419,7 +419,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a4.png'),
+            pic: require('img/a8.png'),
             name: {
                 zh: 'Frank Zheng',
                 en: 'Frank Zheng',
@@ -432,7 +432,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a4.png'),
+            pic: require('img/logo1.png'),
             name: {
                 zh: '',
                 en: 'Kawazoe Yukimasa',
@@ -445,7 +445,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a4.png'),
+            pic: require('img/a10.png'),
             name: {
                 zh: '',
                 en: 'Zhijie Zhang',
@@ -458,7 +458,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/a4.png'),
+            pic: require('img/logo1.png'),
             name: {
                 zh: '',
                 en: 'David Wang',

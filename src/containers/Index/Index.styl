@@ -404,7 +404,7 @@
                 width: 100px
             .person-right
                 margin-left: 130px
-@media (min-width: 768px)
+@media (min-width: 768px) and (max-width: 991px)
     .header-nav .navbar-collapse
         .navbar-nav
             >li>a
@@ -434,21 +434,23 @@
             .person-right
                 margin-left: 120px
             &:first-child, &:nth-child(2)
-            //     height: 375px
-            // &:nth-child(7), &:nth-child(8)
-                height: 465px
+                height: 350px
             &:nth-child(3), &:nth-child(4)
-                height: 422px
+                height: 460px
             &:nth-child(5), &:nth-child(6)
                 height: 375px
+            &:nth-child(7), &:nth-child(8)
+                height: 260px   
             &:nth-child(2n)
                 padding-left: 50px
     .team.advisors
         .persons>.person-intro
             &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4)
+                height: 310px
+            &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)
                 height: 190px
-            &:nth-child(5), &:nth-child(6)
-                height: 260px
+            &:nth-child(9), &:nth-child(10)
+                height: 360px
     .contact
         padding-bottom: 30px
         .contact-icons
@@ -462,7 +464,7 @@
                     height: 96px
                 .item-txt
                     left: 190px
-@media (min-width: 992px)
+@media (min-width: 992px) and (max-width: 1299px)
     .header-nav .navbar-collapse
         .navbar-nav
             >li>a
@@ -498,10 +500,11 @@
                 height: 260px
     .team.advisors
         .persons>.person-intro
-            &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4)
-                height: 165px
-            &:nth-child(5), &:nth-child(6)
-                height: 225px
+            height: 250px
+            &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)
+                height: 200px
+            &:nth-child(3), &:nth-child(4), &:nth-child(9), &:nth-child(10)
+                height: 310px
     .contact
         padding-bottom: 40px
         .contact-icons
@@ -542,19 +545,20 @@
             padding-right: 0
             width: 590px
             float: left
+            height: 320px
             img
                 width:150px
             .person-right
                 margin-left: 180px
-            &:first-child, &:nth-child(2), &:nth-child(5), &:nth-child(6)
+            // &:first-child, &:nth-child(2), &:nth-child(5), &:nth-child(6)
             //     height: 310px
             // &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8)
-                height: 320px
+                // height: 320px
             &:nth-child(2n)
                 margin-left: 100px
     .team.advisors
         .persons>.person-intro
-            height: 215px !important
+            height: 240px
     .contact
         padding-bottom: 50px
         .contact-icons

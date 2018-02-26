@@ -28,8 +28,6 @@
         .navbar-nav
             float: right
             margin: 10px
-    .nav>li>a
-        padding: 10px 15px
 
 .top-area
     height: 100vh
@@ -234,6 +232,9 @@
             span
                 color: $orange
                 cursor: pointer
+                i
+                    color: $dark
+                    font-style: normal
     .files-left
         .names
             background-color: $light
@@ -404,13 +405,10 @@
             .person-right
                 margin-left: 130px
 @media (min-width: 768px)
-    // .top-area
-    //      height: 70vh
     .header-nav .navbar-collapse
-        padding: 0
         .navbar-nav
-            float: right
-            margin: 10px -15px
+            >li>a
+                padding: 10px 8px
     .header-nav
         .navbar-toggle
             margin: 10px
@@ -465,8 +463,10 @@
                 .item-txt
                     left: 190px
 @media (min-width: 992px)
-    // .top-area
-    //     height: 100vh
+    .header-nav .navbar-collapse
+        .navbar-nav
+            >li>a
+                padding: 10px 15px
     .events
         .event1
             font-size: 35px

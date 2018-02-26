@@ -264,7 +264,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/logo1.png'),
+            pic: require('img/a0.png'),
             name: {
                 zh: '李昂达',
                 en: 'Adam Lee',
@@ -282,7 +282,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/logo1.png'),
+            pic: require('img/a0.png'),
             name: {
                 zh: '宋鹏程',
                 en: 'Peter SONG',
@@ -432,7 +432,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/logo1.png'),
+            pic: require('img/a0.png'),
             name: {
                 zh: '',
                 en: 'Kawazoe Yukimasa',
@@ -458,7 +458,7 @@ export const ADVISORS = {
             }
         },
         {
-            pic: require('img/logo1.png'),
+            pic: require('img/a0.png'),
             name: {
                 zh: '',
                 en: 'David Wang',

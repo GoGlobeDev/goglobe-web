@@ -62,7 +62,7 @@ export default class Index extends Component {
                                 {NAV_BAR.map((item, idx)=>{
                                     return (<NavItem key={idx} eventKey={idx + 1} onClick={()=>this.toAnchor(item.anchor, idx + 1)}>{item.label[LANG]}</NavItem>);
                                 })}
-                                <NavItem>{LANG === 'en' ? 'Japanese' : 'English'}</NavItem>
+                                {/* <NavItem>{LANG === 'en' ? 'Japanese' : 'English'}</NavItem> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

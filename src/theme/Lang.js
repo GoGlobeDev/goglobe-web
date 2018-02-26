@@ -587,3 +587,121 @@ export const DOWNLOAD = [
         }
     }
 ];
+export const BANNER = {
+    title: {
+        zh: '区块链',
+        en: 'GO GLOBE',
+        japan: ''
+    },
+    lBtn: {
+        zh: '观看视频',
+        en: 'WATCH VIDEO',
+        japan: ''
+    },
+    rBtn: {
+        zh: '联系我们',
+        en: 'CONTACT US',
+        japan: ''
+    },
+    more: {
+        zh: '了解更多',
+        en: 'LEARN MORE',
+        japan: ''
+    }
+};
+export const FOOTER = {
+    addr: {
+        title: {
+            zh: '地址',
+            en: 'ADDRESS',
+            japan: ''
+        },
+        street: {
+            zh: '皇后街 502/190',
+            en: '502/190 Queen Street',
+            japan: ''
+        },
+        city: {
+            zh: '墨尔本，澳大利亚',
+            en: 'Melbourne, Australia',
+            japan: ''
+        }
+    },
+    contact: {
+        title: {
+            zh: '联系我们',
+            en: 'CONTACT US',
+            japan: ''
+        },
+        email: {
+            zh: '邮箱：info@goglobechain.com',
+            en: 'E-mail: info@goglobechain.com',
+            japan: ''
+        },
+        join: {
+            zh: '加入以下平台进行讨论',
+            en: 'Join the discussion on the channels below',
+            japan: ''
+        }
+    }
+};
+export const GOGLOBE = {
+    title: {
+        zh: '什么是区块链',
+        en: 'What Is GoGlobe?',
+        japan: ''
+    },
+    describe: [
+        {
+            pic: require('img/globe-1.png'),
+            text: {
+                zh: '',
+                en: 'A decentralized and {{open-source}} travels',
+                japan: ''
+            }
+        },
+        {
+            pic: require('img/globe-2.png'),
+            text: {
+                zh: '',
+                en: 'Trading and Booking travel products {{easily}}',
+                japan: ''
+            }
+        },
+        {
+            pic: require('img/globe-3.png'),
+            text: {
+                zh: '',
+                en: 'Cross-border {{highly secure}} travel property investing',
+                japan: ''
+            }
+        }
+    ],
+    note: [
+        {
+            zh: '',
+            en: 'Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping.',
+            japan: ''
+        },
+        {
+            zh: '',
+            en: 'Go Globe provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly.',
+            japan: ''
+        }
+    ],
+    video: {
+        zh: '观看视频',
+        en: 'watch video',
+        japan: ''
+    }
+};
+export const ABOUT = {
+    zh: [],
+    en: ['redefine', 'the travel', 'distribution', 'landscape'],
+    japan: []
+};
+export const WEBTITLE = {
+    zh: '',
+    en: 'Go Globe Chain | Redefine The Travel Diatribution Landscape',
+    japan: ''
+};

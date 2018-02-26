@@ -8,7 +8,7 @@ import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
 import { TEAM, INVESTORS, CONTACT_ICONS_GRAY, CONTACT_ICONS_WHITE, NAV_BAR,
-ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD } from 'theme/Lang';
+ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE } from 'theme/Lang';
 import './Index.styl';
 
 export default class Index extends Component {
@@ -40,12 +40,59 @@ export default class Index extends Component {
         window.location.href = anchor;
         this.setState({activeNav: idx});
     }
+    // 递归创建消息节点元素数组
+    _getNodeItems: Function = (str, messageArrOld) => {
+        if (!str) {
+            return messageArrOld;
+        }
+        let messageArrNew = JSON.parse(JSON.stringify(messageArrOld));
+        if ((/{{[\s+a-zA-Z0-9/-]+}}/).test(str)) {
+            const indexLeft = str.indexOf('{{');
+            const indexRight = str.indexOf('}}');
+            messageArrNew.push({
+                nodeType: 'textNode',
+                nodeText: str.slice(0, indexLeft)
+            });
+            messageArrNew.push({
+                nodeType: 'objectNode',
+                nodeText: str.slice(indexLeft + 2, indexRight)
+            });
+            const otherStr = str.slice(indexRight + 2);
+            messageArrNew = this._getNodeItems(otherStr, messageArrNew);
+        } else {
+            messageArrNew.push({
+                nodeType: 'textNode',
+                nodeText: str
+            });
+        }
+        return messageArrNew;
+    }
+    _constructMsgHtml: Function = (item) => {
+        const messageArr = this._getNodeItems(item, []);
+        return (
+            <div className="item-txt">
+                { messageArr.map((item2, index) => {
+                    // 文本节点
+                    if (item2.nodeType === 'textNode') {
+                        if (item2.nodeText !== '') {
+                            return (<span key={index}>{item2.nodeText}</span>);
+                        }
+                        return null;
+                    }
+                    // 对象节点
+                    if (item2.nodeType === 'objectNode') {
+                        return (<span key={index} className="bold">{ item2.nodeText }</span>);
+                    }
+                })}
+            </div>
+        );
+    }
     render() {
         return (
             this.state.activeNav
              ? <div className="">
                     <Helmet>
-                        <title>Go Globe Chain | Redefine The Travel Diatribution Landscape</title>
+                        <title>{WEBTITLE[LANG]}</title>
                         <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
                         <meta keyword="goglobe travel" />
                     </Helmet>
@@ -68,13 +115,13 @@ export default class Index extends Component {
                     </Navbar>
                     <a name="event"></a><div className="top-area"><a name="home"></a>
                         <div className="tips">
-                            <h3>GO GLOBE</h3>
+                            <h3>{BANNER.title[LANG]}</h3>
                             <div className="tip-btn">
-                                <div className="left" onClick={() => this.toAnchor('#about', 2)}>WATCH VIDEO</div>
-                                <div className="right" onClick={() => this.toAnchor('#contact', 6)}>CONTACT US</div>
+                                <div className="left" onClick={() => this.toAnchor('#about', 2)}>{BANNER.lBtn[LANG]}</div>
+                                <div className="right" onClick={() => this.toAnchor('#contact', 6)}>{BANNER.rBtn[LANG]}</div>
                             </div>
                             <div>
-                                <span>LEARN MORE</span>
+                                <span>{BANNER.more[LANG]}</span>
                                 <div className="more">...</div>
                             </div>
                         </div>
@@ -82,10 +129,11 @@ export default class Index extends Component {
                     <a name="about"></a><div className="intro clearfix"><div className="container">
                         <div className="col-md-5 fun-left">
                             <div className="top-line" />
-                            <div className="left-text">redefine</div>
-                            <div className="left-text">the travel</div>
-                            <div className="left-text">distribution</div>
-                            <div className="left-text">landscape</div>
+                            {ABOUT[LANG].map((item, index) => {
+                                return (
+                                    <div className="left-text" key={index}>{item}</div>
+                                );
+                            })}
                         </div>
                         <div className="col-md-7 fun-right">
                             <Player src="http://www.goglobechain.io/res/goglobe.mp4" />
@@ -93,35 +141,26 @@ export default class Index extends Component {
                     </div></div>
                     <section className="what-globe">
                         <div className="wrapper clearfix">
-                            <div className="title">What Is GoGlobe?</div>
+                            <div className="title">{GOGLOBE.title[LANG]}</div>
                             <div className="container clearfix">
-                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div className="item-pic"><img src={require('img/globe-1.png')} /></div>
-                                    <div className="item-txt">
-                                        A decentralized and <span>open-source</span> travels
-                                    </div>
-                                </div>
-                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div className="item-pic"><img src={require('img/globe-2.png')} /></div>
-                                    <div className="item-txt">
-                                        Trading and Booking travel products <span>easily</span>
-                                    </div>
-                                </div>
-                                <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div className="item-pic"><img src={require('img/globe-3.png')} /></div>
-                                    <div className="item-txt">
-                                        Cross-border <span>highly secure</span> travel property investing
-                                    </div>
-                                </div>
+                                {GOGLOBE.describe.map((item, index) => {
+                                    return (
+                                        <div className="ptl1-item clearfix col-lg-4 col-md-4 col-sm-12 col-xs-12" key={index}>
+                                            <div className="item-pic"><img src={item.pic} /></div>
+                                            {this._constructMsgHtml(item.text[LANG])}
+                                        </div>
+                                    );
+                                })}
                             </div>
                             <div className="ft">
                                 <article className="article">
-                                    <p className="a-intro">Go Globe features a Double-Helix Blockchain which performs value <br />transfer and record keeping.
-                                    </p>
-                                    <p>Go Globe provides decentralized and atomic <br />listing mechanism to empower owners, control pricing and access directly. <br />
-                                    </p>
+                                    {GOGLOBE.note.map((item, index) => {
+                                        return (
+                                            <p className={index === 0 ? 'a-intro' : ''} key={index}>{item[LANG]}</p>
+                                        );
+                                    })}
                                 </article>
-                                <div className="video-btn" onClick={() => this.toAnchor('#about', 2)}>watch video</div>
+                                <div className="video-btn" onClick={() => this.toAnchor('#about', 2)}>{GOGLOBE.video[LANG]}</div>
                             </div>
                         </div>
                         <div className="phone-img"><img src={require('img/phone.png')} /></div>
@@ -172,26 +211,6 @@ export default class Index extends Component {
                                 );
                             })
                             }
-                            {/* <div className="col-sm-6 col-md-3 col-md-offset-2">
-                                <div className="files-left">
-                                    <img src={require('img/document1.png')}/>
-                                    <div className="names">DOWNLOAD THE ONE PAGER</div>
-                                    <div className="available">ALSO AVAILABLE IN</div>
-                                    <div className="language"><span>中文</span>
-                                    &emsp;&bull;&emsp;<span>ENGLISH</span>&emsp;&bull;&emsp;
-                                    <span>日本语</span></div>
-                                </div>
-                            </div>
-                            <div className="col-sm-6 col-md-3 col-md-offset-2">
-                                <div className="files-right">
-                                    <img src={require('img/document1.png')}/>
-                                    <div className="names">DOWNLOAD THE WHITE PAPER</div>
-                                    <div className="available">ALSO AVAILABLE IN</div>
-                                    <div className="language"><span>中文</span>
-                                    &emsp;&bull;&emsp;<span>ENGLISH</span>&emsp;&bull;&emsp;
-                                    <span>日本语</span></div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                     <a name="partners"></a><div className="partners"><div className="container">
@@ -265,15 +284,15 @@ export default class Index extends Component {
                             <img src={require('img/logo2.png')} />
                         </div>
                         <div className="col-sm-4 footer-mid">
-                            <h4>ADDRESS</h4>
-                            <p>502/190 Queen Street</p>
-                            <p>Melbourne, Australia</p>
+                            <h4>{FOOTER.addr.title[LANG]}</h4>
+                            <p>{FOOTER.addr.street[LANG]}</p>
+                            <p>{FOOTER.addr.city[LANG]}</p>
                         </div>
                         <div className="col-sm-5 col-sm-offset-1 footer-right">
-                            <h4>CONTACT US</h4>
-                            <div className="e-mail">E-mail: info@goglobechain.com</div>
+                            <h4>{FOOTER.contact.title[LANG]}</h4>
+                            <div className="e-mail">{FOOTER.contact.email[LANG]}</div>
                             <div className="splitter"></div>
-                            <div className="join-us">Join the discussion on the channels below</div>
+                            <div className="join-us">{FOOTER.contact.join[LANG]}</div>
                             <ul className="contact-icons">
                                 {CONTACT_ICONS_WHITE.map((item, index)=>{
                                     return (<li key={index}><img src={item.pic}/></li>);

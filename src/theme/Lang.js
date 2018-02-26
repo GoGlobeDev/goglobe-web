@@ -254,7 +254,7 @@ export const TEAM = {
             },
             title: {
                 zh: '',
-                en: '',
+                en: 'Technology Leader',
                 japan: ''
             },
             intro: {

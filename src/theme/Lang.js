@@ -174,7 +174,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/p1.png'),
+            pic: require('img/p2.png'),
             name: {
                 zh: '',
                 en: 'Chris Hamilton',
@@ -228,7 +228,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/p4.png'),
+            pic: require('img/p5.png'),
             name: {
                 zh: '',
                 en: 'Yiqing XIE',
@@ -246,7 +246,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/p4.png'),
+            pic: require('img/p6.png'),
             name: {
                 zh: '',
                 en: 'Chris Zhong',
@@ -264,7 +264,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/p6.png'),
+            pic: require('img/logo1.png'),
             name: {
                 zh: '李昂达',
                 en: 'Adam Lee',
@@ -282,7 +282,7 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/p8.png'),
+            pic: require('img/logo1.png'),
             name: {
                 zh: '宋鹏程',
                 en: 'Peter SONG',

@@ -137,17 +137,33 @@ export const INVESTORS = {
         }
     ]
 };
-
-export const CONTACT_ICONS_GRAY = [
-    {pic: require('img/twittergray.png')},
-    {pic: require('img/twitterbgray.png')},
-    {pic: require('img/facebookgray.png')}
-];
-export const CONTACT_ICONS_WHITE = [
-    {pic: require('img/twitterwhite.png')},
-    {pic: require('img/twitterbwhite.png')},
-    {pic: require('img/facebook.png')}
-];
+export const CONTACT = {
+    title: {
+        zh: '联系我们',
+        en: 'CONTACT US',
+        japan: ''
+    },
+    CONTACT_ICONS_GRAY: [
+        {pic: require('img/twittergray.png')},
+        {pic: require('img/twitterbgray.png')},
+        {pic: require('img/facebookgray.png')}
+    ],
+    CONTACT_ICONS_WHITE: [
+        {pic: require('img/twitterwhite.png')},
+        {pic: require('img/twitterbwhite.png')},
+        {pic: require('img/facebook.png')}
+    ]
+};
+// export const CONTACT_ICONS_GRAY = [
+//     {pic: require('img/twittergray.png')},
+//     {pic: require('img/twitterbgray.png')},
+//     {pic: require('img/facebookgray.png')}
+// ];
+// export const CONTACT_ICONS_WHITE = [
+//     {pic: require('img/twitterwhite.png')},
+//     {pic: require('img/twitterbwhite.png')},
+//     {pic: require('img/facebook.png')}
+// ];
 export const TEAM = {
     title: {
         zh: '团队',

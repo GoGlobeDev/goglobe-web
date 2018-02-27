@@ -7,7 +7,7 @@ import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
-import { TEAM, INVESTORS, CONTACT_ICONS_GRAY, CONTACT_ICONS_WHITE, NAV_BAR,
+import { TEAM, INVESTORS, CONTACT, NAV_BAR,
 ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE } from 'theme/Lang';
 import './Index.styl';
 
@@ -198,11 +198,11 @@ export default class Index extends Component {
                                                 {item[LANG].lang.map((item1, index1) => {
                                                     if (index1 !== (item[LANG].lang.length - 1)) {
                                                         return (
-                                                            <span key={index1}>{item1}<i>&emsp;&bull;&emsp;</i></span>
+                                                            <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a><i>&emsp;&bull;&emsp;</i></span>
                                                         );
                                                     }
                                                     return (
-                                                        <span key={index1}>{item1}</span>
+                                                        <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a></span>
                                                     );
                                                 })}
                                             </div>
@@ -269,9 +269,9 @@ export default class Index extends Component {
                         </div>
                     </div>
                     <a name="contact"></a><div className="contact"><div className="container">
-                        <div className="title">CONTACT US</div>
+                        <div className="title">{CONTACT.title[LANG]}</div>
                         <ul className="contact-icons clearfix">
-                            {CONTACT_ICONS_GRAY.map((item, index)=>{
+                            {CONTACT.CONTACT_ICONS_GRAY.map((item, index)=>{
                                 return (<li key={index}><img src={item.pic}/></li>);
                             })}
                         </ul>
@@ -294,7 +294,7 @@ export default class Index extends Component {
                             <div className="splitter"></div>
                             <div className="join-us">{FOOTER.contact.join[LANG]}</div>
                             <ul className="contact-icons">
-                                {CONTACT_ICONS_WHITE.map((item, index)=>{
+                                {CONTACT.CONTACT_ICONS_WHITE.map((item, index)=>{
                                     return (<li key={index}><img src={item.pic}/></li>);
                                 })}
                             </ul>

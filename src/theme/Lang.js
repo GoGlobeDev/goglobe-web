@@ -261,24 +261,24 @@ export const TEAM = {
                 japan: ''
             }
         },
-        {
-            pic: require('img/p6.png'),
-            name: {
-                zh: '',
-                en: 'Chris Zhong',
-                japan: ''
-            },
-            title: {
-                zh: '',
-                en: 'Technology Leader',
-                japan: ''
-            },
-            intro: {
-                zh: '',
-                en: 'A passionate technology leader with extensive industry experience in Australia.The lead architect in a major global technology firm.She has deep knowledge in Blockchain and speaks at various conferences across the globe.',
-                japan: ''
-            }
-        },
+        // {
+        //     pic: require('img/p6.png'),
+        //     name: {
+        //         zh: '',
+        //         en: 'Chris Zhong',
+        //         japan: ''
+        //     },
+        //     title: {
+        //         zh: '',
+        //         en: 'Technology Leader',
+        //         japan: ''
+        //     },
+        //     intro: {
+        //         zh: '',
+        //         en: 'A passionate technology leader with extensive industry experience in Australia.The lead architect in a major global technology firm.She has deep knowledge in Blockchain and speaks at various conferences across the globe.',
+        //         japan: ''
+        //     }
+        // },
         {
             pic: require('img/a0.png'),
             name: {

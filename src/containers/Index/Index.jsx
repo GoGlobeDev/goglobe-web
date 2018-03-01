@@ -185,6 +185,7 @@ export default class Index extends Component {
                         </div>
                     </section>
                     <a name="files"></a>
+                    {/* <a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a> */}
                     <div className="files clearfix">
                         <div className="container">
                             { DOWNLOAD.map((item, index) => {
@@ -198,11 +199,11 @@ export default class Index extends Component {
                                                 {item[LANG].lang.map((item1, index1) => {
                                                     if (index1 !== (item[LANG].lang.length - 1)) {
                                                         return (
-                                                            <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a><i>&emsp;&bull;&emsp;</i></span>
+                                                            <span key={index1}>{item1}<i>&emsp;&bull;&emsp;</i></span>
                                                         );
                                                     }
                                                     return (
-                                                        <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a></span>
+                                                        <span key={index1}>{item1}</span>
                                                     );
                                                 })}
                                             </div>

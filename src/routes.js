@@ -2,7 +2,8 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import {
     App,
-    Index
+    Index,
+    AirDrop
 } from 'containers';
 
 export default function getRoutes() {
@@ -12,6 +13,7 @@ export default function getRoutes() {
     return (
         <Route path="/" component={App}>
             <IndexRoute component={Index} />
+            {<Route path="airdrop" component={AirDrop} />}
         </Route>
     );
 }

@@ -31,17 +31,17 @@ export default class AirDropState extends Component {
                     </div>
                     <div className="block">
                         <p>Get 250 free GOG for every invited friend!</p>
-                        <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " className="has-value" />
+                        <FormControl type="text" value={this.state.ethAdress} className="has-value" />
                     </div>
                     { this.state.isLocked
                         ? <div className="block">
                             <p>You need to verify your E-mail  to unlock your account. <span className="red">No airdrop for locked account!</span></p>
-                            <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " onChange={(evt) => this.changeEmail(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
+                            <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your email " onChange={(evt) => this.changeEmail(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
                             <Button>Send verification mail</Button>
                         </div>
                         : <div className="block">
                             <p>Your E-mail address:</p>
-                            <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " className="has-value" />
+                            <FormControl type="text" value={this.state.ethAdress} className="has-value" />
                             <p className="green">Your account is activated.</p>
                         </div>
                     }

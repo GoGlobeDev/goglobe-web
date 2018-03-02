@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+import { FormControl, Button } from 'react-bootstrap';
 
 import './AirDrop.styl';
 
-export default class AirDrop extends Component {
+export default class AirDropState extends Component {
 
     static propTypes = {
         children: PropTypes.object
     };
     state: Object = {
-        ethAdress: ''
+        email: '',
+        isLocked: true
     };
-    changeAdress: Function = (evt) => {
-        this.setState({ ethAdress: evt.target.value });
+    changeEmail: Function = (evt) => {
+        this.setState({ email: evt.target.value });
     }
     render() {
         return (
@@ -25,19 +26,28 @@ export default class AirDrop extends Component {
                     <meta keyword="goglobe travel" />
                 </Helmet>
                 <div className="center-form">
-                    <div className="air-logo">
+                    <div className="air-state-logo">
                         <img src={require('img/logo4.png')} />
                     </div>
-                    <div className="air-doc">
-                        <img src={require('img/airdrop.png')} />
+                    <div className="block">
+                        <p>Get 250 free GOG for every invited friend!</p>
+                        <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " className="has-value" />
                     </div>
-                    <p className="air-tip">Enter your ETH address to get 250 free GOG additional 250 GOG for every invited friend</p>
-                    <FormGroup>
-                        <InputGroup>
-                            <FormControl type="text" value={this.state.ethAdress} className="" placeholder="Enter your ETH address " onChange={(evt) => this.changeAdress(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
-                            <InputGroup.Addon>submit</InputGroup.Addon>
-                        </InputGroup>
-                    </FormGroup>
+                    { this.state.isLocked
+                        ? <div className="block">
+                            <p>You need to verify your E-mail  to unlock your account. <span className="red">No airdrop for locked account!</span></p>
+                            <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " onChange={(evt) => this.changeEmail(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
+                            <Button>Send verification mail</Button>
+                        </div>
+                        : <div className="block">
+                            <p>Your E-mail address:</p>
+                            <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your ETH address " className="has-value" />
+                            <p className="green">Your account is activated.</p>
+                        </div>
+                    }
+                    <div className="form-footer">
+                        Received <span className="red">252</span> GOG
+                    </div>
                 </div>
                 <div className="pos cloud-l1"><img src={require('img/cloud-l1.png')} /></div>
                 <div className="pos cloud-l2"><img src={require('img/cloud-l2.png')} /></div>

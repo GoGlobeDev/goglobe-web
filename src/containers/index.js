@@ -5,3 +5,5 @@ export Index from './Index/Index';
 
 export AirDrop from './AirDrop/AirDrop';
 
+export AirDropState from './AirDrop/AirDropState';
+

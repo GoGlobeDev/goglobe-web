@@ -11,17 +11,18 @@ const environment = {
 }[process.env.NODE_ENV || 'development'];
 
 // 连接服务器 #王玉锋 2016.6.15
-const SERVER_MODE = 'API2SSH';
-// const SERVER_MODE = 'TEST1';
-const SERVER_PORT = '443';
-// const SERVER_PORT = '8088';
+const SERVER_MODE = 'ONLINE';
+// const SERVER_MODE = 'TEST2';
+const SERVER_PORT = '8000';
+// const SERVER_PORT = '8080';
 
 const SERVER_MAP = {
     LOCAL: 'http://localhost',
     API2SSH: 'https://api2.factube.com',
     API_DATAME: 'http://api.data.me',
     TEST1: 'http://test.factube.com',
-    TEST2: 'http://test2.factube.com'
+    TEST2: 'http://test2.factube.com',
+    ONLINE: 'http://www.goglobechain.com'
 };
 
 // 不同环境的精选列表详情库(目前相同)

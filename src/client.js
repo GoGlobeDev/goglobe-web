@@ -18,12 +18,14 @@ const store = createStore(browserHistory, client, window.__data);
 const history = syncHistoryWithStore(browserHistory, store);
 
 /* eslint-disable */
-// const head = document.getElementsByTagName('head')[0];
+const head = document.getElementsByTagName('head')[0];
 
-// window._hmt = [];
-// const hm = document.createElement('script');
-// hm.src = '//hm.baidu.com/hm.js?839630d62e86dfb0aa5b07cf45bbfad7';
-// head.appendChild(hm);
+if (process.env.NODE_ENV === 'production') {
+  window._hmt = [];
+  const hm = document.createElement('script');
+  hm.src = 'https://hm.baidu.com/hm.js?9a4057358fabe43191e95e85bdb06ad0';
+  head.appendChild(hm);
+}
 
 // const wxApi = document.createElement('script');
 // wxApi.src = 'https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js';

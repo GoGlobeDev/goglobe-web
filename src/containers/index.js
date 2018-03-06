@@ -7,3 +7,7 @@ export AirDrop from './AirDrop/AirDrop';
 
 export AirDropState from './AirDrop/AirDropState';
 
+export AirDropActive from './AirDrop/AirDropActive';
+
+export AirDropActiveState from './AirDrop/AirDropActiveState';
+

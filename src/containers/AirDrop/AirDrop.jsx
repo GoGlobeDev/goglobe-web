@@ -31,9 +31,12 @@ export default class AirDrop extends Component {
                 }
                 return Promise.reject(new Error(response.status));
             }).then((res) => {
-                console.log(res);
                 if (res.status === 'success') {
-                    browserHistory.push('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status);
+                    if (res.goglobe.email) {
+                        browserHistory.push('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status + '&email=' + res.goglobe.email);
+                    } else {
+                        browserHistory.push('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status);
+                    }
                 } else if (res.status === 'success_end') {
                     this.setState({
                         alertmsg: 'This event has ended'
@@ -43,6 +46,11 @@ export default class AirDrop extends Component {
             }).catch((error) => {
                 console.log(error);
             });
+        }
+    }
+    _handleKeyPress: Function = (target) => {
+        if (target.charCode === 13) {
+            this.clickToLogin();
         }
     }
     render() {
@@ -63,7 +71,9 @@ export default class AirDrop extends Component {
                     <p className="air-tip">Enter your ETH address to get 250 free GOG additional 250 GOG for every invited friend</p>
                     <FormGroup>
                         <InputGroup>
-                            <FormControl type="text" value={this.state.ethAdress} className="" placeholder="Enter your ETH address " onChange={(evt) => this.changeAdress(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
+                            <FormControl type="text" value={this.state.ethAdress} className="" placeholder="Enter your ETH address "
+                                onChange={(evt) => this.changeAdress(evt)} className={this.state.ethAdress ? 'has-value' : ''}
+                                onKeyPress = { this._handleKeyPress } />
                             <InputGroup.Addon onClick={ () => this.clickToLogin() }>submit</InputGroup.Addon>
                         </InputGroup>
                     </FormGroup>

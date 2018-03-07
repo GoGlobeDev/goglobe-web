@@ -113,14 +113,37 @@
         bottom: 1px
 .air-drop-active
     .state-block
-        width: 70%
+        width: 80%
         overflow: hidden
+        margin: 260px auto
         .state-pic
             float: left
+            width: 55%
+            text-align: center
             img
                 max-width: 100%
         .state-describe
-            float: right            
+            float: right
+            width: 42%
+            color: #1d1b1b
+            h1
+                font-size: 50px
+                font-weight: bold
+                margin: 45px 0 20px
+            p
+                font-size: 22px
+            .btn
+                width: 240px
+                height: 70px
+                background-image: linear-gradient(to right, #fb915e, #fd776a 45%, #fc80aa)
+                box-shadow: 2.5px 4.3px 32px 0 rgba(253, 120, 103, 0.45)
+                border-radius: 35px
+                color: $light
+                margin: 11% 0
+                font-size: 22px
+                letter-spacing: normal
+                padding: 0
+                border: none
 @media (max-width: 320px)
     .air-drop
         .center-form
@@ -191,6 +214,29 @@
             width: 35%
             bottom: 18px
             right: 40px
+    .air-drop-active
+        .state-block
+            margin: 0 auto
+            padding-top: 80px
+            text-align: center
+            >div
+                display: inline-block
+            .state-pic
+                float: none
+                width: 70%
+            .state-describe
+                float: none
+                width: 95%
+                h1
+                    font-size: 30px
+                    margin: 10px 0
+                p
+                    font-size: 14px
+                .btn
+                    width: 180px
+                    height: 45px
+                    margin: 5% 0
+                    font-size: 14px          
 @media (min-width: 321px) and (max-width: 442px)
     .air-drop
         .center-form
@@ -259,6 +305,29 @@
             width: 40%
             bottom: 20px
             right: 40px
+    .air-drop-active
+        .state-block
+            margin: 0 auto
+            padding-top: 100px
+            text-align: center
+            >div
+                display: inline-block
+            .state-pic
+                float: none
+                width: 70%
+            .state-describe
+                float: none
+                width: 95%
+                h1
+                    font-size: 35px
+                    margin: 10px 0
+                p
+                    font-size: 16px
+                .btn
+                    width: 200px
+                    height: 50px
+                    margin: 5% 0
+                    font-size: 16px          
 @media (min-width: 443px) and (max-width: 767px)
     .air-drop
         .center-form
@@ -327,6 +396,29 @@
             width: 40%
             bottom: 20px
             right: 40px
+    .air-drop-active
+        .state-block
+            margin: 0 auto
+            padding-top: 100px
+            text-align: center
+            >div
+                display: inline-block
+            .state-pic
+                float: none
+                width: 70%
+            .state-describe
+                float: none
+                width: 95%
+                h1
+                    font-size: 40px
+                    margin: 0 0 10px
+                p
+                    font-size: 16px
+                .btn
+                    width: 200px
+                    height: 50px
+                    margin: 7% 0
+                    font-size: 16px        
 @media (min-width: 768px) and (max-width: 992px)
     .air-drop
         .center-form
@@ -350,7 +442,34 @@
         right: 7%
         bottom: 270px
         top: inherit
+    .air-drop-active
+        .state-block
+            .state-describe
+                h1
+                    font-size: 40px
+                    margin: 30px 0 10px
+                p
+                    font-size: 16px
+                .btn
+                    width: 200px
+                    height: 50px
+                    margin: 7% 0
+                    font-size: 16px    
 @media (min-width: 993px)
     .cloud-r1
         right: 3%
         top: 130px
+@media (min-width: 993px) and (max-width: 1279px)
+    .air-drop-active
+        .state-block
+            .state-describe
+                h1
+                    font-size: 45px
+                    margin: 35px 0 15px
+                p
+                    font-size: 18px
+                .btn
+                    width: 220px
+                    height: 60px
+                    margin: 9% 0
+                    font-size: 18px

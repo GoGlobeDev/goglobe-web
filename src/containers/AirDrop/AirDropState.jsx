@@ -26,25 +26,19 @@ export default class AirDropState extends Component {
                     account: account,
                     email: this.state.email
                 };
-                asyncSendEmail(data).then(response => response.json()).then((res) => {
-                    if (res.status) {
-                        console.log(res);
-                    }
-                });
+                asyncSendEmail(data);
             }
         }
     }
     render() {
         let itemArr = [];
         if (__CLIENT__) {
-            console.log(location.search, location.search.substring(1));
             const qs = location.search.length > 0 ? location.search.substring(1) : '';
             const items = qs.length > 0 ? qs.split('&') : [];
             itemArr = items.map((item) => {
                 return decodeURIComponent(item.split('=')[1]);
             });
         }
-        console.log(itemArr);
         return (
             itemArr.length > 0
                 ? <div className="air-drop height">

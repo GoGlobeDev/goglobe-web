@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-// import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import { asyncActive } from './AirDropUtil.js';
@@ -19,7 +19,6 @@ export default class AirDropActive extends Component {
     componentDidMount() {
         let itemArr = [];
         if (__CLIENT__) {
-            console.log(location.search, location.search.substring(1));
             const qs = location.search.length > 0 ? location.search.substring(1) : '';
             const items = qs.length > 0 ? qs.split('&') : [];
             itemArr = items.map((item) => {
@@ -55,10 +54,10 @@ export default class AirDropActive extends Component {
                     });
                 }
             }
-            // if (res.status === 'success') {
-            //     browserHistory.replace('/airdrop/activestate?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status + '&email=' + res.goglobe.email);
-            // }
         });
+    }
+    clickToHome: Function = () => {
+        browserHistory.replace('/airdrop');
     }
     renderState: Function = () => {
         const _activeState = this.state.activeState;

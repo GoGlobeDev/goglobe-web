@@ -24,7 +24,7 @@ export default class App extends Component {
     };
     render() {
         return (
-            <div className="app height">
+            <div className="height">
                 <Helmet {...config.app.head}/>
                 { this.props.children }
             </div>

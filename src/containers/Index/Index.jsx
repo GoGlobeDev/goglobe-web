@@ -253,15 +253,6 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </div>
-                    <a name="partners"></a><div className="partners"><div className="container">
-                        <div className="title">{PARTNERS.title[LANG]}</div>
-                        <ul className="brand-list clearfix">
-                            {PARTNERS.imgs.map((item, index) => {
-                                return (<li key={index} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                                    <img src={item.pic} /></li>);
-                            })}
-                        </ul>
-                    </div></div>
                     <a name="partners"></a><div className="investors"><div className="container">
                         <div className="title">{INVESTORS.title[LANG]}</div>
                         <ul className="brand-list clearfix">
@@ -270,6 +261,15 @@ export default class Index extends Component {
                                     <img src={item.pic} />
                                     <div className="investor-intro">{item.intro[LANG]}</div>
                                 </li>);
+                            })}
+                        </ul>
+                    </div></div>
+                    <a name="partners"></a><div className="partners"><div className="container">
+                        <div className="title">{PARTNERS.title[LANG]}</div>
+                        <ul className="brand-list clearfix">
+                            {PARTNERS.imgs.map((item, index) => {
+                                return (<li key={index} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                    <img src={item.pic} /></li>);
                             })}
                         </ul>
                     </div></div>

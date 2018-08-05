@@ -356,7 +356,7 @@ export const TEAM = {
 
 export const ADVISORS = {
     title: {
-        zh: '顾问',
+        zh: '顾问团队',
         en: 'ADVISORS',
         japan: ''
     },

@@ -1,5 +1,5 @@
 // 首页文件 @author wc 2017.6.27  zhaoyue 2018.2.12
- // 外部引用
+// 外部引用
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -7,8 +7,10 @@ import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
-import { TEAM, INVESTORS, CONTACT, NAV_BAR,
-ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE } from 'theme/Lang';
+import {
+    TEAM, INVESTORS, CONTACT, NAV_BAR,
+    ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE
+} from 'theme/Lang';
 import './Index.styl';
 
 export default class Index extends Component {
@@ -30,15 +32,15 @@ export default class Index extends Component {
                     }
                 });
                 window.location.href = str;
-                this.setState({activeNav: _index});
+                this.setState({ activeNav: _index });
             } else {
-                this.setState({activeNav: 1});
+                this.setState({ activeNav: 1 });
             }
         }
     }
-    toAnchor: Function=(anchor, idx)=>{
+    toAnchor: Function = (anchor, idx) => {
         window.location.href = anchor;
-        this.setState({activeNav: idx});
+        this.setState({ activeNav: idx });
     }
     // 递归创建消息节点元素数组
     _getNodeItems: Function = (str, messageArrOld) => {
@@ -46,7 +48,7 @@ export default class Index extends Component {
             return messageArrOld;
         }
         let messageArrNew = JSON.parse(JSON.stringify(messageArrOld));
-        if ((/{{[\s+a-zA-Z0-9/-]+}}/).test(str)) {
+        if ((/{{[\u4e00-\u9fa5a-zA-Z0-9/-\s+]+}}/).test(str)) {
             const indexLeft = str.indexOf('{{');
             const indexRight = str.indexOf('}}');
             messageArrNew.push({
@@ -71,7 +73,7 @@ export default class Index extends Component {
         const messageArr = this._getNodeItems(item, []);
         return (
             <div className="item-txt">
-                { messageArr.map((item2, index) => {
+                {messageArr.map((item2, index) => {
                     // 文本节点
                     if (item2.nodeType === 'textNode') {
                         if (item2.nodeText !== '') {
@@ -81,7 +83,7 @@ export default class Index extends Component {
                     }
                     // 对象节点
                     if (item2.nodeType === 'objectNode') {
-                        return (<span key={index} className="bold">{ item2.nodeText }</span>);
+                        return (<span key={index} className="bold">{item2.nodeText}</span>);
                     }
                 })}
             </div>
@@ -90,7 +92,7 @@ export default class Index extends Component {
     render() {
         return (
             this.state.activeNav
-             ? <div className="">
+                ? <div className="">
                     <Helmet>
                         <title>{WEBTITLE[LANG]}</title>
                         <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
@@ -99,15 +101,18 @@ export default class Index extends Component {
                     <Navbar collapseOnSelect fixedTop className="header-nav">
                         <Navbar.Header>
                             <Navbar.Brand>
-                                <img className="logo1" src={require('img/logo1.png')}/>
-                                <img className="logo3" src={require('img/logo3.png')}/>
+                                <img className="logo1" src={require('img/logo1.png')} />
+                                { LANG === 'en'
+                                    ? <img className="logo3" src={require('img/logo3.png')} />
+                                    : <div className="logo3 logo-text">自游链：基于区块链与物联网设备的世界旅游新生态</div>
+                                }
                             </Navbar.Brand>
                             <Navbar.Toggle />
                         </Navbar.Header>
                         <Navbar.Collapse>
                             <Nav activeKey={this.state.activeNav}>
-                                {NAV_BAR.map((item, idx)=>{
-                                    return (<NavItem key={idx} eventKey={idx + 1} onClick={()=>this.toAnchor(item.anchor, idx + 1)}>{item.label[LANG]}</NavItem>);
+                                {NAV_BAR.map((item, idx) => {
+                                    return (<NavItem key={idx} eventKey={idx + 1} onClick={() => this.toAnchor(item.anchor, idx + 1)}>{item.label[LANG]}</NavItem>);
                                 })}
                                 {/* <NavItem>{LANG === 'en' ? 'Japanese' : 'English'}</NavItem> */}
                             </Nav>
@@ -160,7 +165,7 @@ export default class Index extends Component {
                                         );
                                     })}
                                 </article>
-                                <div className="video-btn" onClick={() => this.toAnchor('#about', 2)}>{GOGLOBE.video[LANG]}</div>
+                                {/* <div className="video-btn" onClick={() => this.toAnchor('#about', 2)}>{GOGLOBE.video[LANG]}</div> */}
                             </div>
                         </div>
                         <div className="phone-img"><img src={require('img/phone.png')} /></div>
@@ -170,12 +175,12 @@ export default class Index extends Component {
                             <div className="title">{FEATURES.title[LANG]}</div>
                             <p>&nbsp;</p>
                             <div className="reason">
-                                { FEATURES.text.map((item, index) => {
+                                {FEATURES.text.map((item, index) => {
                                     return (
                                         <div className="reason-item clearfix" key={index}>
                                             <div className="item-pic"><img src={item.pic} /></div>
                                             <div className="item-txt">
-                                                <h3 className="txt-title">{item.name} <span className="color-3">{item.subName}</span></h3>
+                                                <h3 className="txt-title">{item.name[LANG]} <span className="color-3">{item.subName[LANG]}</span></h3>
                                                 <p className="txt-intro">{item.intro[LANG]}</p>
                                             </div>
                                         </div>
@@ -187,13 +192,13 @@ export default class Index extends Component {
                     <a name="files"></a>
                     <div className="files clearfix">
                         <div className="container">
-                            { DOWNLOAD.map((item, index) => {
+                            {DOWNLOAD.map((item, index) => {
                                 return (
                                     <div className="col-sm-6 col-md-3 col-md-offset-2" key={index}>
-                                        <div className={ index === 0 ? 'files-left' : 'files-right'}>
-                                            <img src={require('img/document1.png')}/>
+                                        <div className={index === 0 ? 'files-left' : 'files-right'}>
+                                            <img src={require('img/document1.png')} />
                                             <div className="names">{item[LANG].title}</div>
-                                            <div className="available">{item[LANG].vs}</div>
+                                            {/* <div className="available">{item[LANG].vs}</div>
                                             <div className="language">
                                                 {item[LANG].lang.map((item1, index1) => {
                                                     if (index1 !== (item[LANG].lang.length - 1)) {
@@ -205,7 +210,7 @@ export default class Index extends Component {
                                                         <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a></span>
                                                     );
                                                 })}
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 );
@@ -213,33 +218,13 @@ export default class Index extends Component {
                             }
                         </div>
                     </div>
-                    <a name="partners"></a><div className="partners"><div className="container">
-                        <div className="title">{PARTNERS.title[LANG]}</div>
-                        <ul className="brand-list clearfix">
-                            {PARTNERS.imgs.map((item, index)=>{
-                                return (<li key={index} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                                    <img src={item.pic}/></li>);
-                            })}
-                        </ul>
-                    </div></div>
-                    <a name="partners"></a><div className="investors"><div className="container">
-                        <div className="title">{INVESTORS.title[LANG]}</div>
-                        <ul className="brand-list clearfix">
-                            {INVESTORS.text.map((item, index)=>{
-                                return (<li key={index} className="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                    <img src={item.pic}/>
-                                    <div className="investor-intro">{item.intro[LANG]}</div>
-                                    </li>);
-                            })}
-                        </ul>
-                    </div></div>
                     <a name="team"></a>
                     <div className="team-img">
                         <div className="team clearfix">
                             <div className="container">
                                 <div className="title">{TEAM.title[LANG]}</div>
                                 <div className="persons clearfix">
-                                    {TEAM.text.map((item, idx)=>{
+                                    {TEAM.text.map((item, idx) => {
                                         return (<div className="person-intro clearfix col-sm-6 col-xs-12" key={idx}>
                                             <Image src={item.pic} circle />
                                             <div className="person-right">
@@ -255,7 +240,7 @@ export default class Index extends Component {
                             <div className="container">
                                 <div className="title">{ADVISORS.title[LANG]}</div>
                                 <div className="persons clearfix">
-                                    {ADVISORS.text.map((item, idx)=>{
+                                    {ADVISORS.text.map((item, idx) => {
                                         return (<div className="person-intro clearfix col-sm-6 col-xs-12" key={idx}>
                                             <Image src={item.pic} circle />
                                             <div className="person-right">
@@ -268,15 +253,35 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </div>
+                    <a name="partners"></a><div className="partners"><div className="container">
+                        <div className="title">{PARTNERS.title[LANG]}</div>
+                        <ul className="brand-list clearfix">
+                            {PARTNERS.imgs.map((item, index) => {
+                                return (<li key={index} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                    <img src={item.pic} /></li>);
+                            })}
+                        </ul>
+                    </div></div>
+                    <a name="partners"></a><div className="investors"><div className="container">
+                        <div className="title">{INVESTORS.title[LANG]}</div>
+                        <ul className="brand-list clearfix">
+                            {INVESTORS.text.map((item, index) => {
+                                return (<li key={index} className="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <img src={item.pic} />
+                                    <div className="investor-intro">{item.intro[LANG]}</div>
+                                </li>);
+                            })}
+                        </ul>
+                    </div></div>
                     <a name="contact"></a><div className="contact"><div className="container">
                         <div className="title">{CONTACT.title[LANG]}</div>
                         <ul className="contact-icons clearfix">
-                            {CONTACT.CONTACT_ICONS_GRAY.map((item, index)=>{
-                                return (<li key={index}><img src={item.pic}/></li>);
+                            {CONTACT.CONTACT_ICONS_GRAY.map((item, index) => {
+                                return (<li key={index}><img src={item.pic} /></li>);
                             })}
                         </ul>
                         <div className="up-to-top" onClick={() => this.toAnchor('#home', 1)}>
-                            <img src={require('img/arrow.png')}/>
+                            <img src={require('img/arrow.png')} />
                         </div>
                     </div></div>
                     <div className="footer clearfix"><div className="container">
@@ -294,8 +299,8 @@ export default class Index extends Component {
                             <div className="splitter"></div>
                             <div className="join-us">{FOOTER.contact.join[LANG]}</div>
                             <ul className="contact-icons">
-                                {CONTACT.CONTACT_ICONS_WHITE.map((item, index)=>{
-                                    return (<li key={index}><img src={item.pic}/></li>);
+                                {CONTACT.CONTACT_ICONS_WHITE.map((item, index) => {
+                                    return (<li key={index}><img src={item.pic} /></li>);
                                 })}
                             </ul>
                         </div>

@@ -104,7 +104,7 @@ export default class Index extends Component {
                                 <img className="logo1" src={require('img/logo1.png')} />
                                 { LANG === 'en'
                                     ? <img className="logo3" src={require('img/logo3.png')} />
-                                    : <div className="logo3 logo-text">自游链：基于区块链与物联网设备的世界旅游新生态</div>
+                                    : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
                                 }
                             </Navbar.Brand>
                             <Navbar.Toggle />

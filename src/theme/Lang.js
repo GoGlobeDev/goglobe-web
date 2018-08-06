@@ -822,7 +822,7 @@ export const ABOUT = {
     japan: []
 };
 export const WEBTITLE = {
-    zh: '',
+    zh: '自游链 | 世界旅游新生态',
     en: 'Go Globe Chain | Redefine The Travel Diatribution Landscape',
     japan: ''
 };

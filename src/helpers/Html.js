@@ -53,7 +53,6 @@ export default class Html extends Component {
             <div id="content" className="height" dangerouslySetInnerHTML={{__html: content}}/>
             <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} charSet="UTF-8"/>
             <script src={assets.javascript.main} charSet="UTF-8"/>
-            <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=oe13z9OWW7qHBlMHGKVcP20AZWw9FQDH" />
             </body>
             </html>
         );

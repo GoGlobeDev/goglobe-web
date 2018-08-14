@@ -14,6 +14,14 @@ import './App.styl';
 
 /* eslint new-cap: [2, {capIsNewExceptions: ["DragDropContext"]}] */
 // @DragDropContext(HTML5Backend)
+
+import counterpart from 'counterpart';
+const localeZh = require('theme/locales/locale-zh.json');
+
+counterpart.registerTranslations('zh', localeZh);
+// counterpart.setFallbackLocale('zh');
+counterpart.setLocale('zh');
+
 export default class App extends Component {
 
     static propTypes = {

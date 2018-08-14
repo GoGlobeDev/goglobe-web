@@ -4,12 +4,18 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
+import Translate from 'react-translate-component';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
+
+import counterpart from 'counterpart';
+const localeEn = require('theme/locales/locale-en.json');
+const localeZh = require('theme/locales/locale-zh.json');
+
 import {
     TEAM, INVESTORS, CONTACT, NAV_BAR,
-    ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE
+    ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, FOOTER, GOGLOBE, ABOUT
 } from 'theme/Lang';
 import './Index.styl';
 
@@ -17,7 +23,7 @@ export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // activeNav: 0
+            currentLocale: counterpart.getLocale()
         };
     }
     componentWillMount() {
@@ -41,6 +47,25 @@ export default class Index extends Component {
     toAnchor: Function = (anchor, idx) => {
         window.location.href = anchor;
         this.setState({ activeNav: idx });
+    }
+    changeLocale: Function = () => {
+        console.log('fdg');
+        const value = counterpart.getLocale();
+        if (value === 'zh') {
+            counterpart.registerTranslations('en', localeEn);
+            counterpart.setLocale('en');
+            this.setState({
+                currentLocale: 'en'
+            });
+            // this.props.setCurrentLocale('en');
+        } else {
+            counterpart.registerTranslations('zh', localeZh);
+            counterpart.setLocale('zh');
+            this.setState({
+                currentLocale: 'zh'
+            });
+            // this.props.setCurrentLocale('zh');
+        }
     }
     // 递归创建消息节点元素数组
     _getNodeItems: Function = (str, messageArrOld) => {
@@ -90,11 +115,13 @@ export default class Index extends Component {
         );
     }
     render() {
+        console.log(counterpart.getLocale());
         return (
             this.state.activeNav
                 ? <div className="">
                     <Helmet>
-                        <title>{WEBTITLE[LANG]}</title>
+                        <Translate component="title" content="website.title" />
+                        {/* <title>{WEBTITLE[LANG]}</title> */}
                         <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
                         <meta keyword="goglobe travel" />
                     </Helmet>
@@ -102,7 +129,7 @@ export default class Index extends Component {
                         <Navbar.Header>
                             <Navbar.Brand>
                                 <img className="logo1" src={require('img/logo1.png')} />
-                                { LANG === 'en'
+                                {LANG === 'en'
                                     ? <img className="logo3" src={require('img/logo3.png')} />
                                     : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
                                 }
@@ -114,19 +141,27 @@ export default class Index extends Component {
                                 {NAV_BAR.map((item, idx) => {
                                     return (<NavItem key={idx} eventKey={idx + 1} onClick={() => this.toAnchor(item.anchor, idx + 1)}>{item.label[LANG]}</NavItem>);
                                 })}
-                                {/* <NavItem>{LANG === 'en' ? 'Japanese' : 'English'}</NavItem> */}
+                                <NavItem onClick={() => this.changeLocale()}>{this.state.currentLocale === 'zh' ? 'English' : '中文'}</NavItem>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
                     <a name="event"></a><div className="top-area"><a name="home"></a>
                         <div className="tips">
-                            <h3>{BANNER.title[LANG]}</h3>
+                            {/* <h3>{BANNER.title[LANG]}</h3> */}
+                            <Translate component="h3" content="banner.title" />
                             <div className="tip-btn">
-                                <div className="left" onClick={() => this.toAnchor('#about', 2)}>{BANNER.lBtn[LANG]}</div>
-                                <div className="right" onClick={() => this.toAnchor('#contact', 6)}>{BANNER.rBtn[LANG]}</div>
+                                <div className="left" onClick={() => this.toAnchor('#about', 2)}>
+                                    {/* {BANNER.lBtn[LANG]} */}
+                                    <Translate component="span" content="banner.lBtn" />
+                                </div>
+                                <div className="right" onClick={() => this.toAnchor('#contact', 6)}>
+                                    {/* {BANNER.rBtn[LANG]} */}
+                                    <Translate component="span" content="banner.rBtn" />
+                                </div>
                             </div>
                             <div>
-                                <span>{BANNER.more[LANG]}</span>
+                                {/* <span>{BANNER.more[LANG]}</span> */}
+                                <Translate component="span" content="banner.more" />
                                 <div className="more">...</div>
                             </div>
                         </div>

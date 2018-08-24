@@ -1,2 +1,2 @@
-export { default as Navbar } from './Navbar'
-export { default as AppMain } from './AppMain'
+export { default as HeaderCon } from './HeaderCon'
+export { default as MainCon } from './MainCon'

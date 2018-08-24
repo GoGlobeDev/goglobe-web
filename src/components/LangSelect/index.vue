@@ -1,7 +1,7 @@
 <template>
   <el-dropdown trigger="click" class='international' @command="handleSetLanguage">
     <div>
-      切换语言<i class="el-icon-caret-bottom"></i>
+      切换语言
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item command="zh" :disabled="language==='zh'">中文</el-dropdown-item>
@@ -13,12 +13,12 @@
 <script>
 export default {
   computed: {
-    language() {
+    language () {
       return this.$store.getters.language
     }
   },
   methods: {
-    handleSetLanguage(lang) {
+    handleSetLanguage (lang) {
       this.$i18n.locale = lang
       this.$store.dispatch('setLanguage', lang)
       this.$message({
@@ -30,4 +30,10 @@ export default {
 }
 </script>
 
-
+<style scoped>
+.international-icon {
+  font-size: 20px;
+  cursor: pointer;
+  vertical-align: -5px!important;
+}
+</style>

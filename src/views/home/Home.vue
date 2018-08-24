@@ -1,19 +1,19 @@
 <template>
-  <div class="app-wrapper">
-    <div class="main-container">
-      <navbar></navbar>
-      <app-main></app-main>
-    </div>
+  <div>
+    <header-con></header-con>
+    <main-con></main-con>
   </div>
 </template>
 <script>
-import { Navbar, AppMain } from './components'
+import { HeaderCon, MainCon } from './components'
 
 export default {
-  name: 'layout',
+  name: 'home',
   components: {
-    Navbar,
-    AppMain
+    HeaderCon,
+    MainCon
   }
 }
 </script>
+<style lang="stylus" scoped>
+</style>

@@ -197,7 +197,10 @@ export default class Index extends Component {
                                     <div className="col-sm-6 col-md-3 col-md-offset-2" key={index}>
                                         <div className={index === 0 ? 'files-left' : 'files-right'}>
                                             <img src={require('img/document1.png')} />
-                                            <div className="names">{item[LANG].title}</div>
+                                            { index === 1
+                                                ? <div className="names"><a download="GoGlobeWhitePaper_CN.pdf" href="http://www.goglobechain.com/whitepaper/GoGlobeWhitePaper_CN.pdf">{item[LANG].title}</a></div>
+                                                : <div className="names">{item[LANG].title}</div>
+                                            }
                                             {/* <div className="available">{item[LANG].vs}</div>
                                             <div className="language">
                                                 {item[LANG].lang.map((item1, index1) => {

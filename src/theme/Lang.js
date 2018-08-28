@@ -16,7 +16,7 @@ export const NAV_BAR = [
     {anchor: '#home', label: {zh: '首页', en: 'home', japan: ''}},
     {anchor: '#about', label: {zh: '项目简介', en: 'About us', japan: ''}},
     {anchor: '#files', label: {zh: '白皮书', en: 'White Paper', japan: ''}},
-    // {anchor: '#partners', label: {zh: '合作伙伴', en: 'Partners', japan: ''}},
+    {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
     {anchor: '#team', label: {zh: '团队与支持者', en: 'Team', japan: ''}},
     {anchor: '#contact', label: {zh: '联系我们', en: 'Contact', japan: ''}}
 ];
@@ -825,4 +825,44 @@ export const WEBTITLE = {
     zh: '自游链 | 世界旅游新生态',
     en: 'Go Globe Chain | Redefine The Travel Diatribution Landscape',
     japan: ''
+};
+export const CHAINDATA = {
+    search: {
+        placeholder: {
+            zh: '搜索地址',
+            en: 'search address',
+            japan: ''
+        },
+        button: {
+            zh: '搜索',
+            en: 'search',
+            japan: ''
+        }
+    },
+    data: [
+        {
+            src: require('img/miner.png'),
+            name: {
+                zh: '全网矿机数量',
+                en: '',
+                japan: ''
+            }
+        },
+        {
+            src: require('img/calculate.png'),
+            name: {
+                zh: '全网算力',
+                en: '',
+                japan: ''
+            }
+        },
+        {
+            src: require('img/output.png'),
+            name: {
+                zh: '每日GOG 总产出',
+                en: '',
+                japan: ''
+            }
+        }
+    ]
 };

@@ -346,7 +346,57 @@
             width: 90%
             height: 1px
             background-color: rgba($light, .3)
-
+.chain-data
+    .search-box
+        width: 66%
+        position: relative
+        background-color: $light
+        border-radius: 10px
+        margin: 50px auto 30px
+        img
+            width: 23px
+            height: 22px
+            position: absolute
+            top: 14px
+            left: 10px
+        input 
+            width: 100%
+            padding: 10px 50px
+            border: none
+            height: 50px
+            font-size: 16px
+            &:focus
+                outline-color: #FFB401
+        button
+            padding: 5px 20px
+            position: absolute
+            top: 10px
+            right: 10px
+            background:linear-gradient(136deg,rgba(255,214,104,1) 0%,rgba(255,187,24,1) 100%)
+            border: none
+            border-radius: 8px
+            color: #4E4D4E
+    .container
+        width: 66%
+        display: flex
+        margin: 10px auto 100px
+        >div
+            flex: 1
+            text-align: center
+            background-color: $light
+            border-radius: 10px
+            margin-right: 36px
+            padding: 30px
+            img
+                width: 60px
+                height: 60px
+            p
+                color: #7D7D7D
+            .number
+                color: #FFB401
+                font-size: 36px
+            &:last-child
+                margin-right: 0
 @media (max-width: 440px)
     .header-nav
         padding: 0 20px

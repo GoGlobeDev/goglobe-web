@@ -8,7 +8,7 @@ import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
 import {
-    TEAM, INVESTORS, CONTACT, NAV_BAR,
+    TEAM, INVESTORS, CONTACT, NAV_BAR, CHAINDATA,
     ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE
 } from 'theme/Lang';
 import './Index.styl';
@@ -219,6 +219,27 @@ export default class Index extends Component {
                                 );
                             })
                             }
+                        </div>
+                    </div>
+                    <a name="chainData"></a>
+                    <div className="chain-data">
+                        <div className="search-box">
+                            <img src={require('img/search.png')} />
+                            <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} />
+                            <button>{CHAINDATA.search.button[LANG]}</button>
+                        </div>
+                        <div className="container">
+                            { CHAINDATA.data.map((item, index) => {
+                                return (
+                                    <div className="" key={index}>
+                                        <div>
+                                            <img src={item.src} />
+                                            <p>{item.name[LANG]}</p>
+                                        </div>
+                                        <div className="number">129473</div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                     <a name="team"></a>

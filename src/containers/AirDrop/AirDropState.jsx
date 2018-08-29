@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormControl, Button } from 'react-bootstrap';
 
+import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncSendEmail } from './AirDropUtil.js';
 
 export default class AirDropState extends Component {
@@ -12,14 +13,14 @@ export default class AirDropState extends Component {
         params: PropTypes.object
     };
     state: Object = {
-        email: ''
+        phone: ''
     };
     changeEmail: Function = (evt) => {
-        this.setState({ email: evt.target.value });
+        this.setState({ phone: evt.target.value });
     }
     // 发送邮件激活账号
     clickToSendEmail: Function = (account) => {
-        if (this.state.email) {
+        if (this.state.phone) {
             const email = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
             if (email.test(this.state.email)) {
                 const data = {
@@ -43,32 +44,37 @@ export default class AirDropState extends Component {
             itemArr.length > 0
                 ? <div className="air-drop height">
                     <Helmet>
-                        <title>Go Globe Chain</title>
+                        <title>{WEBTITLE[LANG]}</title>
                         <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
                         <meta keyword="goglobe travel" />
                     </Helmet>
                     <div className="center-form">
                         <div className="air-state-logo">
-                            <img src={require('img/logo4.png')} />
+                            {/* <img src={require('img/logo4.png')} /> */}
+                            <img className="logo1" src={require('img/logo1.png')} />
+                            { LANG === 'en'
+                                ? <img className="logo3" src={require('img/logo3.png')} />
+                                : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
+                            }
                         </div>
                         <div className="block">
-                            <p>Get 250 free GOG for every invited friend!</p>
+                            <p>{AIRDROP.invited[LANG]}</p>
                             <FormControl type="text" value={'http://goglobechain.com/airdrop/state?code=' + itemArr[1]} className="has-value" />
                         </div>
                         { Number(itemArr[2]) === 0
                             ? <div className="block">
-                                <p>You need to verify your E-mail  to unlock your account. <span className="red">No airdrop for locked account!</span></p>
-                                <FormControl type="text" value={this.state.ethAdress} placeholder="Enter your email " onChange={(evt) => this.changeEmail(evt)} className={this.state.ethAdress ? 'has-value' : ''}/>
-                                <Button onClick={() => this.clickToSendEmail(itemArr[0])}>Send verification mail</Button>
+                                <p>{AIRDROP.verify[LANG]} <span className="red">{AIRDROP.alert[LANG]}</span></p>
+                                <FormControl type="text" value={this.state.phone} placeholder={AIRDROP.placeholderPhone[LANG]} onChange={(evt) => this.changeEmail(evt)} className={this.state.phone ? 'has-value' : ''}/>
+                                <Button onClick={() => this.clickToSendEmail(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
                             </div>
                             : <div className="block">
-                                <p>Your E-mail address:</p>
+                                <p>{AIRDROP.valid[LANG]}</p>
                                 <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" />
-                                <p className="green">Your account is activated.</p>
+                                <p className="green">{AIRDROP.validStatus[LANG]}</p>
                             </div>
                         }
                         <div className="form-footer">
-                            Received <span className="red">252</span> GOG
+                            {AIRDROP.received[LANG]} <span className="red">252</span> GOG
                         </div>
                     </div>
                     <div className="pos cloud-l1"><img src={require('img/cloud-l1.png')} /></div>

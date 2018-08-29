@@ -7,7 +7,7 @@ import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
 import {
-    TEAM, INVESTORS, CONTACT, NAV_BAR, CHAINDATA,
+    TEAM, INVESTORS, CONTACT, NAV_BAR,
     ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE
 } from 'theme/Lang';
 import './Index.styl';
@@ -229,7 +229,7 @@ export default class Index extends Component {
                             }
                         </div>
                     </div>
-                    <div className="chain-data" id="chainData">
+                    {/* <div className="chain-data" id="chainData">
                         <div className="search-box">
                             <img src={require('img/search.png')} />
                             <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} onChange={(evt) => this.changeSearchkey(evt)} value={this.state.searchkey} />
@@ -248,7 +248,7 @@ export default class Index extends Component {
                                 );
                             })}
                         </div>
-                    </div>
+                    </div> */}
                     <div className="team-img" id="team">
                         <div className="team clearfix">
                             <div className="container">

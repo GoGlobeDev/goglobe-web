@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
+import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncLogin } from './AirDropUtil.js';
 import './AirDrop.styl';
 
@@ -57,24 +58,32 @@ export default class AirDrop extends Component {
         return (
             <div className="air-drop height">
                 <Helmet>
-                    <title>Go Globe Chain</title>
+                    <title>{WEBTITLE[LANG]}</title>
                     <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
                     <meta keyword="goglobe travel" />
                 </Helmet>
                 <div className="center-form">
                     <div className="air-logo">
-                        <img src={require('img/logo4.png')} />
+                        {/* <img src={require('img/logo4.png')} /> */}
+                        <img className="logo1" src={require('img/logo1.png')} />
+                        { LANG === 'en'
+                            ? <img className="logo3" src={require('img/logo3.png')} />
+                            : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
+                        }
                     </div>
                     <div className="air-doc">
-                        <img src={require('img/airdrop.png')} />
+                        { LANG === 'en'
+                            ? <img src={require('img/airdrop.png')} />
+                            : <img src={require('img/airdrop-zh.png')} />
+                        }
                     </div>
-                    <p className="air-tip">Enter your ETH address to get 250 free GOG additional 250 GOG for every invited friend</p>
+                    <p className="air-tip">{AIRDROP.airTip[LANG]}</p>
                     <FormGroup>
                         <InputGroup>
-                            <FormControl type="text" value={this.state.ethAdress} className="" placeholder="Enter your ETH address "
+                            <FormControl type="text" value={this.state.ethAdress} className="" placeholder={AIRDROP.placeholderAddr[LANG]}
                                 onChange={(evt) => this.changeAdress(evt)} className={this.state.ethAdress ? 'has-value' : ''}
                                 onKeyPress = { this._handleKeyPress } />
-                            <InputGroup.Addon onClick={ () => this.clickToLogin() }>submit</InputGroup.Addon>
+                            <InputGroup.Addon onClick={ () => this.clickToLogin() }>{AIRDROP.submit[LANG]}</InputGroup.Addon>
                         </InputGroup>
                     </FormGroup>
                 </div>

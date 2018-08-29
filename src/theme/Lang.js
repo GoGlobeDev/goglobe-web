@@ -16,7 +16,7 @@ export const NAV_BAR = [
     {anchor: '#home', label: {zh: '首页', en: 'home', japan: ''}},
     {anchor: '#about', label: {zh: '项目简介', en: 'About us', japan: ''}},
     {anchor: '#files', label: {zh: '白皮书', en: 'White Paper', japan: ''}},
-    {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
+    // {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
     {anchor: '#team', label: {zh: '团队与支持者', en: 'Team', japan: ''}},
     {anchor: '#contact', label: {zh: '联系我们', en: 'Contact', japan: ''}}
 ];
@@ -865,4 +865,61 @@ export const CHAINDATA = {
             }
         }
     ]
+};
+export const AIRDROP = {
+    airTip: {
+        zh: '输入你的以太坊地址可以免费获得250个GOG，每邀请一个朋友可额外获得250个GOG',
+        en: 'Enter your ETH address to get 250 free GOG additional 250 GOG for every invited friend',
+        Japan: ''
+    },
+    submit: {
+        zh: '提交',
+        en: 'submit',
+        japan: ''
+    },
+    placeholderAddr: {
+        zh: '请输入您的以太坊地址',
+        en: 'Enter your ETH address',
+        japan: ''
+    },
+    invited: {
+        zh: '每邀请一个朋友可免费获得250个GOG！',
+        en: 'Get 250 free GOG for every invited friend!',
+        japan: ''
+    },
+    verify: {
+        zh: '您需要通过验证您的手机号来激活您的账户。',
+        en: 'You need to verify your phone to unlock your account.',
+        japan: ''
+    },
+    alert: {
+        zh: '未激活的账户无法进行空投！',
+        en: 'No airdrop for locked account!',
+        japan: ''
+    },
+    placeholderPhone: {
+        zh: '请输入您的手机号',
+        en: 'Enter your phone',
+        japan: ''
+    },
+    send: {
+        zh: '发送验证码',
+        en: 'Send verification code',
+        japan: ''
+    },
+    valid: {
+        zh: '您的手机号:',
+        en: 'Your phone:',
+        japan: ''
+    },
+    validStatus: {
+        zh: '您的账户已激活',
+        en: 'Your account is activated.',
+        japan: ''
+    },
+    received: {
+        zh: '收到',
+        en: 'Received',
+        japan: ''
+    }
 };

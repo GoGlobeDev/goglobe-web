@@ -59,7 +59,7 @@ export default class AirDropState extends Component {
                         </div>
                         <div className="block">
                             <p>{AIRDROP.invited[LANG]}</p>
-                            <FormControl type="text" value={'http://goglobechain.com/airdrop/state?code=' + itemArr[1]} className="has-value" />
+                            <FormControl type="text" value={'http://goglobechain.com/airdrop/state?code=' + itemArr[1]} className="has-value" readOnly />
                         </div>
                         { Number(itemArr[2]) === 0
                             ? <div className="block">
@@ -69,7 +69,7 @@ export default class AirDropState extends Component {
                             </div>
                             : <div className="block">
                                 <p>{AIRDROP.valid[LANG]}</p>
-                                <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" />
+                                <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" readOnly />
                                 <p className="green">{AIRDROP.validStatus[LANG]}</p>
                             </div>
                         }

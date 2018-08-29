@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
+import web3 from 'web3';
 
 import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncLogin } from './AirDropUtil.js';
@@ -22,7 +23,7 @@ export default class AirDrop extends Component {
         this.setState({ ethAdress: evt.target.value });
     }
     clickToLogin: Function = () => {
-        if (this.state.ethAdress) {
+        if (this.state.ethAdress && web3.utils.isAddress(this.state.ethAdress)) {
             const data = {
                 account: this.state.ethAdress
             };

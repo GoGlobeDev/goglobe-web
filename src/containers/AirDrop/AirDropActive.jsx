@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { browserHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
 
+import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncActive } from './AirDropUtil.js';
 
 export default class AirDropActive extends Component {
@@ -66,9 +67,9 @@ export default class AirDropActive extends Component {
                 <div className="state-block">
                     <div className="state-pic"><img src={require('img/active-ok.png')} /></div>
                     <div className="state-describe">
-                        <h1>GOOD!</h1>
-                        <p>Your E-mail is verified successfully</p>
-                        <Button onClick={() => this.clickToHome()}>Back to Homepage</Button>
+                        <h1>{AIRDROP.verifyStatus.status.good[LANG]}</h1>
+                        <p>{AIRDROP.verifyStatus.tips.good[LANG]}</p>
+                        <Button onClick={() => this.clickToHome()}>{AIRDROP.verifyStatus.goBack[LANG]}</Button>
                     </div>
                 </div>
             );
@@ -77,9 +78,9 @@ export default class AirDropActive extends Component {
                 <div className="state-block">
                     <div className="state-pic"><img src={require('img/active-already.png')} /></div>
                     <div className="state-describe">
-                        <h1>SORRY!</h1>
-                        <p>You have already verified your E-mail</p>
-                        <Button onClick={() => this.clickToHome()}>Back to Homepage</Button>
+                        <h1>{AIRDROP.verifyStatus.status.sorry[LANG]}</h1>
+                        <p>{AIRDROP.verifyStatus.tips.sorry[LANG]}</p>
+                        <Button onClick={() => this.clickToHome()}>{AIRDROP.verifyStatus.goBack[LANG]}</Button>
                     </div>
                 </div>
             );
@@ -88,9 +89,9 @@ export default class AirDropActive extends Component {
                 <div className="state-block">
                     <div className="state-pic"><img src={require('img/nouser.png')} /></div>
                     <div className="state-describe">
-                        <h1>OOPS!</h1>
-                        <p>The verification link is invilid</p>
-                        <Button onClick={() => this.clickToHome()}>Back to Homepage</Button>
+                        <h1>{AIRDROP.verifyStatus.status.oops[LANG]}</h1>
+                        <p>{AIRDROP.verifyStatus.tips.oops[LANG]}</p>
+                        <Button onClick={() => this.clickToHome()}>{AIRDROP.verifyStatus.goBack[LANG]}</Button>
                     </div>
                 </div>
             );
@@ -101,7 +102,7 @@ export default class AirDropActive extends Component {
             this.state.isSendReq
             ? <div className="air-drop-active height">
                 <Helmet>
-                    <title>Go Globe Chain</title>
+                    <title>{WEBTITLE[LANG]}</title>
                 </Helmet>
                 {this.renderState()}
             </div>

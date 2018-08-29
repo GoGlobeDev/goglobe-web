@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { Button } from 'react-bootstrap';
 // import { browserHistory } from 'react-router';
 
+import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncActive } from './AirDropUtil.js';
 
 export default class AirDropActiveState extends Component {
@@ -50,16 +51,16 @@ export default class AirDropActiveState extends Component {
         return (
             <div className="air-drop height">
                 <Helmet>
-                    <title>Go Globe Chain</title>
+                    <title>{WEBTITLE[LANG]}</title>
                 </Helmet>
                 <div className="center-form">
                     <div className="air-state-logo">
                         <img src={require('img/logo4.png')} />
                     </div>
                     <div className="block">
-                        <h1>SORRY!</h1>
-                        <p>You have already verified your E-mail</p>
-                        <Button onClick={() => this.clickToActive()}>Back to Homepage</Button>
+                        <h1>{AIRDROP.verifyStatus.status.sorry[LANG]}</h1>
+                        <p>{AIRDROP.verifyStatus.tips.sorry[LANG]}</p>
+                        <Button onClick={() => this.clickToActive()}>{AIRDROP.verifyStatus.goBack[LANG]}</Button>
                     </div>
                 </div>
             </div>

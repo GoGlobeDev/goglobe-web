@@ -921,5 +921,46 @@ export const AIRDROP = {
         zh: '收到',
         en: 'Received',
         japan: ''
+    },
+    verifyStatus: {
+        goBack: {
+            zh: '返回首页',
+            en: 'Back to Homepage',
+            japan: ''
+        },
+        status: {
+            good: {
+                zh: '非常棒！',
+                en: 'Good!',
+                japan: ''
+            },
+            sorry: {
+                zh: '对不起！',
+                en: 'SORRY!',
+                japan: ''
+            },
+            oops: {
+                zh: '哎呦！',
+                en: 'OOPS!',
+                japan: ''
+            }
+        },
+        tips: {
+            good: {
+                zh: '您的手机号已验证成功！',
+                en: 'Your phone is verified successfully!',
+                japan: ''
+            },
+            sorry: {
+                zh: '您的手机号已完成验证！',
+                en: 'You have already verified your phone!',
+                japan: ''
+            },
+            oops: {
+                zh: '验证链接不合法！',
+                en: 'The verification link is invilid!',
+                japan: ''
+            }
+        }
     }
 };

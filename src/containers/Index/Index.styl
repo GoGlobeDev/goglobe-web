@@ -347,8 +347,9 @@
             height: 1px
             background-color: rgba($light, .3)
 .chain-data
-    .search-box
+    >div
         width: 66%
+    .search-box
         position: relative
         background-color: $light
         border-radius: 10px
@@ -376,8 +377,9 @@
             border: none
             border-radius: 8px
             color: #4E4D4E
+            &:focus
+                outline: none
     .container
-        width: 66%
         display: flex
         margin: 10px auto 100px
         >div
@@ -465,6 +467,27 @@
                 width: 100px
             .person-right
                 margin-left: 130px
+@media (max-width: 767px)
+    .chain-data
+        >div
+            width: 80%
+        .search-box
+            margin: 20px auto
+            input 
+                height: 40px
+                font-size: 14px
+            img
+                top: 10px
+            button
+                top: 5px
+        .container
+            display: block
+            margin: 10px auto 20px
+            >div
+                float: left
+                width: 100%
+                margin: 10px 0
+                padding: 15px
 @media (min-width: 768px) and (max-width: 991px)
     .header-nav .navbar-collapse
         .navbar-nav
@@ -527,6 +550,9 @@
                     height: 96px
                 .item-txt
                     left: 190px
+    .chain-data
+        >div
+            width: 80%!important
 @media (min-width: 992px) and (max-width: 1299px)
     .header-nav .navbar-collapse
         .navbar-nav

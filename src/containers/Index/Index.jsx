@@ -1,7 +1,6 @@
 // 首页文件 @author wc 2017.6.27  zhaoyue 2018.2.12
 // 外部引用
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Player } from 'video-react';
@@ -18,6 +17,7 @@ export default class Index extends Component {
         super(props);
         this.state = {
             // activeNav: 0
+            searchkey: ''
         };
     }
     componentWillMount() {
@@ -41,6 +41,15 @@ export default class Index extends Component {
     toAnchor: Function = (anchor, idx) => {
         window.location.href = anchor;
         this.setState({ activeNav: idx });
+    }
+    changeSearchkey: Function = (evt) => {
+        this.setState({
+            searchkey: evt.target.value
+        });
+    }
+    clickToWallet: Function = () => {
+        const url = '/mining/nav/' + this.state.activeNav + '/key/' + this.state.searchkey;
+        window.location.href = url;
     }
     // 递归创建消息节点元素数组
     _getNodeItems: Function = (str, messageArrOld) => {
@@ -118,7 +127,7 @@ export default class Index extends Component {
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
-                    <a name="event"></a><div className="top-area"><a name="home"></a>
+                    <div className="top-area" id="home">
                         <div className="tips">
                             <h3>{BANNER.title[LANG]}</h3>
                             <div className="tip-btn">
@@ -131,7 +140,7 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </div>
-                    <a name="about"></a><div className="intro clearfix"><div className="container">
+                    <div className="intro clearfix" id="about"><div className="container">
                         <div className="col-md-5 fun-left">
                             <div className="top-line" />
                             {ABOUT[LANG].map((item, index) => {
@@ -189,8 +198,7 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </section>
-                    <a name="files"></a>
-                    <div className="files clearfix">
+                    <div className="files clearfix" id="files">
                         <div className="container">
                             {DOWNLOAD.map((item, index) => {
                                 return (
@@ -221,12 +229,11 @@ export default class Index extends Component {
                             }
                         </div>
                     </div>
-                    <a name="chainData"></a>
-                    <div className="chain-data">
+                    <div className="chain-data" id="chainData">
                         <div className="search-box">
                             <img src={require('img/search.png')} />
-                            <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} />
-                            <button>{CHAINDATA.search.button[LANG]}</button>
+                            <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} onChange={(evt) => this.changeSearchkey(evt)} value={this.state.searchkey} />
+                            <button onClick={this.clickToWallet}>{CHAINDATA.search.button[LANG]}</button>
                         </div>
                         <div className="container">
                             { CHAINDATA.data.map((item, index) => {
@@ -242,8 +249,7 @@ export default class Index extends Component {
                             })}
                         </div>
                     </div>
-                    <a name="team"></a>
-                    <div className="team-img">
+                    <div className="team-img" id="team">
                         <div className="team clearfix">
                             <div className="container">
                                 <div className="title">{TEAM.title[LANG]}</div>
@@ -277,7 +283,7 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </div>
-                    <a name="partners"></a><div className="investors"><div className="container">
+                    <div className="investors"><div className="container">
                         <div className="title">{INVESTORS.title[LANG]}</div>
                         <ul className="brand-list clearfix">
                             {INVESTORS.text.map((item, index) => {
@@ -288,7 +294,7 @@ export default class Index extends Component {
                             })}
                         </ul>
                     </div></div>
-                    <a name="partners"></a><div className="partners"><div className="container">
+                    <div className="partners"><div className="container">
                         <div className="title">{PARTNERS.title[LANG]}</div>
                         <ul className="brand-list clearfix">
                             {PARTNERS.imgs.map((item, index) => {
@@ -297,7 +303,7 @@ export default class Index extends Component {
                             })}
                         </ul>
                     </div></div>
-                    <a name="contact"></a><div className="contact"><div className="container">
+                    <div className="contact" id="contact"><div className="container">
                         <div className="title">{CONTACT.title[LANG]}</div>
                         <ul className="contact-icons clearfix">
                             {CONTACT.CONTACT_ICONS_GRAY.map((item, index) => {

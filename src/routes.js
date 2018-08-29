@@ -6,7 +6,8 @@ import {
     AirDrop,
     AirDropState,
     AirDropActive,
-    AirDropActiveState
+    AirDropActiveState,
+    Wallet
 } from 'containers';
 
 /* eslint-disable */
@@ -24,10 +25,11 @@ export default function getRoutes() {
     return (
         <Route path="/" component={App} onChange={baiduTongji}>
             <IndexRoute component={Index} />
-            {<Route path="airdrop" component={AirDrop} />}
-            {<Route path="airdrop/state" component={AirDropState} />}
-            {<Route path="airdrop/active" component={AirDropActive} />}
-            {<Route path="airdrop/activestate" component={AirDropActiveState} />}
+            <Route path="mining/nav/:activeNav/key/:searchkey" component={Wallet} />
+            <Route path="airdrop" component={AirDrop} />
+            <Route path="airdrop/state" component={AirDropState} />
+            <Route path="airdrop/active" component={AirDropActive} />
+            <Route path="airdrop/activestate" component={AirDropActiveState} />
         </Route>
     );
 }

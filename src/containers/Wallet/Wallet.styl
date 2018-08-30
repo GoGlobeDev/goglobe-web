@@ -1,0 +1,143 @@
+@import '../../theme/variables.styl'
+.wallet
+    padding: 1px
+    .search-result
+        margin: 90px auto 20px
+        .header
+            background: linear-gradient(136deg,rgba(255,214,104,1) 0%,rgba(255,187,24,1) 100%)
+            color: #4E4D4E
+            border-radius: 10px 10px 0 0
+            padding: 16px
+        .info-list
+            .info-item
+                color: #7D7D7D
+                background-color: #F6F6F6
+                border-radius: 10px
+                .gog
+                    font-size: 14px
+                    color: #B2B2B2
+                    .gog-number
+                        font-size: 24px
+                        color: #FFA001
+        .mining-table
+            border: 1px solid #DFDFDF
+            border-radius:10px 10px 0px 0px
+            .table-head
+                background-color: #E4E4E4
+                color: #7D7D7D
+                border-radius:10px 10px 0px 0px
+                overflow: hidden
+                .head-item
+                    float: left
+                    text-align: center
+                    &:first-child
+                        width: 10%
+                    &:nth-child(2)
+                        width: 60%
+                    &:last-child
+                        width: 30%
+            .body-row
+                overflow: hidden
+                text-align: center
+                color: #4E4D4E
+                &:nth-child(2n-1)
+                    background-color: $light
+                &:nth-child(2n)
+                    background-color: #F6F6F6
+                .body-item
+                    float: left
+                    &:first-child
+                        width: 10%
+                    &:nth-child(2)
+                        width: 60%
+                    &:last-child
+                        width: 30%
+@media (max-width: 768px)
+    .wallet
+        .web
+            display: none
+        .search-result
+            width: 92%
+            .top
+                box-shadow:0px 1px 15px 0px rgba(201,201,201, 0.5)
+                border-radius: 10px
+                background: $light
+            .header
+                height: 50px
+                font-size: 15px
+            .info-list
+                margin: 16px 8px
+                .info-item
+                    padding: 15px 16px
+                    margin: 8px 0
+                    overflow: hidden
+                    >div
+                        float: right
+                    img 
+                        float: left
+                    p
+                        float: left
+                        font-size: 16px
+                        margin: 4px
+                    .number
+                        font-size: 24px
+            .recomment
+                padding: 20px 10px
+                color: #7D7D7D
+                font-size: 13px
+            .mining-record
+                margin: 30px 0
+                color: #4E4D4E
+                .table-title
+                    font-size: 16px
+                .table-head
+                    .head-item
+                        height: 45px
+                        line-height: 45px
+                .body-item
+                    height: 40px
+                    line-height: 40px
+                    font-size: 13px
+@media (min-width: 769px)
+    .wallet
+        .mobile
+            display: none
+        .search-result
+            width: 66%
+            box-shadow:0px 1px 15px 0px rgba(201,201,201, 0.5)
+            border-radius: 10px
+            background: $light
+            .header
+                height: 58px
+                font-size: 18px
+            .body
+                padding: 30px 50px
+            .info-list
+                display: flex
+                margin-bottom: 30px
+                .info-item
+                    flex: 1
+                    margin-right: 3%
+                    text-align: center
+                    padding: 20px 2%
+                    p
+                        font-size: 14px
+                    .number
+                        font-size: 24px
+                    &:last-child
+                        margin-right: 0
+            .recomment
+                color: #7D7D7D
+                font-size: 16px
+            .mining-record
+                margin: 60px 0
+                color: #4E4D4E
+                .table-title
+                    font-size: 20px
+                .table-head
+                    .head-item
+                        height: 60px
+                        line-height: 60px
+                .body-item
+                    height: 50px
+                    line-height: 50px

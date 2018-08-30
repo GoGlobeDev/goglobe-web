@@ -20,13 +20,13 @@ export default class Wallet extends Component {
     }
     render() {
         return (
-            <div className="wallet height">
+            <div className="wallet">
                 <Helmet title="钱包" />
                 <Navbar collapseOnSelect fixedTop className="header-nav">
                     <Navbar.Header>
                         <Navbar.Brand>
                             <img className="logo1" src={require('img/logo1.png')} />
-                            { LANG === 'en'
+                            {LANG === 'en'
                                 ? <img className="logo3" src={require('img/logo3.png')} />
                                 : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
                             }
@@ -41,6 +41,104 @@ export default class Wallet extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                <div className="search-result web">
+                    <div className="header">地址：{this.props.params.searchkey}</div>
+                    <div className="body">
+                        <div className="info-list">
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>余额</p>
+                                <div className="gog"><span className="gog-number">452</span> GOG</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>绑定矿机</p>
+                                <div className="number">2</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>算力</p>
+                                <div className="number">255</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>每日产出</p>
+                                <div className="number">2554</div>
+                            </div>
+                        </div>
+                        <div className="recomment">推荐人：XXXXCCCCCCCCCCCCCCCCCCCCCCC</div>
+                        <div className="mining-record">
+                            <h3 className="table-title">挖矿记录</h3>
+                            <div className="mining-table">
+                                <div className="table-head">
+                                    <div className="head-item"></div>
+                                    <div className="head-item">挖矿产出</div>
+                                    <div className="head-item">日期</div>
+                                </div>
+                                <div className="table-body">
+                                    {[1, 2, 3, 4, 5].map((item) => {
+                                        return (
+                                            <div key={item} className="body-row">
+                                                <div className="body-item">{item}</div>
+                                                <div className="body-item">1253</div>
+                                                <div className="body-item">2018-8-30</div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="search-result mobile">
+                    <div className="top">
+                        <div className="header">地址：{this.props.params.searchkey}</div>
+                        <div className="info-list">
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>余额</p>
+                                <div className="gog"><span className="gog-number">452</span> GOG</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>绑定矿机</p>
+                                <div className="number">2</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>算力</p>
+                                <div className="number">255</div>
+                            </div>
+                            <div className="info-item">
+                                <img src={require('img/balance.png')} />
+                                <p>每日产出</p>
+                                <div className="number">2554</div>
+                            </div>
+                        </div>
+                        <div className="recomment">推荐人：XXXXCCCCCCCCCCCCCCCCCCCCCCC</div>
+                    </div>
+                    <div className="mining-record">
+                        <h3 className="table-title">挖矿记录</h3>
+                        <div className="mining-table">
+                            <div className="table-head">
+                                <div className="head-item"></div>
+                                <div className="head-item">挖矿产出</div>
+                                <div className="head-item">日期</div>
+                            </div>
+                            <div className="table-body">
+                                {[1, 2, 3, 4, 5].map((item) => {
+                                    return (
+                                        <div key={item} className="body-row">
+                                            <div className="body-item">{item}</div>
+                                            <div className="body-item">1253</div>
+                                            <div className="body-item">2018-8-30</div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

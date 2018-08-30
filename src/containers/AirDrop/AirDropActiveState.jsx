@@ -55,7 +55,10 @@ export default class AirDropActiveState extends Component {
                 </Helmet>
                 <div className="center-form">
                     <div className="air-state-logo">
-                        <img src={require('img/logo4.png')} />
+                    { LANG === 'en'
+                        ? <img className="logo3" src={require('img/logo4.png')} />
+                        : <span className="logo-text"><img className="logo1" src={require('img/logo1.png')} />自游链：世界旅游新生态</span>
+                    }
                     </div>
                     <div className="block">
                         <h1>{AIRDROP.verifyStatus.status.sorry[LANG]}</h1>

@@ -65,12 +65,10 @@ export default class AirDrop extends Component {
                 </Helmet>
                 <div className="center-form">
                     <div className="air-logo">
-                        {/* <img src={require('img/logo4.png')} /> */}
-                        <img className="logo1" src={require('img/logo1.png')} />
-                        { LANG === 'en'
-                            ? <img className="logo3" src={require('img/logo3.png')} />
-                            : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
-                        }
+                    { LANG === 'en'
+                        ? <img className="logo3" src={require('img/logo4.png')} />
+                        : <span className="logo-text"><img className="logo1" src={require('img/logo1.png')} />自游链：世界旅游新生态</span>
+                    }
                     </div>
                     <div className="air-doc">
                         { LANG === 'en'

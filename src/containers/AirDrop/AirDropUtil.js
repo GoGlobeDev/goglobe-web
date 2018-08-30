@@ -19,7 +19,7 @@ export function asyncLogin(data) {
         body: JSON.stringify(data)
     });
 }
-export function asyncSendEmail(data) {
+export function asyncSendCode(data) {
     const xtoken = window.localStorage.getItem('x-auth-token');
     return fetch(host + ':' + port + '/airdrop/send', {
         method: 'POST',

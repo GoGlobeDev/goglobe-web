@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormControl, Button } from 'react-bootstrap';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
-import { asyncSendEmail } from './AirDropUtil.js';
+import { asyncSendCode } from './AirDropUtil.js';
 
 export default class AirDropState extends Component {
 
@@ -15,20 +17,14 @@ export default class AirDropState extends Component {
     state: Object = {
         phone: ''
     };
-    changeEmail: Function = (evt) => {
-        this.setState({ phone: evt.target.value });
-    }
     // 发送邮件激活账号
     clickToSendEmail: Function = (account) => {
         if (this.state.phone) {
-            const email = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
-            if (email.test(this.state.email)) {
-                const data = {
-                    account: account,
-                    email: this.state.email
-                };
-                asyncSendEmail(data);
-            }
+            const data = {
+                account: account,
+                phone: this.state.phone
+            };
+            asyncSendCode(data);
         }
     }
     render() {
@@ -50,11 +46,9 @@ export default class AirDropState extends Component {
                     </Helmet>
                     <div className="center-form">
                         <div className="air-state-logo">
-                            {/* <img src={require('img/logo4.png')} /> */}
-                            <img className="logo1" src={require('img/logo1.png')} />
                             { LANG === 'en'
-                                ? <img className="logo3" src={require('img/logo3.png')} />
-                                : <div className="logo3 logo-text">自游链：世界旅游新生态</div>
+                                ? <img className="logo3" src={require('img/logo4.png')} />
+                                : <span className="logo-text"><img className="logo1" src={require('img/logo1.png')} />自游链：世界旅游新生态</span>
                             }
                         </div>
                         <div className="block">
@@ -64,7 +58,11 @@ export default class AirDropState extends Component {
                         { Number(itemArr[2]) === 0
                             ? <div className="block">
                                 <p>{AIRDROP.verify[LANG]} <span className="red">{AIRDROP.alert[LANG]}</span></p>
-                                <FormControl type="text" value={this.state.phone} placeholder={AIRDROP.placeholderPhone[LANG]} onChange={(evt) => this.changeEmail(evt)} className={this.state.phone ? 'has-value' : ''}/>
+                                <PhoneInput
+                                    placeholder={AIRDROP.placeholderPhone[LANG]}
+                                    value={ this.state.phone }
+                                    onChange={ phone => this.setState({ phone }) }
+                                    className={this.state.phone ? 'has-value' : ''} />
                                 <Button onClick={() => this.clickToSendEmail(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
                             </div>
                             : <div className="block">

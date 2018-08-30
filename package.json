@@ -78,6 +78,8 @@
     "piping": "^0.3.0",
     "pretty-error": "^1.2.0",
     "prop-types": "^15.5.10",
+    "rc-pagination": "^1.17.0",
+    "rc-select": "^8.2.4",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
     "react-cookie": "^1.0.5",

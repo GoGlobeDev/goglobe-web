@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import Helmet from 'react-helmet';
+import Select from 'rc-select';
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
+import 'rc-select/assets/index.css';
 
 import { NAV_BAR, LANG } from 'theme/Lang';
 import './Wallet.styl';
@@ -87,6 +91,17 @@ export default class Wallet extends Component {
                                     })}
                                 </div>
                             </div>
+                            <Pagination
+                                selectComponentClass={Select}
+                                showSizeChanger
+                                showQuickJumper={{ goButton: <button>确定</button> }}
+                                defaultPageSize={20}
+                                defaultCurrent={5}
+                                onShowSizeChange={this.onShowSizeChange}
+                                onChange={this.onChange}
+                                total={450}
+                            />
+                            <Pagination simple showQuickJumper={{ goButton: true }} defaultCurrent={1} total={50} />
                         </div>
                     </div>
                 </div>

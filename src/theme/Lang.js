@@ -912,6 +912,11 @@ export const AIRDROP = {
         en: 'Send code',
         japan: ''
     },
+    sended: {
+        zh: '已发送...',
+        en: 'Sended...',
+        japan: ''
+    },
     validBtn: {
         zh: '激活',
         en: 'Active',

@@ -6,6 +6,7 @@ import { FormControl, Button } from 'react-bootstrap';
 import 'react-phone-number-input/style.css';
 // import PhoneInput from 'react-phone-number-input';
 import { browserHistory } from 'react-router';
+import moment from 'moment';
 
 import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
 import { asyncSendCode, asyncActive, loadBalance } from './AirDropUtil.js';
@@ -18,7 +19,8 @@ export default class AirDropState extends Component {
     state: Object = {
         phone: '',
         code: '',
-        itemArr: []
+        itemArr: [],
+        seconds: 0
     };
     componentWillMount() {
         let itemArr = [];
@@ -46,6 +48,16 @@ export default class AirDropState extends Component {
             code: evt.target.value
         });
     }
+    _tick: Function = (flag) => {
+        const now = moment().unix();
+        this.setState({ seconds: (flag - now + 1), sended: false });
+        if (now > flag) {
+            this.setState({ sended: false, seconds: 0 });
+            this.forceUpdate();
+        } else if (this.state.seconds) {
+            setTimeout(() => this._tick(flag), 1000);
+        }
+    }
     // 发送验证码
     clickToSendCode: Function = (account) => {
         if (this.state.phone) {
@@ -53,7 +65,13 @@ export default class AirDropState extends Component {
                 account: account,
                 phone: this.state.phone
             };
-            asyncSendCode(data);
+            this.setState({ sended: true });
+            asyncSendCode(data).then(response => response.json()).then((res) => {
+                if (res.status === 'success') {
+                    const now = moment().unix();
+                    return setTimeout(() => this._tick(now + 60), 1000);
+                }
+            });
         }
     }
     // 激活账号
@@ -67,6 +85,15 @@ export default class AirDropState extends Component {
                 browserHistory.replace('/airdrop/active/' + res.status);
             });
         }
+    }
+    renderSendCode: Function = (itemArr) => {
+        // 已发送
+        if (this.state.sended) {
+            return (<Button>{AIRDROP.sended[LANG]}</Button>);
+        } else if (this.state.seconds) {
+            return (<Button>{this.state.seconds}s</Button>);
+        }
+        return (<Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button>);
     }
     render() {
         const { itemArr, balance } = this.state;
@@ -100,7 +127,8 @@ export default class AirDropState extends Component {
                                 <FormControl type="text" placeholder={AIRDROP.placeholderPhone[LANG]} value={ this.state.phone } onChange={ evt => this.setState({ phone: evt.target.value }) } className="phone" />
                                 <div className="code-box">
                                     <FormControl type="text" placeholder={AIRDROP.placeholderCode[LANG]} value={this.state.code} onChange={(evt) => this.changeCode(evt)} className="code" />
-                                    <Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
+                                    {/* <Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button> */}
+                                    {this.renderSendCode(itemArr)}
                                 </div>
                                 <Button onClick={() => this.clickToValid(itemArr[0])} className="valid-btn">{AIRDROP.validBtn[LANG]}</Button>
                             </div>

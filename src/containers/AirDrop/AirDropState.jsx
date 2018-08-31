@@ -8,7 +8,7 @@ import 'react-phone-number-input/style.css';
 import { browserHistory } from 'react-router';
 
 import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
-import { asyncSendCode, asyncActive } from './AirDropUtil.js';
+import { asyncSendCode, asyncActive, loadBalance } from './AirDropUtil.js';
 
 export default class AirDropState extends Component {
 
@@ -17,8 +17,30 @@ export default class AirDropState extends Component {
     };
     state: Object = {
         phone: '',
-        code: ''
+        code: '',
+        itemArr: []
     };
+    componentWillMount() {
+        let itemArr = [];
+        if (__CLIENT__) {
+            const qs = location.search.length > 0 ? location.search.substring(1) : '';
+            const items = qs.length > 0 ? qs.split('&') : [];
+            itemArr = items.map((item) => {
+                return decodeURIComponent(item.split('=')[1]);
+            });
+            this.setState({
+                itemArr: itemArr
+            });
+            const data = {
+                code: itemArr[1]
+            };
+            loadBalance(data).then(response => response.json()).then((res) => {
+                this.setState({
+                    balance: res.user.money
+                });
+            });
+        }
+    }
     changeCode: Function = (evt) => {
         this.setState({
             code: evt.target.value
@@ -47,14 +69,8 @@ export default class AirDropState extends Component {
         }
     }
     render() {
-        let itemArr = [];
-        if (__CLIENT__) {
-            const qs = location.search.length > 0 ? location.search.substring(1) : '';
-            const items = qs.length > 0 ? qs.split('&') : [];
-            itemArr = items.map((item) => {
-                return decodeURIComponent(item.split('=')[1]);
-            });
-        }
+        const { itemArr, balance } = this.state;
+        console.log(itemArr);
         return (
             itemArr.length > 0
                 ? <div className="air-drop height">
@@ -72,7 +88,7 @@ export default class AirDropState extends Component {
                         </div>
                         <div className="block">
                             <p>{AIRDROP.invited[LANG]}</p>
-                            <FormControl type="text" value={'http://goglobechain.com/airdrop/state?code=' + itemArr[1]} className="has-value" readOnly />
+                            <FormControl type="text" value={'http://goglobechain.com/airdrop?code=' + itemArr[1]} className="has-value" />
                         </div>
                         { Number(itemArr[2]) === 0
                             ? <div className="block">
@@ -82,20 +98,23 @@ export default class AirDropState extends Component {
                                     value={ this.state.phone }
                                     onChange={ phone => this.setState({ phone }) }
                                     className={this.state.phone ? 'has-value' : ''} /> */}
-                                <input type="text" placeholder={AIRDROP.placeholderPhone[LANG]} value={ this.state.phone } onChange={ evt => this.setState({ phone: evt.target.value }) } className="react-phone-number-input__input phone" />
-                                <input type="text" placeholder={AIRDROP.placeholderCode[LANG]} value={this.state.code} onChange={(evt) => this.changeCode(evt)} className="react-phone-number-input__input code" />
-                                <Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
+                                <FormControl type="text" placeholder={AIRDROP.placeholderPhone[LANG]} value={ this.state.phone } onChange={ evt => this.setState({ phone: evt.target.value }) } className="phone" />
+                                <div className="code-box">
+                                    <FormControl type="text" placeholder={AIRDROP.placeholderCode[LANG]} value={this.state.code} onChange={(evt) => this.changeCode(evt)} className="code" />
+                                    <Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
+                                </div>
                                 <Button onClick={() => this.clickToValid(itemArr[0])} className="valid-btn">{AIRDROP.validBtn[LANG]}</Button>
                             </div>
                             : <div className="block">
-                                <p>{AIRDROP.valided[LANG]}</p>
-                                <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" readOnly />
+                                {/* <p>{AIRDROP.valided[LANG]}</p>
+                                <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" readOnly /> */}
                                 <p className="green">{AIRDROP.validStatus[LANG]}</p>
                             </div>
                         }
                         <div className="form-footer">
-                            {AIRDROP.received[LANG]} <span className="red">252</span> GOG
+                            {AIRDROP.received[LANG]} <span className="red">{balance}</span> GOG
                         </div>
+                        <div className="heart-tip">{AIRDROP.heartTip[LANG]}</div>
                     </div>
                     <div className="pos cloud-l1"><img src={require('img/cloud-l1.png')} /></div>
                     <div className="pos cloud-l2"><img src={require('img/cloud-l2.png')} /></div>

@@ -74,7 +74,7 @@
         .block
             width: 80%
             text-align: left
-            margin: 40px auto
+            margin: 40px auto 0
             font-size: 13px
             .form-control
                 height: 45px
@@ -82,30 +82,50 @@
                 border: solid 1px rgba(#1d1b1b, .3)
                 background-color: $light
                 font-size: 14px
+                &:focus
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(253,118,111,0.45)
             .phone
-                display: block
-                width: 100%
-                padding: 0 5px
+                padding: 0 20px
+                margin: 16px 0
+            .code-box
+                position: relative
+                .btn
+                    position: absolute
+                    top: 0
+                    right: 0
+                    margin: 0
+                    height: 45px
+                    background: linear-gradient(90deg,rgba(251,145,94,1),rgba(253,119,106,1),rgba(252,128,170,1))
+                    border-radius: 0 25px 25px 0
+                    color: $light
             .code
-                width: 50%
                 margin-right: 10px
-                padding: 0 5px
+                padding: 0 100px 0 20px
             .has-value
                 color: #222    
             .btn-default
                 margin: 20px 0
                 border-radius: 10px
             .green
-                color: #2fd689
-                margin: 15px 0    
+                color: #2fd689  
+                margin: 20px 0
+                font-size: 18px
             .valid-btn
                 display: block
                 margin: 0
+                background: linear-gradient(70deg,rgba(251,168,96,1),rgba(253,118,109,1),rgba(251,148,221,1),rgba(251,168,96,1))
+                border-radius:22px
+                color: $light
+                border: none
+                margin: 15px 0
         .form-footer
             font-size: 24px
             font-weight: bold
             .red
-                font-size: 36px        
+                font-size: 36px 
+        .heart-tip
+            color: rgba(#1D1B1B, 70%) 
+            font-size: 14px      
     .pos
         position: absolute
     .cloud-l1
@@ -191,18 +211,34 @@
                 .form-control
                     height: 36px
             .air-state-logo
-                margin: 15px 0 25px
+                margin: 10px 0 12px
             .block
-                margin: 10px auto
+                margin: 5px auto
                 width: 87%
                 .form-control
                     height: 30px
+                    margin: 5px 0
                 .btn
                     margin: 5px 0
+                    height: 30px
+                    font-size: 12px
+                    line-height: 16px
+                .code-box
+                    .btn
+                        height: 30px
+                    //     font-size: 12px
+                    //     line-height: 16px
+                // .valid-btn
+                //     height: 30px
+                //     font-size: 12px
+                //     line-height: 16px
             .form-footer
-                font-size: 20px
+                font-size: 16px
                 .red
-                    font-size: 26px            
+                    font-size: 20px  
+            .heart-tip
+                color: rgba(#1D1B1B, 70%) 
+                font-size: 12px         
         .cloud-l1
             width: 16%
             top: 290px
@@ -226,8 +262,8 @@
             top: 65px
             width: 18%
         .hot-ball
-            top: 30px
-            left: 0
+            top: 20px
+            left: -30px
             width: 30%
         .tree-l
             width: 22%
@@ -286,14 +322,23 @@
             .air-state-logo
                 margin: 25px 0 35px
             .block
-                margin: 15px auto
+                margin: 10px auto
                 width: 87%
                 .form-control
                     height: 36px
+                    margin: 8px 0
+                .code-box
+                    .btn
+                        height: 36px
+                .valid-btn
+                    margin: 10px 0
             .form-footer
-                font-size: 22px
+                font-size: 20px
                 .red
-                    font-size: 28px                
+                    font-size: 24px  
+            .heart-tip
+                color: rgba(#1D1B1B, 70%) 
+                font-size: 12px                
         .cloud-l1
             width: 16%
             top: 290px

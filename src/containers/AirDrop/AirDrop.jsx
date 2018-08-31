@@ -17,8 +17,23 @@ export default class AirDrop extends Component {
     };
     state: Object = {
         ethAdress: '',
-        alertmsg: ''
+        alertmsg: '',
+        invitedCode: ''
     };
+    componentWillMount() {
+        let itemArr = [];
+        if (__CLIENT__) {
+            const qs = location.search.length > 0 ? location.search.substring(1) : '';
+            const items = qs.length > 0 ? qs.split('&') : [];
+            itemArr = items.map((item) => {
+                return decodeURIComponent(item.split('=')[1]);
+            });
+        }
+        const invitedCode = itemArr[0];
+        this.setState({
+            invitedCode: invitedCode
+        });
+    }
     changeAdress: Function = (evt) => {
         this.setState({ ethAdress: evt.target.value });
     }
@@ -27,6 +42,9 @@ export default class AirDrop extends Component {
             const data = {
                 account: this.state.ethAdress
             };
+            if (this.state.invitedCode) {
+                data.invitedCode = this.state.invitedCode;
+            }
             asyncLogin(data).then(response => {
                 if (response.ok) {
                     return response.json();

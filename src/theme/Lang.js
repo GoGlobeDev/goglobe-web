@@ -868,8 +868,8 @@ export const CHAINDATA = {
 };
 export const AIRDROP = {
     airTip: {
-        zh: '输入你的以太坊地址可以免费获得250个GOG，每邀请一个朋友可额外获得250个GOG',
-        en: 'Enter your ETH address to get 250 free GOG additional 250 GOG for every invited friend',
+        zh: '输入你的以太坊地址可以免费获得200个GOG',
+        en: 'Enter your ETH address to get 200 free GOG',
         Japan: ''
     },
     submit: {
@@ -883,8 +883,8 @@ export const AIRDROP = {
         japan: ''
     },
     invited: {
-        zh: '每邀请一个朋友可免费获得250个GOG！',
-        en: 'Get 250 free GOG for every invited friend!',
+        zh: '邀请链接',
+        en: 'invited link',
         japan: ''
     },
     verify: {
@@ -909,7 +909,7 @@ export const AIRDROP = {
     },
     send: {
         zh: '发送验证码',
-        en: 'Send verification code',
+        en: 'Send code',
         japan: ''
     },
     validBtn: {
@@ -928,7 +928,7 @@ export const AIRDROP = {
         japan: ''
     },
     received: {
-        zh: '收到',
+        zh: '共获得',
         en: 'Received',
         japan: ''
     },
@@ -972,5 +972,10 @@ export const AIRDROP = {
                 japan: ''
             }
         }
+    },
+    heartTip: {
+        zh: '您所获得的GOG将在活动之后统一发放',
+        en: 'The GOG you receive will be released after the event.',
+        japan: ''
     }
 };

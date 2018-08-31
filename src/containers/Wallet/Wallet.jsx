@@ -102,6 +102,7 @@ export default class Wallet extends Component {
                                 total={450}
                             />
                             <Pagination simple showQuickJumper={{ goButton: true }} defaultCurrent={1} total={50} />
+                            <Pagination onChange={this.onChange} current={this.state.current} total={25} />
                         </div>
                     </div>
                 </div>

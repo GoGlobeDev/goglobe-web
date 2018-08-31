@@ -34,10 +34,10 @@ export default class AirDrop extends Component {
                 return Promise.reject(new Error(response.status));
             }).then((res) => {
                 if (res.status === 'success') {
-                    if (res.goglobe.email) {
-                        browserHistory.push('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status + '&email=' + res.goglobe.email);
+                    if (res.goglobe.phone) {
+                        browserHistory.replace('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status + '&phone=' + res.goglobe.phone);
                     } else {
-                        browserHistory.push('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status);
+                        browserHistory.replace('/airdrop/state?account=' + res.goglobe.account + '&code=' + res.goglobe.code + '&status=' + res.goglobe.status);
                     }
                 } else if (res.status === 'success_end') {
                     this.setState({

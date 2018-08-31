@@ -21,7 +21,7 @@ export function asyncLogin(data) {
 }
 export function asyncSendCode(data) {
     const xtoken = window.localStorage.getItem('x-auth-token');
-    return fetch(host + ':' + port + '/airdrop/send', {
+    return fetch(host + ':' + port + '/airdrop/send/code', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -33,7 +33,7 @@ export function asyncSendCode(data) {
 }
 export function asyncActive(data) {
     const xtoken = window.localStorage.getItem('x-auth-token');
-    return fetch(host + ':' + port + '/airdrop/active', {
+    return fetch(host + ':' + port + '/airdrop/active/account', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

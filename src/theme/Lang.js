@@ -902,12 +902,22 @@ export const AIRDROP = {
         en: 'Enter your phone',
         japan: ''
     },
+    placeholderCode: {
+        zh: '请输入验证码',
+        en: 'Enter the code',
+        japan: ''
+    },
     send: {
         zh: '发送验证码',
         en: 'Send verification code',
         japan: ''
     },
-    valid: {
+    validBtn: {
+        zh: '激活',
+        en: 'Active',
+        japan: ''
+    },
+    valided: {
         zh: '您的手机号:',
         en: 'Your phone:',
         japan: ''

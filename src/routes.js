@@ -28,7 +28,7 @@ export default function getRoutes() {
             <Route path="mining/nav/:activeNav/key/:searchkey" component={Wallet} />
             <Route path="airdrop" component={AirDrop} />
             <Route path="airdrop/state" component={AirDropState} />
-            <Route path="airdrop/active" component={AirDropActive} />
+            <Route path="airdrop/active/:status" component={AirDropActive} />
             <Route path="airdrop/activestate" component={AirDropActiveState} />
         </Route>
     );

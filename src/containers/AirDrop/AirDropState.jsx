@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormControl, Button } from 'react-bootstrap';
 import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
+// import PhoneInput from 'react-phone-number-input';
+import { browserHistory } from 'react-router';
 
 import { WEBTITLE, LANG, AIRDROP } from 'theme/Lang';
-import { asyncSendCode } from './AirDropUtil.js';
+import { asyncSendCode, asyncActive } from './AirDropUtil.js';
 
 export default class AirDropState extends Component {
 
@@ -15,16 +16,34 @@ export default class AirDropState extends Component {
         params: PropTypes.object
     };
     state: Object = {
-        phone: ''
+        phone: '',
+        code: ''
     };
-    // 发送邮件激活账号
-    clickToSendEmail: Function = (account) => {
+    changeCode: Function = (evt) => {
+        this.setState({
+            code: evt.target.value
+        });
+    }
+    // 发送验证码
+    clickToSendCode: Function = (account) => {
         if (this.state.phone) {
             const data = {
                 account: account,
                 phone: this.state.phone
             };
             asyncSendCode(data);
+        }
+    }
+    // 激活账号
+    clickToValid: Function = (account) => {
+        if (this.state.phone) {
+            const data = {
+                account: account,
+                code: this.state.code
+            };
+            asyncActive(data).then(response => response.json()).then((res) => {
+                browserHistory.replace('/airdrop/active/' + res.status);
+            });
         }
     }
     render() {
@@ -58,15 +77,18 @@ export default class AirDropState extends Component {
                         { Number(itemArr[2]) === 0
                             ? <div className="block">
                                 <p>{AIRDROP.verify[LANG]} <span className="red">{AIRDROP.alert[LANG]}</span></p>
-                                <PhoneInput
+                                {/* <PhoneInput
                                     placeholder={AIRDROP.placeholderPhone[LANG]}
                                     value={ this.state.phone }
                                     onChange={ phone => this.setState({ phone }) }
-                                    className={this.state.phone ? 'has-value' : ''} />
-                                <Button onClick={() => this.clickToSendEmail(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
+                                    className={this.state.phone ? 'has-value' : ''} /> */}
+                                <input type="text" placeholder={AIRDROP.placeholderPhone[LANG]} value={ this.state.phone } onChange={ evt => this.setState({ phone: evt.target.value }) } className="react-phone-number-input__input phone" />
+                                <input type="text" placeholder={AIRDROP.placeholderCode[LANG]} value={this.state.code} onChange={(evt) => this.changeCode(evt)} className="react-phone-number-input__input code" />
+                                <Button onClick={() => this.clickToSendCode(itemArr[0])}>{AIRDROP.send[LANG]}</Button>
+                                <Button onClick={() => this.clickToValid(itemArr[0])} className="valid-btn">{AIRDROP.validBtn[LANG]}</Button>
                             </div>
                             : <div className="block">
-                                <p>{AIRDROP.valid[LANG]}</p>
+                                <p>{AIRDROP.valided[LANG]}</p>
                                 <FormControl type="text" value={itemArr[3] ? itemArr[3] : ''} className="has-value" readOnly />
                                 <p className="green">{AIRDROP.validStatus[LANG]}</p>
                             </div>

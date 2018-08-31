@@ -70,7 +70,6 @@ export default class AirDropState extends Component {
     }
     render() {
         const { itemArr, balance } = this.state;
-        console.log(itemArr);
         return (
             itemArr.length > 0
                 ? <div className="air-drop height">

@@ -867,6 +867,11 @@ export const CHAINDATA = {
     ]
 };
 export const AIRDROP = {
+    activityOver: {
+        zh: '活动已结束',
+        en: 'The activity is over!',
+        Japan: ''
+    },
     airTip: {
         zh: '输入你的以太坊地址可以免费获得200个GOG',
         en: 'Enter your ETH address to get 200 free GOG',

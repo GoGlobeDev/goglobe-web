@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+// import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import web3 from 'web3';
 
@@ -94,7 +94,7 @@ export default class AirDrop extends Component {
                             : <img src={require('img/airdrop-zh.png')} />
                         }
                     </div>
-                    <p className="air-tip">{AIRDROP.airTip[LANG]}</p>
+                    {/* <p className="air-tip">{AIRDROP.airTip[LANG]}</p>
                     <FormGroup>
                         <InputGroup>
                             <FormControl type="text" value={this.state.ethAdress} className="" placeholder={AIRDROP.placeholderAddr[LANG]}
@@ -102,7 +102,10 @@ export default class AirDrop extends Component {
                                 onKeyPress = { this._handleKeyPress } />
                             <InputGroup.Addon onClick={ () => this.clickToLogin() }>{AIRDROP.submit[LANG]}</InputGroup.Addon>
                         </InputGroup>
-                    </FormGroup>
+                    </FormGroup> */}
+                    <div className="activity-over">
+                        { AIRDROP.activityOver[LANG] }
+                    </div>
                 </div>
                 <div className="pos cloud-l1"><img src={require('img/cloud-l1.png')} /></div>
                 <div className="pos cloud-l2"><img src={require('img/cloud-l2.png')} /></div>

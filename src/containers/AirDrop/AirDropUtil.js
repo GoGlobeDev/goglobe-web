@@ -19,9 +19,9 @@ export function asyncLogin(data) {
         body: JSON.stringify(data)
     });
 }
-export function asyncSendEmail(data) {
+export function asyncSendCode(data) {
     const xtoken = window.localStorage.getItem('x-auth-token');
-    return fetch(host + ':' + port + '/airdrop/send', {
+    return fetch(host + ':' + port + '/airdrop/send/code', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -33,7 +33,19 @@ export function asyncSendEmail(data) {
 }
 export function asyncActive(data) {
     const xtoken = window.localStorage.getItem('x-auth-token');
-    return fetch(host + ':' + port + '/airdrop/active', {
+    return fetch(host + ':' + port + '/airdrop/active/account', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'x-auth-token': xtoken
+        },
+        body: JSON.stringify(data)
+    });
+}
+export function loadBalance(data) {
+    const xtoken = window.localStorage.getItem('x-auth-token');
+    return fetch(host + ':' + port + '/airdrop/user', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

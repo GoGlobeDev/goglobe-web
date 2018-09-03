@@ -16,7 +16,7 @@ export const NAV_BAR = [
     {anchor: '#home', label: {zh: '首页', en: 'home', japan: ''}},
     {anchor: '#about', label: {zh: '项目简介', en: 'About us', japan: ''}},
     {anchor: '#files', label: {zh: '白皮书', en: 'White Paper', japan: ''}},
-    {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
+    // {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
     {anchor: '#team', label: {zh: '团队与支持者', en: 'Team', japan: ''}},
     {anchor: '#contact', label: {zh: '联系我们', en: 'Contact', japan: ''}}
 ];
@@ -865,4 +865,127 @@ export const CHAINDATA = {
             }
         }
     ]
+};
+export const AIRDROP = {
+    activityOver: {
+        zh: '活动已结束',
+        en: 'The activity is over!',
+        Japan: ''
+    },
+    airTip: {
+        zh: '输入你的以太坊地址可以免费获得200个GOG',
+        en: 'Enter your ETH address to get 200 free GOG',
+        Japan: ''
+    },
+    submit: {
+        zh: '提交',
+        en: 'submit',
+        japan: ''
+    },
+    placeholderAddr: {
+        zh: '请输入您的以太坊地址',
+        en: 'Enter your ETH address',
+        japan: ''
+    },
+    invited: {
+        zh: '邀请链接',
+        en: 'invited link',
+        japan: ''
+    },
+    verify: {
+        zh: '您需要通过验证您的手机号来激活您的账户。',
+        en: 'You need to verify your phone to unlock your account.',
+        japan: ''
+    },
+    alert: {
+        zh: '未激活的账户无法进行空投！',
+        en: 'No airdrop for locked account!',
+        japan: ''
+    },
+    placeholderPhone: {
+        zh: '请输入您的手机号',
+        en: 'Enter your phone',
+        japan: ''
+    },
+    placeholderCode: {
+        zh: '请输入验证码',
+        en: 'Enter the code',
+        japan: ''
+    },
+    send: {
+        zh: '发送验证码',
+        en: 'Send code',
+        japan: ''
+    },
+    sended: {
+        zh: '已发送...',
+        en: 'Sended...',
+        japan: ''
+    },
+    validBtn: {
+        zh: '激活',
+        en: 'Active',
+        japan: ''
+    },
+    valided: {
+        zh: '您的手机号:',
+        en: 'Your phone:',
+        japan: ''
+    },
+    validStatus: {
+        zh: '您的账户已激活',
+        en: 'Your account is activated.',
+        japan: ''
+    },
+    received: {
+        zh: '共获得',
+        en: 'Received',
+        japan: ''
+    },
+    verifyStatus: {
+        goBack: {
+            zh: '返回首页',
+            en: 'Back to Homepage',
+            japan: ''
+        },
+        status: {
+            good: {
+                zh: '非常棒！',
+                en: 'Good!',
+                japan: ''
+            },
+            sorry: {
+                zh: '对不起！',
+                en: 'SORRY!',
+                japan: ''
+            },
+            oops: {
+                zh: '哎呦！',
+                en: 'OOPS!',
+                japan: ''
+            }
+        },
+        tips: {
+            good: {
+                zh: '您的手机号已验证成功！',
+                en: 'Your phone is verified successfully!',
+                japan: ''
+            },
+            sorry: {
+                zh: '您的手机号已完成验证！',
+                en: 'You have already verified your phone!',
+                japan: ''
+            },
+            oops: {
+                zh: '验证链接不合法！',
+                en: 'The verification link is invilid!',
+                japan: ''
+            }
+        }
+    },
+    heartTip: {
+        zh: '您所获得的GOG将在活动之后统一发放',
+        en: 'The GOG you receive will be released after the event.',
+        japan: ''
+    }
 };

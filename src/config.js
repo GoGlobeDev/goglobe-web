@@ -22,7 +22,7 @@ const SERVER_MAP = {
     API_DATAME: 'http://api.data.me',
     TEST1: 'http://test.factube.com',
     TEST2: 'http://test2.factube.com',
-    ONLINE: 'http://www.goglobechain.com'
+    ONLINE: 'http://52.196.161.219'
 };
 
 // 不同环境的精选列表详情库(目前相同)

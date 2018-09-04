@@ -109,10 +109,9 @@ export default class Index extends Component {
         );
     }
     render() {
-        console.log(this.state.status);
-        const { alert, activeNav, ethAdress } = this.state;
+        const { alert, activeNav, ethAdress, status } = this.state;
         return (
-            activeNav
+            activeNav && status
                 ? <div className="index-page">
                     <Helmet>
                         <title>{WEBTITLE[LANG]}</title>
@@ -255,7 +254,9 @@ export default class Index extends Component {
                                             <img src={item.src} />
                                             <p>{item.name[LANG]}</p>
                                         </div>
-                                        <div className="number">129473</div>
+                                        { index === 0 && <div className="number">{status.todayTotalDevice || 0}</div>}
+                                        { index === 1 && <div className="number">{status.todayTotalMining || 0}</div>}
+                                        { index === 2 && <div className="number">{status.todayTotalPower || 0}</div>}
                                     </div>
                                 );
                             })}

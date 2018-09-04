@@ -226,7 +226,7 @@
         img
             max-width: 100%
 .inno
-    padding: 40px
+    padding: 40px 20px
     background-color: $light
     position: relative
     // padding-bottom: 700px
@@ -697,23 +697,28 @@
         .contact-icons
             margin: 80px auto
     .inno
-        .inno-container .reason
-            .reason-item
-                text-align: left
-                .item-pic
-                    width: 140px
-                    height: 140px
-                    background-color: $light
-                    border-radius: 50%
-                    padding: 10px
-                    margin: 0 auto
-                    box-shadow: 0 0 60px rgba(86,66,142,.14)
-                    img
-                        max-width: 100%
-                .item-txt
-                    color: #222222
-                    position: absolute
-                    top: -15%
+        padding: 40px 0
+        .inno-container 
+            width: 1280px
+            padding: 0
+            margin: 0 auto
+            .reason
+                .reason-item
+                    text-align: left
+                    .item-pic
+                        width: 140px
+                        height: 140px
+                        background-color: $light
+                        border-radius: 50%
+                        padding: 10px
+                        margin: 0 auto
+                        box-shadow: 0 0 60px rgba(86,66,142,.14)
+                        img
+                            max-width: 100%
+                    .item-txt
+                        color: #222222
+                        position: absolute
+                        top: -15%
     .reason-item:nth-child(2n + 1)
         .item-txt
             right: 0
@@ -744,7 +749,27 @@
     color: $orange
 
 
-//
+@media (min-width: 768px)
+    .inno
+        padding: 40px 0
+        .inno-container 
+            width: 750px
+            padding: 0
+            margin: 0 auto
+@media (min-width: 992px)
+    .inno
+        padding: 40px 0
+        .inno-container 
+            width: 970px
+            padding: 0
+            margin: 0 auto
+@media (min-width: 1200px)
+    .inno
+        padding: 40px 0
+        .inno-container 
+            width: 1170px
+            padding: 0
+            margin: 0 auto
 @media (min-width: 1300px)
     .container
         width: 1280px

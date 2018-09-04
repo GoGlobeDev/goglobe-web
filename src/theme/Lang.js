@@ -16,7 +16,7 @@ export const NAV_BAR = [
     {anchor: '#home', label: {zh: '首页', en: 'home', japan: ''}},
     {anchor: '#about', label: {zh: '项目简介', en: 'About us', japan: ''}},
     {anchor: '#files', label: {zh: '白皮书', en: 'White Paper', japan: ''}},
-    // {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
+    {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
     {anchor: '#team', label: {zh: '团队与支持者', en: 'Team', japan: ''}},
     {anchor: '#contact', label: {zh: '联系我们', en: 'Contact', japan: ''}}
 ];
@@ -986,6 +986,67 @@ export const AIRDROP = {
     heartTip: {
         zh: '您所获得的GOG将在活动之后统一发放',
         en: 'The GOG you receive will be released after the event.',
+        japan: ''
+    }
+};
+export const WALLET = {
+    addr: {
+        zh: '地址',
+        en: 'address',
+        japan: ''
+    },
+    balance: {
+        zh: '余额',
+        en: 'balance',
+        japan: ''
+    },
+    device: {
+        zh: '绑定矿机',
+        en: 'deviceSum',
+        japan: ''
+    },
+    power: {
+        zh: '算力',
+        en: 'power',
+        japan: ''
+    },
+    dailyProduce: {
+        zh: '每日产出',
+        en: 'dailyProduce',
+        japan: ''
+    },
+    recommend: {
+        zh: '推荐人',
+        en: 'recommend',
+        japan: ''
+    },
+    miningRecord: {
+        zh: '挖矿记录',
+        en: 'miningRecord',
+        japan: ''
+    },
+    tableTitle: {
+        output: {
+            zh: '挖矿产出',
+            en: 'output',
+            japan: ''
+        },
+        data: {
+            zh: '日期',
+            en: 'date',
+            japan: ''
+        }
+    }
+};
+export const ALERT = {
+    title: {
+        zh: '错误提示',
+        en: 'WrongTip',
+        japan: ''
+    },
+    content: {
+        zh: '地址不合法',
+        en: 'The address is unvalid',
         japan: ''
     }
 };

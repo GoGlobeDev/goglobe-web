@@ -5,11 +5,13 @@ import Helmet from 'react-helmet';
 import { Image, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
+import web3 from 'web3';
 
 import {
-    TEAM, INVESTORS, CONTACT, NAV_BAR,
+    TEAM, INVESTORS, CONTACT, NAV_BAR, CHAINDATA, ALERT,
     ADVISORS, PARTNERS, FEATURES, LANG, DOWNLOAD, BANNER, FOOTER, GOGLOBE, ABOUT, WEBTITLE
 } from 'theme/Lang';
+import { loadStatus } from './indexUtil';
 import './Index.styl';
 
 export default class Index extends Component {
@@ -17,7 +19,8 @@ export default class Index extends Component {
         super(props);
         this.state = {
             // activeNav: 0
-            searchkey: ''
+            ethAdress: '',
+            status: {}
         };
     }
     componentWillMount() {
@@ -36,20 +39,27 @@ export default class Index extends Component {
             } else {
                 this.setState({ activeNav: 1 });
             }
+            loadStatus().then(response => response.json()).then((data) => {
+                this.setState({ status: data });
+            });
         }
     }
     toAnchor: Function = (anchor, idx) => {
         window.location.href = anchor;
         this.setState({ activeNav: idx });
     }
-    changeSearchkey: Function = (evt) => {
+    changeEthAdress: Function = (evt) => {
         this.setState({
-            searchkey: evt.target.value
+            ethAdress: evt.target.value
         });
     }
     clickToWallet: Function = () => {
-        const url = '/mining/nav/' + this.state.activeNav + '/key/' + this.state.searchkey;
-        window.location.href = url;
+        if (this.state.ethAdress && web3.utils.isAddress(this.state.ethAdress)) {
+            const url = '/mining/nav/' + this.state.activeNav + '/key/' + this.state.ethAdress;
+            window.location.href = url;
+        } else {
+            this.setState({alert: true});
+        }
     }
     // 递归创建消息节点元素数组
     _getNodeItems: Function = (str, messageArrOld) => {
@@ -99,9 +109,11 @@ export default class Index extends Component {
         );
     }
     render() {
+        console.log(this.state.status);
+        const { alert, activeNav, ethAdress } = this.state;
         return (
-            this.state.activeNav
-                ? <div className="">
+            activeNav
+                ? <div className="index-page">
                     <Helmet>
                         <title>{WEBTITLE[LANG]}</title>
                         <meta name="description" content="Go Globe features a Double-Helix Blockchain which performs value transfer and record keeping. Go Globe also provides decentralized and atomic listing mechanism to empower owners, control pricing and access directly." />
@@ -119,7 +131,7 @@ export default class Index extends Component {
                             <Navbar.Toggle />
                         </Navbar.Header>
                         <Navbar.Collapse>
-                            <Nav activeKey={this.state.activeNav}>
+                            <Nav activeKey={activeNav}>
                                 {NAV_BAR.map((item, idx) => {
                                     return (<NavItem key={idx} eventKey={idx + 1} onClick={() => this.toAnchor(item.anchor, idx + 1)}>{item.label[LANG]}</NavItem>);
                                 })}
@@ -229,10 +241,10 @@ export default class Index extends Component {
                             }
                         </div>
                     </div>
-                    {/* <div className="chain-data" id="chainData">
+                    <div className="chain-data" id="chainData">
                         <div className="search-box">
                             <img src={require('img/search.png')} />
-                            <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} onChange={(evt) => this.changeSearchkey(evt)} value={this.state.searchkey} />
+                            <input type="text" placeholder={CHAINDATA.search.placeholder[LANG]} onChange={(evt) => this.changeEthAdress(evt)} value={ethAdress} />
                             <button onClick={this.clickToWallet}>{CHAINDATA.search.button[LANG]}</button>
                         </div>
                         <div className="container">
@@ -248,7 +260,7 @@ export default class Index extends Component {
                                 );
                             })}
                         </div>
-                    </div> */}
+                    </div>
                     <div className="team-img" id="team">
                         <div className="team clearfix">
                             <div className="container">
@@ -335,6 +347,15 @@ export default class Index extends Component {
                             </ul>
                         </div>
                     </div></div>
+                    { alert
+                        && <div className="alert-modal">
+                            <div className="alert-bg" onClick={() => this.setState({alert: false})}></div>
+                            <div className="alert-box">
+                                <div className="alert-header">{ALERT.title[LANG]}<span onClick={() => this.setState({alert: false})}><img src={require('img/delete.png')} /></span></div>
+                                <div className="alert-body">{ALERT.content[LANG]}</div>
+                            </div>
+                        </div>
+                    }
                 </div>
                 : null
         );

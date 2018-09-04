@@ -10,11 +10,11 @@ const environment = {
     }
 }[process.env.NODE_ENV || 'development'];
 
-// 连接服务器 #王玉锋 2016.6.15
-const SERVER_MODE = 'ONLINE';
-// const SERVER_MODE = 'TEST2';
-const SERVER_PORT = '8000';
-// const SERVER_PORT = '8080';
+// 连接服务器
+const SERVER_MODE = 'ONLINE_WALLET';
+// const SERVER_MODE = 'ONLINE';
+const SERVER_PORT = '8088';
+// const SERVER_PORT = '8000';
 
 const SERVER_MAP = {
     LOCAL: 'http://localhost',
@@ -22,16 +22,10 @@ const SERVER_MAP = {
     API_DATAME: 'http://api.data.me',
     TEST1: 'http://test.factube.com',
     TEST2: 'http://test2.factube.com',
-    ONLINE: 'http://52.196.161.219'
+    ONLINE: 'http://52.196.161.219',
+    ONLINE_WALLET: 'http://54.250.199.29'
 };
 
-// 不同环境的精选列表详情库(目前相同)
-const PICKLIST_BASE_MAP = {
-    API2SSH: '59b75028ed8c44b4002f3676',
-    API_DATAME: '59b75028ed8c44b4002f3676',
-    TEST1: '59b75028ed8c44b4002f3676',
-    TEST2: '59b75028ed8c44b4002f3676'
-};
 
 module.exports = Object.assign({
     host: process.env.HOST || 'localhost',
@@ -50,7 +44,5 @@ module.exports = Object.assign({
                 { property: 'og:image:height', content: '200' }
             ]
         }
-    },
-    // 不同环境的精选列表详情库
-    picklistBaseId: PICKLIST_BASE_MAP[SERVER_MODE]
+    }
 }, environment);

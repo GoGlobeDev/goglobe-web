@@ -20,10 +20,10 @@
         <el-row>
             <el-col :span="10">
                 <div class="grid-content">
-                    <div className="top-line" />
-                    <div className="left-text">世界</div>
-                    <div className="left-text">旅游</div>
-                    <div className="left-text">新生态</div>
+                    <div class="top-line" />
+                    <div class="left-text">世界</div>
+                    <div class="left-text">旅游</div>
+                    <div class="left-text">新生态</div>
                 </div>
             </el-col>
             <el-col :span="14">
@@ -38,39 +38,41 @@
                 </div>
             </el-col>
         </el-row>
-        <el-row>
-            <div>{{$t('intro.title')}}</div>
-            <el-row>
-                <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('intro.describe')" :key='index'>
-                    <div className="item-pic"><img src="@/assets/globe-1.png" /></div>
-                    <div>{{item}}</div>
+        <el-row class="intro module" :style="intro">
+            <div class="title">{{$t('intro.title')}}</div>
+            <el-row class="intro-list">
+                <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('intro.describe')" :key='index' class="intro-item">
+                    <div class="intro-pic"><img src="@/assets/globe-1.png" /></div>
+                    <div class="intro-text">{{item}}</div>
                 </el-col>
             </el-row>
-            <div v-for="(item, index) in $t('intro.notice')" :key="index">{{item}}</div>
+            <div v-for="(item, index) in $t('intro.notice')" :key="index" class="ft">{{item}}</div>
         </el-row>
-        <el-row class="feature">
-            <div>{{$t('feature.title')}}</div>
+        <el-row class="feature module">
+            <div class="title">{{$t('feature.title')}}</div>
             <el-row>
                 <el-col :span="24" v-for="(item, index) in $t('feature.contents')" :key='index'>
-                    <div className="item-pic"><img src="@/assets/icon-1.png" /></div>
-                    <div>
-                        <div>{{item.title}}</div>
-                        <div>{{item.intro}}</div>
-                    </div>
+                    <el-row type="flex">
+                        <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="feature-pic"><img src="@/assets/icon-1.png" /></el-col>
+                        <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
+                            <div>{{item.title}}</div>
+                            <div>{{item.intro}}</div>
+                        </el-col>
+                    </el-row>
                 </el-col>
             </el-row>
         </el-row>
-        <el-row class="download">
+        <el-row class="download module">
             <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('download')" :key='index'>
-                <div className="item-pic"><img src="@/assets/document1.png" /></div>
+                <div class="item-pic"><img src="@/assets/document1.png" /></div>
                 <div>{{item.title}}</div>
             </el-col>
         </el-row>
-        <el-row class="team">
-            <div>{{$t('team.title')}}</div>
+        <el-row class="team module">
+            <div class="title">{{$t('team.title')}}</div>
             <el-row>
                 <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('team.members')" :key='index'>
-                    <div className="item-pic"><img src="@/assets/logo.png" /></div>
+                    <div class="item-pic"><img src="@/assets/logo.png" /></div>
                     <div>
                         <div>{{item.name}}</div>
                         <div>{{item.desc}}</div>
@@ -78,11 +80,11 @@
                 </el-col>
             </el-row>
         </el-row>
-        <el-row class="adviser">
-            <div>{{$t('adviser.title')}}</div>
+        <el-row class="adviser module">
+            <div class="title">{{$t('adviser.title')}}</div>
             <el-row>
                 <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('adviser.members')" :key='index'>
-                    <div className="item-pic"><img src="@/assets/logo.png" /></div>
+                    <div class="item-pic"><img src="@/assets/logo.png" /></div>
                     <div>
                         <div>{{item.name}}</div>
                         <div>{{item.desc}}</div>
@@ -90,15 +92,15 @@
                 </el-col>
             </el-row>
         </el-row>
-        <el-row class="investor">
-            <div>{{$t('investor.title')}}</div>
+        <el-row class="investor module">
+            <div class="title">{{$t('investor.title')}}</div>
             <el-row>
                 <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="6" v-for="(item, index) in investorArr" :key='index'>
                     <img :src="item.img" />
                 </el-col>
             </el-row>
         </el-row>
-        <el-row class="partner">
+        <el-row class="partner module">
             <div>{{$t('partner.title')}}</div>
             <el-row>
                 <el-col :xs="12" :sm="12" :md="6" :lg="4" :xl="4" v-for="(item, index) in partnerArr" :key='index'>
@@ -106,20 +108,20 @@
                 </el-col>
             </el-row>
         </el-row>
-        <div className="contact">
-            <div className="title">{{$t('contact.title')}}</div>
-            <div className="contact-icons clearfix">
+        <div class="contact">
+            <div class="title">{{$t('contact.title')}}</div>
+            <div class="contact-icons clearfix">
                 <img src="@/assets/twittergray.png" />
                 <img src="@/assets/twitterbgray.png" />
                 <img src="@/assets/facebookgray.png" />
             </div>
-            <div className="up-to-top">
+            <div class="up-to-top">
                 <img src="@/assets/arrow.png" />
             </div>
         </div>
         <el-row class="footer">
             <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-                <div className="item-pic"><img src="@/assets/logo2.png" /></div>
+                <div class="item-pic"><img src="@/assets/logo2.png" /></div>
                 <div>
                     <h3>{{$t('footer.addr.title')}}</h3>
                     <div>{{$t('footer.addr.street')}}</div>
@@ -132,7 +134,7 @@
                     <div>{{$t('footer.contact.email')}}</div>
                     <div>{{$t('footer.contact.join')}}</div>
                 </div>
-                <div className="contact-icons clearfix">
+                <div class="contact-icons clearfix">
                     <img src="@/assets/twitterwhite.png" />
                     <img src="@/assets/twitterbwhite.png" />
                     <img src="@/assets/facebook.png" />
@@ -151,6 +153,13 @@ export default {
     return {
       banner: {
         backgroundImage: 'url(' + require('../../../assets/banner.jpg') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center bottom'
+      },
+      intro: {
+        backgroundImage: 'url(' + require('../../../assets/feature.jpg') + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
@@ -242,7 +251,37 @@ export default {
             bottom: -18px
             left: 108px
             font-size: 20px
-.video-player-box
-    height: 300px
-    width: 100%
+// .video-player-box
+//     height: 300px
+//     width: 100%
+.title
+    padding-top: 40px
+    text-align: center
+    font-size: 40px
+    letter-spacing: 8px
+    color: #ffb400
+.module
+    padding: 0 50px
+.intro
+    .title
+        margin-bottom: 40px
+    .intro-list
+        margin-bottom: 50px
+    .intro-item
+        position: relative
+        .intro-pic
+            width: 40%
+            img
+                max-width: 100%
+        .intro-text
+            width: 55%
+            position: absolute
+            top: 20%
+            left: 45%
+    .ft
+        margin-bottom: 25px
+    // .ft:first-child
+    //     font-weight: bold
+// .feature
+    // .feature-pic
 </style>

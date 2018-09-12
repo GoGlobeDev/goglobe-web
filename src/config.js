@@ -11,8 +11,8 @@ const environment = {
 }[process.env.NODE_ENV || 'development'];
 
 // 连接服务器
-const SERVER_MODE = 'ONLINE_WALLET';
-// const SERVER_MODE = 'ONLINE';
+// const SERVER_MODE = 'ONLINE_WALLET';
+const SERVER_MODE = 'TEST1';
 const SERVER_PORT = '8088';
 // const SERVER_PORT = '8000';
 
@@ -20,8 +20,7 @@ const SERVER_MAP = {
     LOCAL: 'http://localhost',
     API2SSH: 'https://api2.factube.com',
     API_DATAME: 'http://api.data.me',
-    TEST1: 'http://test.factube.com',
-    TEST2: 'http://test2.factube.com',
+    TEST1: 'http://13.112.45.51',
     ONLINE: 'http://52.196.161.219',
     ONLINE_WALLET: 'http://54.250.199.29'
 };

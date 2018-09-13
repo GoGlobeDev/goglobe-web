@@ -17,6 +17,7 @@ export const NAV_BAR = [
     {anchor: '#about', label: {zh: '项目简介', en: 'About us', japan: ''}},
     {anchor: '#files', label: {zh: '白皮书', en: 'White Paper', japan: ''}},
     {anchor: '#chainData', label: {zh: '链上数据', en: 'ChainData', japan: ''}},
+    {anchor: '#download', label: {zh: '下载钱包', en: 'Download', japan: ''}},
     {anchor: '#team', label: {zh: '团队与支持者', en: 'Team', japan: ''}},
     {anchor: '#contact', label: {zh: '联系我们', en: 'Contact', japan: ''}}
 ];

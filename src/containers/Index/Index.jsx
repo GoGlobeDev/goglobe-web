@@ -45,7 +45,11 @@ export default class Index extends Component {
         }
     }
     toAnchor: Function = (anchor, idx) => {
-        window.location.href = anchor;
+        if (anchor === '#download') {
+            window.open('/download');
+        } else {
+            window.location.href = anchor;
+        }
         this.setState({ activeNav: idx });
     }
     changeEthAdress: Function = (evt) => {
@@ -332,15 +336,19 @@ export default class Index extends Component {
                         </div>
                     </div></div>
                     <div className="footer clearfix"><div className="container">
-                        <div className="col-sm-2 footer-left">
+                        <div className="col-sm-2 col-md-1 footer-left">
                             <img src={require('img/logo2.png')} />
                         </div>
-                        <div className="col-sm-4 footer-mid">
+                        <div className="col-sm-3 col-md-2 footer-mid">
                             <h4>{FOOTER.addr.title[LANG]}</h4>
                             <p>{FOOTER.addr.street[LANG]}</p>
                             <p>{FOOTER.addr.city[LANG]}</p>
                         </div>
-                        <div className="col-sm-5 col-sm-offset-1 footer-right">
+                        <div className="col-sm-3 col-md-2 footer-qrcode">
+                            <img src={require('img/wallet.png')} />
+                            <div>扫码下载钱包App</div>
+                        </div>
+                        <div className="col-sm-4 col-md-5 col-md-offset-1 footer-right">
                             <h4>{FOOTER.contact.title[LANG]}</h4>
                             <div className="e-mail">{FOOTER.contact.email[LANG]}</div>
                             <div className="splitter"></div>

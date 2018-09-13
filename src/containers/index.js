@@ -13,3 +13,5 @@ export AirDropActiveState from './AirDrop/AirDropActiveState';
 
 export Wallet from './Wallet/Wallet';
 
+export Download from './Download/Download';
+

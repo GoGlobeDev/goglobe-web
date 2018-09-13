@@ -1,0 +1,75 @@
+.download-page
+    padding: 24px 16px
+    background-color: #fff
+    img
+        max-width 100%
+    .top
+        overflow: hidden
+        margin-bottom: 30px
+    .logo
+        width: 118px
+        height: 118px
+        margin-right: 20px
+    .info
+        width: calc(100% - 138px)
+        .name
+            font-size: 22px
+            color: #323232
+            font-weight: bold
+        .version
+            font-size: 14px
+            color: rgba(#323232, .7)
+            margin: 10px 0 25px
+        a
+            height: 30px
+            line-height: 30px
+            border-radius: 15px
+            background-color: #007AFF
+            color: #ffffff
+            border: none 
+            padding: 6px 17px
+            &:focus
+                outline: none
+    .desc
+        color: #323232
+        margin-bottom: 30px
+        line-height: 1.64
+        &:last-child
+            margin: 0
+    .version-intro
+        font-weight: bold
+        +ol
+            li
+                list-style: decimal
+                list-style-position: inside
+                padding: 1px 0
+    .tip-container
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 99
+        .tip-bg
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background-color: rgba(0, 0, 0, .8)
+        .tip-text
+            position: absolute
+            z-index: 99
+            font-size: 18px
+            color: #ffffff
+            .curve
+                text-align: right
+                img
+                    width: 66px
+                    height: 83px
+                    // float: right
+                    margin-right: 25px
+            .curve+div
+                width: 61%
+                margin: 15px 35px
+                line-height: 1.62

@@ -7,7 +7,8 @@ import {
     AirDropState,
     AirDropActive,
     AirDropActiveState,
-    Wallet
+    Wallet,
+    Download
 } from 'containers';
 
 /* eslint-disable */
@@ -30,6 +31,7 @@ export default function getRoutes() {
             <Route path="airdrop/state" component={AirDropState} />
             <Route path="airdrop/active/:status" component={AirDropActive} />
             <Route path="airdrop/activestate" component={AirDropActiveState} />
+            <Route path="download" component={Download} />
         </Route>
     );
 }

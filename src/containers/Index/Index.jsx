@@ -54,8 +54,12 @@ export default class Index extends Component {
         });
     }
     clickToWallet: Function = () => {
-        if (this.state.ethAdress && web3.utils.isAddress(this.state.ethAdress)) {
-            const url = '/mining/nav/' + this.state.activeNav + '/key/' + this.state.ethAdress;
+        let _ethAddress = this.state.ethAdress;
+        if (this.state.ethAdress && web3.utils.isAddress(_ethAddress)) {
+            if (_ethAddress.slice(0, 2) !== '0x') {
+                _ethAddress = '0x' + _ethAddress;
+            }
+            const url = '/mining/nav/' + this.state.activeNav + '/key/' + _ethAddress;
             window.location.href = url;
         } else {
             this.setState({alert: true});

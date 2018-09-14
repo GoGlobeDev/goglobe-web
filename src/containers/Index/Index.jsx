@@ -49,8 +49,8 @@ export default class Index extends Component {
             window.open('/download');
         } else {
             window.location.href = anchor;
+            this.setState({ activeNav: idx });
         }
-        this.setState({ activeNav: idx });
     }
     changeEthAdress: Function = (evt) => {
         this.setState({

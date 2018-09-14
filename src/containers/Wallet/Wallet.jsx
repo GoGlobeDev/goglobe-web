@@ -48,8 +48,12 @@ export default class Wallet extends Component {
         });
     }
     toAnchor: Function = (anchor) => {
-        const url = '/' + anchor;
-        window.location.href = url;
+        if (anchor === '#download') {
+            window.open('/download');
+        } else {
+            const url = '/' + anchor;
+            window.location.href = url;
+        }
     }
     changePage: Function = (pageIndex) => {
         const data = {

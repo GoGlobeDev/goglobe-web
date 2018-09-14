@@ -1,10 +1,10 @@
 // Airdrop utils by zy on 2018.3.5
 
 import fetch from 'isomorphic-fetch';
-import config from 'config.js';
+// import config from 'config.js';
 
-const host = config.apiHost;
-const port = config.apiPort;
+const host = 'http://52.196.161.219';
+const port = '8000';
 
 // 更新用户信息
 export function asyncLogin(data) {

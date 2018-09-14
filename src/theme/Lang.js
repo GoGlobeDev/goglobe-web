@@ -860,7 +860,7 @@ export const CHAINDATA = {
         {
             src: require('img/output.png'),
             name: {
-                zh: '每日GOG 总产出',
+                zh: '每日GOG总产出',
                 en: '',
                 japan: ''
             }
@@ -1030,6 +1030,11 @@ export const WALLET = {
         output: {
             zh: '挖矿产出',
             en: 'output',
+            japan: ''
+        },
+        type: {
+            zh: '类型',
+            en: 'type',
             japan: ''
         },
         data: {

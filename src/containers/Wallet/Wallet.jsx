@@ -144,6 +144,7 @@ export default class Wallet extends Component {
                                         <div className="table-head">
                                             <div className="head-item"></div>
                                             <div className="head-item">{WALLET.tableTitle.output[LANG]}</div>
+                                            <div className="head-item">{WALLET.tableTitle.type[LANG]}</div>
                                             <div className="head-item">{WALLET.tableTitle.data[LANG]}</div>
                                         </div>
                                         <div className="table-body">
@@ -152,6 +153,7 @@ export default class Wallet extends Component {
                                                     <div key={item.id} className="body-row">
                                                         <div className="body-item">{index + 1}</div>
                                                         <div className="body-item">{item.amount}</div>
+                                                        <div className="body-item">{item.opCode === 0 ? '余额奖励' : '挖矿奖励'}</div>
                                                         <div className="body-item">{moment(item.time).format('YYYY-MM-DD')}</div>
                                                     </div>
                                                 );
@@ -213,6 +215,7 @@ export default class Wallet extends Component {
                                             <div className="table-head">
                                                 <div className="head-item"></div>
                                                 <div className="head-item">{WALLET.tableTitle.output[LANG]}</div>
+                                                <div className="head-item">{WALLET.tableTitle.type[LANG]}</div>
                                                 <div className="head-item">{WALLET.tableTitle.data[LANG]}</div>
                                             </div>
                                             <div className="table-body">
@@ -221,6 +224,7 @@ export default class Wallet extends Component {
                                                         <div key={item.id} className="body-row">
                                                             <div className="body-item">{index + 1}</div>
                                                             <div className="body-item">{item.amount}</div>
+                                                            <div className="body-item">{item.opCode === 0 ? '余额奖励' : '挖矿奖励'}</div>
                                                             <div className="body-item">{moment(item.time).format('YYYY-MM-DD')}</div>
                                                         </div>
                                                     );

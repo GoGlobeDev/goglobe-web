@@ -82,5 +82,26 @@ export default {
       email: 'E-mail: info@goglobechain.com',
       join: 'Join the discussion on the channels below'
     }
+  },
+  chainData: {
+    search: {
+      placeholder: 'search address',
+      button: 'search'
+    },
+    data: ['全网矿机数量', '全网算力', '每日GOG总产出']
+  },
+  wallet: {
+    addr: 'address',
+    balance: 'balance',
+    device: 'deviceSum',
+    power: 'power',
+    dailyProduce: 'dailyProduce',
+    recommend: 'recommend',
+    miningRecord: 'miningRecord',
+    tableTitle: {
+      output: 'output',
+      type: 'type',
+      data: 'date'
+    }
   }
 }

@@ -23,6 +23,7 @@ export default {
 <style lang="stylus" scoped>
 .logo-box
   width: 30%
+  margin: 10px 0
   .logo
     width: 40px
     height: 40px
@@ -30,8 +31,7 @@ export default {
     width: calc(100% - 50px)
   .logo-text
     font-size: 20px
-    margin-left: 5px
-    letter-spacing 0.5px
+    margin: 5px
+    letter-spacing: 0.5px
     line-height 1.6
-    font-weight normal
 </style>

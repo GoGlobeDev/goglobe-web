@@ -6,6 +6,8 @@ export default {
     home: '首页',
     intro: '项目简介',
     whitePaper: '白皮书',
+    chainData: '链上数据',
+    downloadAPP: '下载钱包',
     team: '团队和支持者',
     contact: '联系我们'
   },
@@ -189,6 +191,27 @@ export default {
       title: '联系我们',
       email: '邮箱：info@goglobechain.com',
       join: '加入以下平台进行讨论'
+    }
+  },
+  chainData: {
+    search: {
+      placeholder: '搜索地址',
+      button: '搜索'
+    },
+    data: ['全网矿机数量', '全网算力', '每日GOG总产出']
+  },
+  wallet: {
+    addr: '地址',
+    balance: '余额',
+    device: '绑定矿机',
+    power: '算力',
+    dailyProduce: '每日产出',
+    recommend: '推荐人',
+    miningRecord: '挖矿记录',
+    tableTitle: {
+      output: '挖矿产出',
+      type: '类型',
+      data: '日期'
     }
   }
 }

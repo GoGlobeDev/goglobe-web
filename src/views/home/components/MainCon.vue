@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <el-row>
+        <el-row id="intro">
             <el-col :span="10">
                 <div class="grid-content">
                     <div class="top-line" />
@@ -46,52 +46,67 @@
                     <div class="intro-text">{{item}}</div>
                 </el-col>
             </el-row>
-            <div v-for="(item, index) in $t('intro.notice')" :key="index" class="ft">{{item}}</div>
+            <div v-for="(item, index) in $t('intro.notice')" :key="index" :class="{ft: item, bold: index === 0}">{{item}}</div>
         </el-row>
         <el-row class="feature module">
             <div class="title">{{$t('feature.title')}}</div>
             <el-row>
-                <el-col :span="24" v-for="(item, index) in $t('feature.contents')" :key='index'>
-                    <el-row type="flex">
-                        <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="feature-pic"><img src="@/assets/icon-1.png" /></el-col>
-                        <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
-                            <div>{{item.title}}</div>
-                            <div>{{item.intro}}</div>
-                        </el-col>
-                    </el-row>
+                <el-col :span="24" v-for="(item, index) in $t('feature.contents')" :key='index' class="feature-item">
+                    <div class="feature-pic"><img src="@/assets/icon-1.png" /></div>
+                    <div class="feature-content">
+                        <div class="content-title">{{item.title}}</div>
+                        <div class="content-intro">{{item.intro}}</div>
+                    </div>
                 </el-col>
             </el-row>
         </el-row>
-        <el-row class="download module">
+        <el-row class="download module" id="download">
             <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('download')" :key='index'>
                 <div class="item-pic"><img src="@/assets/document1.png" /></div>
-                <div>{{item.title}}</div>
+                <div :class="{text: item, paper: index === 1}">{{item.title}}</div>
             </el-col>
         </el-row>
-        <el-row class="team module">
-            <div class="title">{{$t('team.title')}}</div>
-            <el-row>
-                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('team.members')" :key='index'>
-                    <div class="item-pic"><img src="@/assets/logo.png" /></div>
+        <div class="chaindData module" id="chainData">
+            <el-input :placeholder="$t('chainData.search.placeholder')" v-model="address" class="input-with-select">
+                <el-button slot="prepend" icon="el-icon-search"></el-button>
+                <el-button slot="append">{{$t('chainData.search.button')}}</el-button>
+            </el-input>
+            <el-row class="module">
+                <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('chainData.data')" :key='index'>
                     <div>
-                        <div>{{item.name}}</div>
-                        <div>{{item.desc}}</div>
+                        <img :src="chainDataImg[index].img" />
+                        <div>{{item}}</div>
+                        <div>22</div>
                     </div>
                 </el-col>
             </el-row>
-        </el-row>
-        <el-row class="adviser module">
-            <div class="title">{{$t('adviser.title')}}</div>
-            <el-row>
-                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('adviser.members')" :key='index'>
-                    <div class="item-pic"><img src="@/assets/logo.png" /></div>
-                    <div>
-                        <div>{{item.name}}</div>
-                        <div>{{item.desc}}</div>
-                    </div>
-                </el-col>
+        </div>
+        <div :style="team">
+            <el-row class="team module" id="team">
+                <div class="title">{{$t('team.title')}}</div>
+                <el-row :gutter="20">
+                    <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('team.members')" :key='index'>
+                        <div class="item-pic fl"><img src="@/assets/a0.png" /></div>
+                        <div class="item-intro fl">
+                            <div class="name">{{item.name}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                        </div>
+                    </el-col>
+                </el-row>
             </el-row>
-        </el-row>
+            <el-row class="adviser module">
+                <div class="title">{{$t('adviser.title')}}</div>
+                <el-row :gutter="20">
+                    <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(item, index) in $t('adviser.members')" :key='index'>
+                        <div class="item-pic fl"><img src="@/assets/a0.png" /></div>
+                        <div class="item-intro fl">
+                            <div class="name">{{item.name}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                        </div>
+                    </el-col>
+                </el-row>
+            </el-row>
+        </div>
         <el-row class="investor module">
             <div class="title">{{$t('investor.title')}}</div>
             <el-row>
@@ -101,34 +116,37 @@
             </el-row>
         </el-row>
         <el-row class="partner module">
-            <div>{{$t('partner.title')}}</div>
+            <div class="title">{{$t('partner.title')}}</div>
             <el-row>
                 <el-col :xs="12" :sm="12" :md="6" :lg="4" :xl="4" v-for="(item, index) in partnerArr" :key='index'>
                     <img :src="item.img" />
                 </el-col>
             </el-row>
         </el-row>
-        <div class="contact">
+        <div class="contact" id="contact" :style="contact">
             <div class="title">{{$t('contact.title')}}</div>
             <div class="contact-icons clearfix">
                 <img src="@/assets/twittergray.png" />
                 <img src="@/assets/twitterbgray.png" />
-                <img src="@/assets/facebookgray.png" />
+                <img src="@/assets/facebookgray.png" class="last" />
             </div>
             <div class="up-to-top">
                 <img src="@/assets/arrow.png" />
             </div>
         </div>
-        <el-row class="footer">
-            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-                <div class="item-pic"><img src="@/assets/logo2.png" /></div>
-                <div>
+        <el-row class="footer module" :gutter="30">
+            <el-col :xs="24" :sm="24" :md="7" :lg="7" :xl="7">
+                <div class="item-pic fl"><img src="@/assets/logo2.png" /></div>
+                <div class="fl">
                     <h3>{{$t('footer.addr.title')}}</h3>
                     <div>{{$t('footer.addr.street')}}</div>
                     <div>{{$t('footer.addr.city')}}</div>
                 </div>
             </el-col>
-            <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+            <el-col :xs="24" :sm="24" :md="3" :lg="3" :xl="3">
+                <img src="@/assets/wallet.png" />
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="14" :lg="14" :xl="14">
                 <div>
                     <h3>{{$t('footer.contact.title')}}</h3>
                     <div>{{$t('footer.contact.email')}}</div>
@@ -165,6 +183,17 @@ export default {
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center bottom'
       },
+      team: {
+        background: 'url(' + require('../../../assets/team.jpg') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center bottom'
+      },
+      contact: {
+        backgroundImage: 'url(' + require('../../../assets/grid.png') + ')',
+        backgroundSize: 'auto 100%'
+      },
       investorArr: [
         {img: require('@/assets/invester_01.jpg')},
         {img: require('@/assets/invester_02.jpg')},
@@ -196,7 +225,13 @@ export default {
         {img: require('@/assets/ptn16.jpg')},
         {img: require('@/assets/ptn17.jpg')},
         {img: require('@/assets/ptn18.jpg')}
-      ]
+      ],
+      chainDataImg: [
+        {img: require('@/assets/miner.png')},
+        {img: require('@/assets/calculate.png')},
+        {img: require('@/assets/output.png')}
+      ],
+      address: ''
     //   playerOptions: {
     //     muted: true,
     //     language: 'en',
@@ -260,8 +295,10 @@ export default {
     font-size: 40px
     letter-spacing: 8px
     color: #ffb400
+    margin-bottom: 30px
 .module
     padding: 0 50px
+    border-bottom: 1px solid #dee6ed
 .intro
     .title
         margin-bottom: 40px
@@ -271,17 +308,103 @@ export default {
         position: relative
         .intro-pic
             width: 40%
-            img
-                max-width: 100%
+            transition: transform 0.3s ease-in
+            &:hover
+                transition: transform 0.3s ease-out
+                transform: scale(1.2, 1.2)
         .intro-text
             width: 55%
             position: absolute
-            top: 20%
-            left: 45%
+            top: 30%
+            left: 40%
     .ft
         margin-bottom: 25px
+        text-align: center
+    .ft.bold
+        font-weight: bold
     // .ft:first-child
     //     font-weight: bold
-// .feature
-    // .feature-pic
+.feature
+    background-color: #fff
+    .feature-item
+        position: relative
+        margin-bottom: 50px
+        .feature-pic
+            width: 120px
+            height: 120px
+            margin: 0 auto
+            box-shadow: 0 0 60px rgba(86,66,142,0.14)
+            border-radius: 50%
+        .feature-content
+            position: absolute
+            .content-title
+                font-size: 26px
+                color: #ffb400
+                margin-bottom: 10px
+            .content-intro
+                font-style: italic
+                font-size: 16px
+                line-height: 1.4
+    .feature-item:nth-child(2n+1)
+        .feature-content
+            left: 60%
+            right: 0
+            top: 3%
+    .feature-item:nth-child(2n)
+        .feature-content
+            right: 60%
+            left: 0
+            top: 3%
+.download
+    background-color: rgba(255,180,0,0.1)
+    >div
+        text-align: center
+        padding: 50px 0
+        .text
+           height: 40px
+           line-height: 40px 
+           color: #ffb400
+           background-color: #fff
+           width: 260px
+           margin: 10px auto
+           border-radius: 4px
+        .text.paper
+            color: #fff
+            background-color: #ffb400
+.team, .adviser
+    .el-col
+        padding: 20px 10px
+        .item-pic
+            width: 27%
+            max-width: 150px
+            margin-right: 20px
+        .item-intro
+            width: 63%
+            min-width: calc(100% - 170px)
+            .name
+                font-weight: bold
+                font-size: 18px
+                margin: 10px 0
+                text-align: left
+            .desc
+                line-height: 23px
+                color: rgba(38,42,46,0.6)
+                text-align: justify
+.partner
+    .el-col
+        height: 126px
+        img
+            max-width: 180px
+.contact
+    .contact-icons
+        width: 260px
+        margin: 60px auto
+        img
+            margin-right: 60px
+        img.last
+            margin-right: 0
+.footer
+    background-color: #444
+    color: rgba(255,255,255,0.3)
+    padding: 20px 50px
 </style>

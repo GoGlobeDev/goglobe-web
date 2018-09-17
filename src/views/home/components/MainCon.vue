@@ -66,12 +66,12 @@
                 <div :class="{text: item, paper: index === 1}">{{item.title}}</div>
             </el-col>
         </el-row>
-        <div class="chaindData module" id="chainData">
+        <div class="chaindData" id="chainData">
             <el-input :placeholder="$t('chainData.search.placeholder')" v-model="address" class="input-with-select">
                 <el-button slot="prepend" icon="el-icon-search"></el-button>
                 <el-button slot="append">{{$t('chainData.search.button')}}</el-button>
             </el-input>
-            <el-row class="module">
+            <el-row class="data-box">
                 <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('chainData.data')" :key='index'>
                     <div>
                         <img :src="chainDataImg[index].img" />
@@ -163,9 +163,13 @@
 </template>
 <script>
 // import videoPlayer from 'vue-video-player'
+import { loadStatus } from '@/api/wallet'
 export default {
   components: {
     // videoPlayer
+  },
+  created () {
+    this._loadStatus()
   },
   data () {
     return {
@@ -248,6 +252,11 @@ export default {
   methods: {
     onPlayerPlay (player) {
       console.log('player play!', player)
+    },
+    _loadStatus () {
+      loadStatus().then(res => {
+        console.log(res)
+      })
     }
   }
 }
@@ -362,7 +371,7 @@ export default {
         padding: 50px 0
         .text
            height: 40px
-           line-height: 40px 
+           line-height: 40px
            color: #ffb400
            background-color: #fff
            width: 260px
@@ -407,4 +416,10 @@ export default {
     background-color: #444
     color: rgba(255,255,255,0.3)
     padding: 20px 50px
+.chaindData
+    padding: 50px
+    .data-box
+        text-align: center
+        .el-col
+            padding: 30px
 </style>

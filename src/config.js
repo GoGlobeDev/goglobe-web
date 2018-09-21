@@ -12,7 +12,7 @@ const environment = {
 
 // 连接服务器
 // const SERVER_MODE = 'ONLINE_WALLET';
-const SERVER_MODE = 'TEST_WALLET';
+const SERVER_MODE = 'ONLINE_WALLET';
 const SERVER_PORT = '8088';
 // const SERVER_PORT = '8000';
 

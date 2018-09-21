@@ -37,7 +37,7 @@ export default class Download extends Component {
     // }
     render() {
         const iosUrl = '#';
-        const androidUrl = 'http://www.goglobe.io/app/GOGWallet1.0.0.0.apk';
+        const androidUrl = 'http://www.goglobe.com/app/GoGlobeWallet.apk';
         return (
             <div className="download-page height">
                 <Helmet>自游俱乐部</Helmet>

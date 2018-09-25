@@ -26,6 +26,7 @@ export default class Wallet extends Component {
             activeNav: Number(this.props.params.activeNav),
             userInfo: {},
             record: {},
+            pageIndex: 1,
             mobileRecord: {}
         };
     }
@@ -62,7 +63,7 @@ export default class Wallet extends Component {
             rows: 20
         };
         loadRecord(data).then(response => response.json()).then((res) => {
-            this.setState({ record: res });
+            this.setState({ record: res, pageIndex: pageIndex });
         });
     }
     loadMore: Function = (resolve, finish) => {
@@ -87,7 +88,7 @@ export default class Wallet extends Component {
         }, 1000);
     }
     render() {
-        const { userInfo, record, mobileRecord } = this.state;
+        const { userInfo, record, mobileRecord, pageIndex } = this.state;
         return (
             userInfo && (record.list || mobileRecord.list)
                 ? <div className="wallet">
@@ -151,7 +152,7 @@ export default class Wallet extends Component {
                                             {record.list.map((item, index) => {
                                                 return (
                                                     <div key={item.id} className="body-row">
-                                                        <div className="body-item">{index + 1}</div>
+                                                        <div className="body-item">{index + 1 + ( pageIndex - 1 ) * 20}</div>
                                                         <div className="body-item">{item.amount}</div>
                                                         <div className="body-item">{item.opCode === 0 ? '余额奖励' : '挖矿奖励'}</div>
                                                         <div className="body-item">{moment(item.time).format('YYYY-MM-DD')}</div>

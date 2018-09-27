@@ -7,3 +7,19 @@ export function loadStatus () {
     params: {}
   })
 }
+
+export function loadAccountInfo (data) {
+  return request({
+    url: '/wallet/eth',
+    method: 'POST',
+    data
+  })
+}
+
+export function loadMiningRescord (data) {
+  return request({
+    url: '/wallet/eth/record',
+    method: 'POST',
+    data
+  })
+}

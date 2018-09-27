@@ -101,7 +101,7 @@ export default {
     tableTitle: {
       output: 'output',
       type: 'type',
-      data: 'date'
+      date: 'date'
     }
   }
 }

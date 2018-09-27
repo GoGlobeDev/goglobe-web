@@ -69,14 +69,14 @@
         <div class="chaindData" id="chainData">
             <el-input :placeholder="$t('chainData.search.placeholder')" v-model="address" class="input-with-select">
                 <el-button slot="prepend" icon="el-icon-search"></el-button>
-                <el-button slot="append">{{$t('chainData.search.button')}}</el-button>
+                <el-button slot="append" @click="searchAddr">{{$t('chainData.search.button')}}</el-button>
             </el-input>
             <el-row class="data-box">
                 <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('chainData.data')" :key='index'>
                     <div>
-                        <img :src="chainData[index].img" />
+                        <img :src="chainData[index] && chainData[index].img" />
                         <div>{{item}}</div>
-                        <div>{{chainData[index].data}}</div>
+                        <div>{{chainData[index] && chainData[index].data}}</div>
                     </div>
                 </el-col>
             </el-row>
@@ -164,6 +164,7 @@
 <script>
 // import videoPlayer from 'vue-video-player'
 import { loadStatus } from '@/api/wallet'
+import web3 from 'web3'
 export default {
   components: {
     // videoPlayer
@@ -251,7 +252,6 @@ export default {
     },
     _loadStatus () {
       loadStatus().then(res => {
-        console.log(res)
         const _data = [
           {
             img: require('@/assets/miner.png'),
@@ -268,6 +268,22 @@ export default {
         ]
         this.chainData = _data
       })
+    },
+    searchAddr () {
+      let _ethAddress = this.address
+      if (_ethAddress && web3.utils.isAddress(_ethAddress)) {
+        if (_ethAddress.slice(0, 2) !== '0x') {
+          _ethAddress = '0x' + _ethAddress
+        }
+        console.log(window.location.hash)
+        const url = '/mining/wallet/' + _ethAddress + '/' + window.location.hash
+        window.location.href = url
+      } else {
+        this.$message({
+          message: '请输入钱包地址',
+          type: 'warning'
+        })
+      }
     }
   }
 }

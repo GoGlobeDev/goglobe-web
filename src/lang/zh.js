@@ -211,7 +211,7 @@ export default {
     tableTitle: {
       output: '挖矿产出',
       type: '类型',
-      data: '日期'
+      date: '日期'
     }
   }
 }

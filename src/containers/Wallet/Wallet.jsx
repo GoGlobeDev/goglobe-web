@@ -122,17 +122,17 @@ export default class Wallet extends Component {
                                     <div className="gog"><span className="gog-number">{userInfo.balance || 0}</span> GOG</div>
                                 </div>
                                 <div className="info-item">
-                                    <img src={require('img/balance.png')} />
+                                    <img src={require('img/miner1.png')} />
                                     <p>{WALLET.device[LANG]}</p>
                                     <div className="number">{userInfo.deviceSum || 0}</div>
                                 </div>
                                 <div className="info-item">
-                                    <img src={require('img/balance.png')} />
+                                    <img src={require('img/calculate1.png')} />
                                     <p>{WALLET.power[LANG]}</p>
                                     <div className="number">{userInfo.power || 0}</div>
                                 </div>
                                 <div className="info-item">
-                                    <img src={require('img/balance.png')} />
+                                    <img src={require('img/output1.png')} />
                                     <p>{WALLET.dailyProduce[LANG]}</p>
                                     <div className="number">{userInfo.dailyProduce || 0}</div>
                                 </div>
@@ -192,17 +192,17 @@ export default class Wallet extends Component {
                                             <div className="gog"><span className="gog-number">{userInfo.balance || 0}</span> GOG</div>
                                         </div>
                                         <div className="info-item">
-                                            <img src={require('img/balance.png')} />
+                                            <img src={require('img/miner1.png')} />
                                             <p>{WALLET.device[LANG]}</p>
                                             <div className="number">{userInfo.deviceSum || 0}</div>
                                         </div>
                                         <div className="info-item">
-                                            <img src={require('img/balance.png')} />
+                                            <img src={require('img/calculate1.png')} />
                                             <p>{WALLET.power[LANG]}</p>
                                             <div className="number">{userInfo.power || 0}</div>
                                         </div>
                                         <div className="info-item">
-                                            <img src={require('img/balance.png')} />
+                                            <img src={require('img/output1.png')} />
                                             <p>{WALLET.dailyProduce[LANG]}</p>
                                             <div className="number">{userInfo.dailyProduce || 0}</div>
                                         </div>

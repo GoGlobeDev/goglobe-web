@@ -74,9 +74,9 @@
             <el-row class="data-box">
                 <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" v-for="(item, index) in $t('chainData.data')" :key='index'>
                     <div>
-                        <img :src="chainDataImg[index].img" />
+                        <img :src="chainData[index].img" />
                         <div>{{item}}</div>
-                        <div>22</div>
+                        <div>{{chainData[index].data}}</div>
                     </div>
                 </el-col>
             </el-row>
@@ -230,11 +230,7 @@ export default {
         {img: require('@/assets/ptn17.jpg')},
         {img: require('@/assets/ptn18.jpg')}
       ],
-      chainDataImg: [
-        {img: require('@/assets/miner.png')},
-        {img: require('@/assets/calculate.png')},
-        {img: require('@/assets/output.png')}
-      ],
+      chainData: [],
       address: ''
     //   playerOptions: {
     //     muted: true,
@@ -256,6 +252,21 @@ export default {
     _loadStatus () {
       loadStatus().then(res => {
         console.log(res)
+        const _data = [
+          {
+            img: require('@/assets/miner.png'),
+            data: res.data.todayTotalDevice
+          },
+          {
+            img: require('@/assets/calculate.png'),
+            data: res.data.todayTotalMining
+          },
+          {
+            img: require('@/assets/output.png'),
+            data: res.data.todayTotalPower
+          }
+        ]
+        this.chainData = _data
       })
     }
   }

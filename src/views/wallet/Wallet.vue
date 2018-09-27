@@ -36,7 +36,7 @@
         <div class="recommend">{{$t('wallet.recommend')}} ：{{account.referral || ''}}</div>
         <div class="mining-record">
             <h3 class="table-title">{{$t('wallet.miningRecord')}}</h3>
-            <el-table :data="record.list" stripe style="width: 100%" class="table11">
+            <el-table :data="record.list" stripe style="width: 100%">
                 <el-table-column prop="index" label="" style="width: 10%" align="center"></el-table-column>
                 <el-table-column prop="amount" :label="$t('wallet.tableTitle.output')" style="width: 30%" align="center"></el-table-column>
                 <el-table-column prop="type" :label="$t('wallet.tableTitle.type')" style="width: 30%" align="center"></el-table-column>
@@ -47,11 +47,9 @@
                 :current-page.sync="currentPage"
                 :page-size="20"
                 layout="prev, pager, next, jumper"
-                :total="record.number"
-                class="page">
+                :total="record.number">
             </el-pagination>
         </div>
-        
     </div>
   </div>
 </template>
@@ -149,10 +147,6 @@ export default {
             .table-title
                 font-size: 20px
                 font-weight: 500
-            .table11
+            .el-table
                 margin-bottom: 20px
-                .el-table__header-wrapper .el-table__header th.is-leaf
-                    background-color: #e4e4e4
-        .el-pagination .el-pagination__jump
-            float: right
 </style>

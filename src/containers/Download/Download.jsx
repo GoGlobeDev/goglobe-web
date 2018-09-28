@@ -46,17 +46,18 @@ export default class Download extends Component {
                         <div className="logo left"><img src={require('img/logo-download.png')} /></div>
                         <div className="left info">
                             <div className="name">自游俱乐部</div>
-                            <div className="version">版本号：1.0.1</div>
+                            <div className="version">版本号：1.1.0</div>
                             <a href = {this.state.ios ? iosUrl : androidUrl}>app下载</a>
                         </div>
                     </div>
                     <p className="desc">自游俱乐部是一款移动端轻钱包APP，它旨在为普通用户提供一款安全放心，简单好用，功能强大的数字资产钱包应用。</p>
                     <div>
-                        <div className="version-intro">版本号：1.0.1</div>
+                        <div className="version-intro">版本号：1.1.0</div>
                         <ol>
-                            <li>在1.0版本的基础上优化了矿机系统</li>
-                            <li>增加了修改交易密码的功能</li>
-                            <li>修改bug</li>
+                            <li>增加了提币功能，用户可以将矿机挖出来的币提至自己的链上钱包内</li>
+                            <li>增加了矿机信息界面，可以在矿机信息界面内查看矿机的具体信息，包括算力构成，每日产出以及初始奖励等</li>
+                            <li>“我的操作”界面重新定义了在APP内部的操作记录</li>
+                            <li>增加了主动/被动检查APP更新的功能</li>
                         </ol>
                     </div>
                 </div>

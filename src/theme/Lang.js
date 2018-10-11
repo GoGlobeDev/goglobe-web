@@ -317,24 +317,6 @@ export const TEAM = {
             }
         },
         {
-            pic: require('img/a0.png'),
-            name: {
-                zh: 'Chris Zhong',
-                en: 'Chris Zhong',
-                japan: ''
-            },
-            title: {
-                zh: '技术布道师',
-                en: '',
-                japan: ''
-            },
-            intro: {
-                zh: '某全球领导地位的科技公司的首席架构师，在澳大利亚拥有丰富行业经验的技术领导者，精通区块链知识并在世界各地的大型会议进行发言。',
-                en: '',
-                japan: ''
-            }
-        },
-        {
             pic: require('img/p7.png'),
             name: {
                 zh: 'Nick YU',

@@ -211,7 +211,7 @@ export const TEAM = {
         {
             pic: require('img/a0.png'),
             name: {
-                zh: 'Peter Song',
+                zh: '宋鹏程',
                 en: 'Peter SONG',
                 japan: ''
             },
@@ -229,7 +229,7 @@ export const TEAM = {
         {
             pic: require('img/a0.png'),
             name: {
-                zh: 'Adam Li',
+                zh: '李昂达',
                 en: 'Adam Li',
                 japan: ''
             },

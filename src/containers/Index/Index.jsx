@@ -169,7 +169,7 @@ export default class Index extends Component {
                             })}
                         </div>
                         <div className="col-md-7 fun-right">
-                            <Player src="http://www.goglobechain.io/res/goglobe.mp4" />
+                            <Player src="http://www.goglobechain.io/res/goglobe1.mp4" />
                         </div>
                     </div></div>
                     <section className="what-globe">

@@ -23,7 +23,7 @@ const head = document.getElementsByTagName('head')[0];
 if (process.env.NODE_ENV === 'production') {
   window._hmt = [];
   const hm = document.createElement('script');
-  hm.src = 'https://hm.baidu.com/hm.js?9a4057358fabe43191e95e85bdb06ad0';
+  hm.src = 'https://hm.baidu.com/hm.js?3bf7f8c779014379c30e5561e78ec8ac';
   head.appendChild(hm);
 }
 

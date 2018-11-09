@@ -46,16 +46,18 @@ export default class Download extends Component {
                         <div className="logo left"><img src={require('img/logo-download.png')} /></div>
                         <div className="left info">
                             <div className="name">自游俱乐部</div>
-                            <div className="version">版本号：1.1.1</div>
+                            <div className="version">版本号：1.1.2</div>
                             <a href = {this.state.ios ? iosUrl : androidUrl}>app下载</a>
                         </div>
                     </div>
                     <p className="desc">自游俱乐部是一款移动端轻钱包APP，它旨在为普通用户提供一款安全放心，简单好用，功能强大的数字资产钱包应用。</p>
                     <div>
-                        <div className="version-intro">版本号：1.1.1</div>
+                        <div className="version-intro">版本号：1.1.2</div>
                         <ol>
-                            <li>增加了绑定JNB交易所账号的功能</li>
-                            <li>优化了在未连接到网络的时候，APP的状态</li>
+                            <li>完善了全部的帮助中心的内容 </li>
+                            <li>优化了创建钱包的流程，提升用户体验 </li>
+                            <li>自游设备界面增加下拉刷新功能 </li>
+                            <li>重新调整了“我的”界面下的功能结构</li>
                             <li>修改bug</li>
                         </ol>
                     </div>

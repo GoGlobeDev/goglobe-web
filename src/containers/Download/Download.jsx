@@ -36,7 +36,7 @@ export default class Download extends Component {
         // }
     // }
     render() {
-        const iosUrl = 'https://www.goglobechain.com/app/DistributionSummary.plist';
+        const iosUrl = 'https://www.goglobe.io/app/DistributionSummary.plist';
         const androidUrl = 'https://www.goglobechain.com/app/GoGlobeWallet.apk';
         return (
             <div className="download-page height">

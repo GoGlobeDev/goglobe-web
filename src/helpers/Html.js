@@ -35,7 +35,7 @@ export default class Html extends Component {
             {head.script.toComponent()}
 
             <link rel="shortcut icon" href="/logo.png" />
-            <link href="http://www.goglobechain.io/res/bootstrap.min.css" rel="stylesheet" />
+            <link href="https://www.goglobechain.io/res/bootstrap.min.css" rel="stylesheet" />
             <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no" />
             {/* styles (will be present only in production with webpack extract text plugin) */}
             {Object.keys(assets.styles).map((style, key) =>

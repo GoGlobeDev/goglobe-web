@@ -36,8 +36,8 @@ export default class Download extends Component {
         // }
     // }
     render() {
-        const iosUrl = 'http://www.goglobechain.com/app/GOGWallet.ipa';
-        const androidUrl = 'http://www.goglobechain.com/app/GoGlobeWallet.apk';
+        const iosUrl = 'https://www.goglobechain.com/app/DistributionSummary.plist';
+        const androidUrl = 'https://www.goglobechain.com/app/GoGlobeWallet.apk';
         return (
             <div className="download-page height">
                 <Helmet>自游俱乐部</Helmet>

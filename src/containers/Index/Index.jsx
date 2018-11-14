@@ -169,7 +169,7 @@ export default class Index extends Component {
                             })}
                         </div>
                         <div className="col-md-7 fun-right">
-                            <Player src="http://www.goglobechain.io/res/goglobe1.mp4" />
+                            <Player src="https://www.goglobe.io/res/goglobe1.mp4" />
                         </div>
                     </div></div>
                     <section className="what-globe">
@@ -225,7 +225,7 @@ export default class Index extends Component {
                                         <div className={index === 0 ? 'files-left' : 'files-right'}>
                                             <img src={require('img/document1.png')} />
                                             { index === 1
-                                                ? <div className="names"><a download="GoGlobeWhitePaper_CN.pdf" href="http://www.goglobechain.com/whitepaper/GoGlobeWhitePaper_CN.pdf">{item[LANG].title}</a></div>
+                                                ? <div className="names"><a download="GoGlobeWhitePaper_CN.pdf" href="https://www.goglobe.io/whitepaper/GoGlobeWhitePaper_CN.pdf">{item[LANG].title}</a></div>
                                                 : <div className="names">{item[LANG].title}</div>
                                             }
                                             {/* <div className="available">{item[LANG].vs}</div>
@@ -233,11 +233,11 @@ export default class Index extends Component {
                                                 {item[LANG].lang.map((item1, index1) => {
                                                     if (index1 !== (item[LANG].lang.length - 1)) {
                                                         return (
-                                                            <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a><i>&emsp;&bull;&emsp;</i></span>
+                                                            <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="https://www.goglobe.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a><i>&emsp;&bull;&emsp;</i></span>
                                                         );
                                                     }
                                                     return (
-                                                        <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="http://www.goglobechain.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a></span>
+                                                        <span key={index1}><a download="Whitepaper_v3.0_EN.pdf" href="https://www.goglobe.io/res/Whitepaper_v3.0_EN.pdf">{item1}</a></span>
                                                     );
                                                 })}
                                             </div> */}

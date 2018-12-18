@@ -46,16 +46,15 @@ export default class Download extends Component {
                         <div className="logo left"><img src={require('img/logo-download.png')} /></div>
                         <div className="left info">
                             <div className="name">自游俱乐部</div>
-                            <div className="version">版本号：1.1.3</div>
+                            <div className="version">版本号：1.1.4</div>
                             <a href = {this.state.ios ? iosUrl : androidUrl}>app下载</a>
                         </div>
                     </div>
                     <p className="desc">自游俱乐部是一款移动端轻钱包APP，它旨在为普通用户提供一款安全放心，简单好用，功能强大的数字资产钱包应用。</p>
                     <div>
-                        <div className="version-intro">版本号：1.1.3</div>
+                        <div className="version-intro">版本号：1.1.4</div>
                         <ol>
-                            <li>增加了提现时可以提币到其他地址的功能</li>
-                            <li>优化性能，修改BUG</li>
+                            <li>增加锁定机制</li>
                         </ol>
                     </div>
                 </div>

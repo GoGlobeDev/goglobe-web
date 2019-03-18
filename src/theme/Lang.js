@@ -208,24 +208,24 @@ export const TEAM = {
                 japan: ''
             }
         },
-        {
-            pic: require('img/a0.png'),
-            name: {
-                zh: '宋鹏程',
-                en: 'Peter SONG',
-                japan: ''
-            },
-            title: {
-                zh: '首席科学家',
-                en: 'Chief Scientist',
-                japan: ''
-            },
-            intro: {
-                zh: '拥有清华大学本科与硕士学位以及纽约大学的博士学位。表单数据库FormDB与商业通证交易系统BTEx的架构设计师。致力于高性能区块链与可信物联网设备的设计与实现。',
-                en: 'He holds B.S. and M.S. from Tsinghua University and Ph.D. from New York University. He has years of experience in database design and development.',
-                japan: ''
-            }
-        },
+        // {
+        //     pic: require('img/a0.png'),
+        //     name: {
+        //         zh: '宋鹏程',
+        //         en: 'Peter SONG',
+        //         japan: ''
+        //     },
+        //     title: {
+        //         zh: '首席科学家',
+        //         en: 'Chief Scientist',
+        //         japan: ''
+        //     },
+        //     intro: {
+        //         zh: '拥有清华大学本科与硕士学位以及纽约大学的博士学位。表单数据库FormDB与商业通证交易系统BTEx的架构设计师。致力于高性能区块链与可信物联网设备的设计与实现。',
+        //         en: 'He holds B.S. and M.S. from Tsinghua University and Ph.D. from New York University. He has years of experience in database design and development.',
+        //         japan: ''
+        //     }
+        // },
         {
             pic: require('img/a0.png'),
             name: {
